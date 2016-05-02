@@ -20,7 +20,7 @@ public class Data {
     private static ArrayList<String> generalList;
     public static ArrayList<String> alcholList;
     public static ArrayList<String> fatigue;
-    public static ArrayList<String> intersection;
+    public static ArrayList<String[]> intersection;
     public static ArrayList<String> negligentDriving;
     public static ArrayList<String> pedestrains;
     public static ArrayList<String> seatBelts;
@@ -42,6 +42,7 @@ public class Data {
     //    public static ArrayList<String> sQuestionsList;
     public static HashMap<String, String[]> answerList;
     private static ArrayList<String> categories;
+    private static HashMap<String, String[]> intersectionAnswers;
 
     public Data() {
         categories = new ArrayList<>();
@@ -505,5 +506,186 @@ public class Data {
                         "aggressive.", "Go slower because the slower you go the safer you are.",
                         "Resist the pressure, stay calm and overtake the cyclist when it is " + "safe.",
                         "2"});
+    }
+
+    private void initializeIntersection() {
+        intersection = new ArrayList<>();
+        intersectionAnswers = new HashMap<>();
+
+
+        intersection.add(new String[]{"As you approach an intersection, you should check for" +
+                " traffic on your left and right -", ""});
+        intersectionAnswers.put("As you approach an intersection, you should check for" +
+                " traffic on your left and right -", new String[]{"Only when the traffic is heavy.",
+        "Only when you approach a stop sign.", "At all times before entering the intersection.", "2"});
+
+
+        intersection.add(new String[]{"When making a right-hand turn at the intersection shown," +
+                " you must give way to -", "intersection_right"});
+        intersectionAnswers.put("When making a right-hand turn at the intersection shown," +
+                " you must give way to -", new String[]{"An oncoming vehicle going straight " +
+                "ahead or turning left and any vehicle on " + "your right.", "A vehicle approaching from your left and " +
+                "intending to turn right.", "Only pedestrians.", "0"});
+
+
+        intersection.add(new String[]{"If turning right at a T-intersection (as shown) must you give way to vehicles approaching from both " +
+                "the left and right?", "intersection_t"});
+        intersectionAnswers.put("If turning right at a T-intersection (as shown) must you give way to vehicles approaching from both " +
+                "the left and right?", new String[]{"No, but you must give way if turning.",
+        "Yes, it has the same meaning as the sign itself.", "No, you only need to give way to the" +
+                " vehicle on your right.", "1"});
+
+        intersection.add(new String[]{"If turning at an intersection are you required to give way" +
+                " to pedestrians?", "intersection_both"});
+        intersectionAnswers.put("If turning at an intersection are you required to give way " +
+                "to pedestrians?", new String[]{"Yes, only if turning left.", "Yes, a driver turning right or left must " +
+                "give way to pedestrians, if there is a danger of a collision",
+        "Yes, only if turning right.", "1"});
+
+
+        intersection.add(new String[]{"When you come to an intersection and the road beyond is choked with vehicles going in the same " +
+                "direction, what should you do?", "one_direction_intersection"});
+        intersectionAnswers.put("When you come to an intersection and the road beyond is choked with vehicles going in the same " +
+                "direction, what should you do?",
+                new String[]{"Wait until there is room for you to " +
+                        "completely cross the intersection.", "Proceed if there is no traffic on your right.",
+                "Travel into the intersection and wait until " +
+                        "traffic ahead moves.", "0"});
+
+        intersection.add(new String[]{"Right-turns must be made from which lanes when travelling" +
+                " on a laned roadway?", ""});
+        intersectionAnswers.put("Right-turns must be made from which lanes when travelling " +
+                "on a laned roadway?", new String[]{"The lane carrying the least amount of traffic.",
+        "The far left-hand lane.", "The far right-hand lane or any other lane having an arrow pointing " +
+                "right.", "2"});
+
+        intersection.add(new String[]{"In this diagram both vehicles O and P must pass through GIVE WAY signs before entering the " +
+                "intersection. Which vehicle goes first?", "intersection_o_p"});
+        intersectionAnswers.put("In this diagram both vehicles O and P must pass through GIVE WAY signs before entering the " +
+                "intersection. Which vehicle goes first?",
+                new String[]{"Vehicle O.", "Vehicle P.", "It depends on who moves first.", "1"});
+
+        intersection.add(new String[]{"Vehicle O is at a STOP sign -", "intersection_o_p_q_r"});
+        intersectionAnswers.put("Vehicle O is at a STOP sign -",
+                new String[]{" Vehicle O must give way only to vehicle R.",
+                        "Vehicle O must give way to vehicles P, Q and R.",
+                        "All vehicles must give way to vehicle O", "1"});
+
+
+        intersection.add(new String[]{"If both vehicles P and O in the diagram are turning right, which vehicle is in the best position to turn " +
+                "left into the street marked 'X'?", "intersection_pink"});
+        intersectionAnswers.put("If both vehicles P and O in the diagram are turning right, which vehicle is in the best position to turn " +
+                "left into the street marked 'X'?", new String[]{"Vehicle P.", "Neither vehicle.",
+        "Vehicle O.", "2"});
+
+
+        intersection.add(new String[]{"The diagram shows a marked pedestrian crossing at an intersection. There is also a STOP sign at " +
+                "the intersection. You have already stopped for a pedestrian. Must you stop again at the STOP line?"
+        , "intersection_stop"});
+        intersectionAnswers.put("The diagram shows a marked pedestrian crossing at an intersection. There is also a STOP sign at " +
+                "the intersection. You have already stopped for a pedestrian. Must you stop again " +
+                "at the STOP line?", new String[]{"Yes, if there is traffic on your right only.",
+                "Yes, at all times.", "No, if the intersection is clear.", "1"});
+
+
+        intersection.add(new String[]{"A GIVE WAY sign at an intersection means that you must -",
+                "intersection_give_way"});
+        intersectionAnswers.put("A GIVE WAY sign at an intersection means that you must -",
+                new String[]{"Be ready to stop and give way to all " +
+                        "other traffic if there is danger of a " +
+                        "collision.", "Stop completely at all times and have no right " +
+                        "of way.", "Slow down and only give way to traffic on your " +
+                        "right.", "0"});
+
+        intersection.add(new String[]{"Which vehicle in the diagram must give way?", "give_way_j_k_l"});
+        intersectionAnswers.put("Which vehicle in the diagram must give way?",
+                new String[]{"Vehicle J.", "Vehicle K.", "Vehicle L.", "0"});
+
+        intersection.add(new String[]{"You want to make a left turn. You must use your" +
+                " left-hand indicator -", ""});
+        intersectionAnswers.put("You want to make a left turn. You must use your left-hand indicator -",
+                new String[]{"Only when there is traffic behind you.", "At all times.",
+                "Only when arrows are marked on the roadway.", "1"});
+
+        intersection.add(new String[]{"At the T-intersection shown in the diagram which vehicle" +
+                " should give way?", "intersection_r_q"});
+        intersectionAnswers.put("At the T-intersection shown in the diagram which vehicle should give way?",
+                new String[]{"Vehicle Q.", "Whichever vehicle got there last.", "Vehicle R.", "2"});
+
+        intersection.add(new String[]{"You wish to make a right-hand turn from a ONE WAY STREET with no arrows marked on the " +
+                "roadway. You should position your vehicle -", ""});
+        intersectionAnswers.put("You wish to make a right-hand turn from a ONE WAY STREET with no arrows marked on the " +
+                "roadway. You should position your vehicle -", new String[]{"On the right-hand side of the street.",
+        "In the middle of the street.", "On the left-hand side of the street.", "0"});
+
+
+        intersection.add(new String[]{"When there are no arrows marked on the road, left turns" +
+                " must be made from -", ""});
+        intersectionAnswers.put("When there are no arrows marked on the road, left turns must be made from -",
+                new String[]{"The middle of the road.", "Either side of the road.",
+                        "The far left-hand side of the road.", "2"});
+
+        intersection.add(new String[]{"What should you do on approaching a railway level crossing" +
+                " displaying a STOP sign?", "intersection_rail"});
+        intersectionAnswers.put("What should you do on approaching a railway level crossing" +
+                " displaying a STOP sign?", new String[]{"Stop at all times and proceed when safe to do so.",
+        "Slow down to 10 km/h, then proceed through the crossing.",
+        "Stop, only if a train is at the crossing.", "0"});
+
+        intersection.add(new String[]{"You are driving the car in the diagram. You must stop -",
+                "intersection_must_stop"});
+        intersectionAnswers.put("You are driving the car in the diagram. You must stop -",
+                new String[]{"Even when there is no other traffic.",
+                        "Only if there is a car on your right or left.",
+                "Only if there is danger of a collision with " +
+                        "another vehicle.", "0"});
+
+        intersection.add(new String[]{"If the boomgates are down and the signals are flashing," +
+                " at a railway level crossing, you may begin to cross -", ""});
+        intersectionAnswers.put("If the boomgates are down and the signals are flashing," +
+                " at a railway level crossing, you may begin to cross -",
+                new String[]{"If you cannot see a train approaching.",
+                        "If you can safely go around the closed gate.",
+                "Only when the gate is up and the lights stop flashing.", "2"});
+
+        intersection.add(new String[]{"When approaching a railway level crossing displaying" +
+                " this sign, you must -", "intersection_rail_two_tracks"});
+        intersectionAnswers.put("When approaching a railway level crossing displaying this sign," +
+                " you must -", new String[]{"Increase your speed to avoid any approaching trains.",
+                "Slow down, look both ways for trains and be " +
+                "prepared to stop if necessary.", "Continue across at normal speed, do not slow down.",
+        "1"});
+
+
+        intersection.add(new String[]{"Even if the signal at a railway level crossing does not" +
+                " indicate that a train is coming, you should -", "intersection_stop_on_red_signal"});
+        intersectionAnswers.put("Even if the signal at a railway level crossing does not indicate " +
+                "that a train is coming, you should -", new String[]{"Speed up and cross the tracks quickly.",
+        "Stop completely at all times.", "Slow down, be ready to stop and give way if " +
+                "there is danger of collision.", "2"});
+
+
+        intersection.add(new String[]{"You come to an intersection in Sydney with a Light Rail " +
+                "vehicle about to enter. What should you do?", "intersection_train"});
+        intersectionAnswers.put("You come to an intersection in Sydney with a Light Rail" +
+                " vehicle about to enter. What should you do?", new String[]{
+                "Wait until the intersection is clear.", "Enter the intersection, but keep away" +
+                " from the Light Rail vehicle.", "Change lanes before crossing the intersection.",
+                "0"
+        });
+
+
+        intersection.add(new String[]{"You approach an intersection in busy traffic and want to go " +
+                "straight ahead. The traffic lights turn " +
+                "green. When are you permitted to enter the intersection?", "intersection_white_car_circule"});
+        intersectionAnswers.put("You approach an intersection in busy traffic and want to go " +
+                "straight ahead. The traffic lights turn " +
+                "green. When are you permitted to enter the intersection?", new String[]{"Only when there is room for your vehicle on " +
+                "the other side.", "Immediately after the traffic lights turn green.",
+                "When the vehicle behind signals you to go.", "0"});
+
+        // 37
+
+
     }
 }
