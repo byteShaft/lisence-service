@@ -110,16 +110,16 @@ public class Data {
 
         ICAC.add("What will happen if you offer a testing officer a bribe to pass your driving test?");
         answerList.put("What will happen if you offer a testing officer a bribe to pass your driving test?",
-                new String[] {"Action will be taken against you. The penalties are severe and" +
+                new String[] {"Action will be taken against you. The penalties are severe and " +
                         "include fines and imprisonment.", "Only the testing officer will be investigated.",
                         "Nothing, there is no penalty.", "0"});
 
-        ICAC.add("What will happen if a testing officer asks you for a bribe to pass your driving test and you give it to" +
+        ICAC.add("What will happen if a testing officer asks you for a bribe to pass your driving test and you give it to " +
                 "him or her?");
-        answerList.put("What will happen if a testing officer asks you for a bribe to pass your driving test and you give it to" +
+        answerList.put("What will happen if a testing officer asks you for a bribe to pass your driving test and you give it to " +
                 "him or her?",
                 new String[] {"Only the testing officer will be investigated.",
-                        "Action will be taken against you. The penalties are severe and " +
+                        "Action will be taken against you. The penalties are severe and  " +
                         "include fines and imprisonment.",
                         "Nothing, there is no penalty.", "1"});
 
@@ -135,9 +135,9 @@ public class Data {
                         "No.",
                 "Yes, provided L and P1 or P2 plates are displayed.", "1"});
 
-        generalList.add("To progress to a P2 provisional licence, a P1 provisional driver must hold a P1 licence" +
+        generalList.add("To progress to a P2 provisional licence, a P1 provisional driver must hold a P1 licence " +
                 "for a minimum period of?");
-        answerList.put("To progress to a P2 provisional licence, a P1 provisional driver must hold a P1 licence" +
+        answerList.put("To progress to a P2 provisional licence, a P1 provisional driver must hold a P1 licence " +
                         "for a minimum period of?",
                 new String[] {"24 months.", "12 months.", "18 months.", "1"});
 
@@ -161,17 +161,17 @@ public class Data {
 
         generalList.add("What is meant by this sign on or near a bridge?");
         answerList.put("What is meant by this sign on or near a bridge?",
-                new String[] {"Stop at all times before crossing the bridge and only give" +
+                new String[] {"Stop at all times before crossing the bridge and only give " +
                         "way to pedestrians who may be crossing.",
-                        "Slow down and be prepared to give way to" +
+                        "Slow down and be prepared to give way to " +
                                 "vehicles travelling in the opposite direction.",
                         "Do not overtake a vehicle travelling in the same direction.", "1"});
 
         generalList.add("When reversing, you should?");
         answerList.put("When reversing, you should?",
-                new String[] {"Unbuckle your seat belt so you can reverse as quickly" +
+                new String[] {"Unbuckle your seat belt so you can reverse as quickly " +
                         "as possible.",
-                        "Take care and never reverse for a greater" +
+                        "Take care and never reverse for a greater " +
                                 "distance and time than is necessary.",
                         "Sound your horn to warn other drivers.", "1"});
 
@@ -181,9 +181,9 @@ public class Data {
                         "You must leave at least 2 metres from the front only.",
                         "You must leave at least 3 metres front and back.", "0"});
 
-        generalList.add("Where there is parallel kerbside parking, are you allowed to double-park alongside a parked" +
+        generalList.add("Where there is parallel kerbside parking, are you allowed to double-park alongside a parked " +
                 "vehicle?");
-        answerList.put("Where there is parallel kerbside parking, are you allowed to double-park alongside a parked" +
+        answerList.put("Where there is parallel kerbside parking, are you allowed to double-park alongside a parked " +
                         "vehicle?",
                 new String[] {"Yes, if not obstructing traffic.",
                         "Yes, if delivering goods.",
@@ -191,7 +191,7 @@ public class Data {
 
         generalList.add("Do you have any responsibilities when opening a vehicle door on a roadway?");
         answerList.put("Do you have any responsibilities when opening a vehicle door on a roadway?",
-                new String[] {"Yes, you must not open a door if you are likely to cause danger to" +
+                new String[] {"Yes, you must not open a door if you are likely to cause danger to " +
                         "road users or impede traffic.",
                         "No, any following traffic must stop if the door interferes with its progress.",
                         "No, there is no regulation to cover this situation.", "0"});
@@ -220,16 +220,16 @@ public class Data {
                         "When within 200 metres of an oncoming vehicle only.",
                         "When within 200 metres of the vehicle ahead or an oncoming one.", "2"});
 
-        generalList.add("You are driving in a 60 km/h zone, with only one lane for traffic in your direction. You see a bus" +
-                "ahead (with this sign displayed on the rear) signalling its intention to pull out from a bus stop, you" +
+        generalList.add("You are driving in a 60 km/h zone, with only one lane for traffic in your direction. You see a bus " +
+                "ahead (with this sign displayed on the rear) signalling its intention to pull out from a bus stop, you " +
                 "should?");
-        answerList.put("You are driving in a 60 km/h zone, with only one lane for traffic in your direction. You see a bus" +
-                        "ahead (with this sign displayed on the rear) signalling its intention to pull out from a bus stop, you" +
+        answerList.put("You are driving in a 60 km/h zone, with only one lane for traffic in your direction. You see a bus " +
+                        "ahead (with this sign displayed on the rear) signalling its intention to pull out from a bus stop, you " +
                         "should?",
-                new String[] {"Slow down, and give way to the bus as it has" +
+                new String[] {"Slow down, and give way to the bus as it has " +
                         "priority.",
                         "Sound your horn to stop the bus from pulling out.",
-                        "Continue at your normal speed as the bus does not have" +
+                        "Continue at your normal speed as the bus does not have " +
                                 "priority.", "0"});
         
     }
