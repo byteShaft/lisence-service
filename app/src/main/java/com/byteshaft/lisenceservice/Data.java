@@ -100,7 +100,6 @@ public class Data {
 
                 break;
         }
-
     }
 
     public static void initializeAlcoholAndDrugs() {
@@ -915,5 +914,4 @@ public class Data {
                         "Resist the pressure, stay calm and overtake the cyclist when it is " + "safe.",
                         "2"});
     }
-
 }
