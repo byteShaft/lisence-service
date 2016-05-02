@@ -218,14 +218,6 @@ public class Data {
                         "aggressive.", "Go slower because the slower you go the safer you are.",
                 "Resist the pressure, stay calm and overtake the cyclist when it is " +"safe.",
                 "2"});
-
-
-
-
-
-
-
-
     }
 
 
