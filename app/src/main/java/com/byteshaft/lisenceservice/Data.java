@@ -20,15 +20,15 @@ public class Data {
     public static ArrayList<String> ICAC;
     private static ArrayList<String[]> generalList;
     public static ArrayList<String[]> trafficSignsSection;
-    public static ArrayList<String[]> alcholList;
+    public static ArrayList<String[]> alcoholList;
     public static ArrayList<String[]> fatigue;
     public static ArrayList<String[]> intersection;
     public static ArrayList<String[]> negligentDriving;
     public static ArrayList<String[]> pedestrains;
-    public static ArrayList<String> seatBelts;
-    public static ArrayList<String> speedLimits;
+    public static ArrayList<String[]> seatBelts;
+    public static ArrayList<String[]> speedLimits;
     public static ArrayList<String[]> trafficLights;
-    public static ArrayList<String> trafficLights2;
+    public static ArrayList<String[]> trafficLights2;
 
 
 //    Alcohol and Drugs
@@ -50,6 +50,9 @@ public class Data {
     public static HashMap<String, String[]> answerListForFatigueAndDefensiveDriving;
     public static HashMap<String, String[]> answerListForTraficLights;
     public static HashMap<String, String[]> answerListForNegligentDriving;
+    public static HashMap<String, String[]> answerListForSpeedLimits;
+    public static HashMap<String, String[]> answerListForSeatBelt;
+
     private static ArrayList<String> categories;
     private static HashMap<String, String[]> intersectionAnswers;
 
@@ -110,7 +113,240 @@ public class Data {
         }
     }
 
+    public static void initializeSeatbelts() {
+
+
+        seatBelts = new ArrayList<>();
+        answerListForSeatBelt = new HashMap<>();
+
+        seatBelts.add(new String[] {"A car is carrying a driver and 3 adult passengers. There are seat belts in all seating positions. By law, seat belts must be worn by -", ""});
+        answerListForSeatBelt.put("A car is carrying a driver and 3 adult passengers. There are seat belts in all seating positions. By law, seat belts must be worn by -",
+                new String[]{
+                        "All four people.",
+                        "Only the driver.",
+                        "Only the driver and front seat passenger.",
+                        "0"});
+
+        seatBelts.add(new String[] {"The adult passenger in the rear is breaking the law because she is -", "sb3"});
+        answerListForSeatBelt.put("The adult passenger in the rear is breaking the law because she is -",
+                new String[]{
+                        "Distracting the driver.",
+                        "Sitting in the back seat.",
+                        "Not wearing the available seat belt.",
+                        "2"});
+
+        seatBelts.add(new String[] {"The most effective device for protecting passengers when in an accident is –", ""});
+        answerListForSeatBelt.put("The most effective device for protecting passengers when in an accident is –",
+                new String[]{
+                        "Seat belts.",
+                        "Safety door latches.",
+                        "Padded instrument panels.",
+                        "0"});
+
+        seatBelts.add(new String[] {"Which one of the following statements is correct? Seat belts -", ""});
+        answerListForSeatBelt.put("Which one of the following statements is correct? Seat belts -",
+                new String[]{
+                        "Save lives and prevent injury.",
+                        "Do not have to be used in the rear seat.",
+                        "Are not necessary for good drivers.",
+                        "0"});
+
+        seatBelts.add(new String[] {"Seat belts and child restraints (eg baby capsules and child seats) -", ""});
+        answerListForSeatBelt.put("Seat belts and child restraints (eg baby capsules and child seats) -",
+                new String[]{
+                        "Are only needed on short trips.",
+                        "Are only needed on long trips.",
+                        "Must always be worn properly, and adjusted tightly.",
+                        "2"});
+
+        seatBelts.add(new String[] {"Child restraints (eg, baby capsules and child seats) -", ""});
+        answerListForSeatBelt.put("Child restraints (eg, baby capsules and child seats) -",
+                new String[]{
+                        "Should be fitted according to the manufacturers' instructions.",
+                        "Are not as safe as holding a child in your arms.",
+                        "Need only be used if the child wants to sleep.",
+                        "0"});
+
+        seatBelts.add(new String[] {"You are driving a vehicle that only has a seat belt" +
+                " for the driver. To reduce the danger of being in a vehicle without a seat " +
+                "belt, where is the best place for passengers to sit?", ""});
+        answerListForSeatBelt.put("You are driving a vehicle that only has a seat belt for " +
+                "the driver. To reduce the danger of being in a vehicle without a seat belt," +
+                " where is the best place for passengers to sit?",
+                new String[]{
+                        "In the front seat.",
+                        "In the back seat.",
+                        "In the front seat sharing your seat belt.",
+                        "1"});
+
+        seatBelts.add(new String[] {"When passengers get in the car and do not put their seat belts on, the safest thing to dois-", ""});
+        answerListForSeatBelt.put("When passengers get in the car and do not put their seat belts on, the safest thing to dois-",
+                new String[]{
+                        "Tell them the car has seat belts and they should wear them.",
+                        "Say nothing because it's the passengers' responsibility to wear their seat belts.",
+                        "Drive slower than you normally would so the passengers are safe.",
+                        "0"});
+
+        seatBelts.add(new String[] {"You want to give a lift to a friend and his four month old baby. Before you do, you need to make sure -", ""});
+        answerListForSeatBelt.put("You want to give a lift to a friend and his four month old baby. Before you do, you need to make sure -",
+                new String[]{
+                        "You have a baby restraint properly fitted to your vehicle.",
+                        "You have enough seat belts for all the passengers, including the baby.",
+                        "Your driver's licence permits you to carry children under the age of twelve months.",
+                        "0"});
+
+        seatBelts.add(new String[] {"You want to fit a baby restraint to your car. What should you secure the restraint to?", "sb19"});
+        answerListForSeatBelt.put("You want to fit a baby restraint to your car. What should you secure the restraint to?",
+                new String[]{
+                        "Only at the back using the seat belt provided.",
+                        "Any seat belt in the back or front of the car.",
+                        "An anchorage point designed for a baby restraint.",
+                        "2"});
+
+        seatBelts.add(new String[] {"You give a friend and her 12 year old son a lift. Your friend" +
+                " sits in the front and her son gets in the back. The boy does not put his seat " +
+                "belt on. By law, who has to make sure the child wears his seat belt?", ""});
+        answerListForSeatBelt.put("You give a friend and her 12 year old son a lift. " +
+                "Your friend sits in the front and her son gets in the back. The boy does not put" +
+                " his seat belt on. By law, who has to make sure the child wears his seat belt?",
+                new String[]{
+                        "The child does because it is always the passenger's responsibility.",
+                        "Your friend does because she is the parent.",
+                        "You do, because you are the driver.",
+                        "2"});
+
+        seatBelts.add(new String[] {"Which of the following statements is correct?", ""});
+        answerListForSeatBelt.put("Which of the following statements is correct?",
+                new String[]{
+                        "By law, all occupants of a car (unless exempt) need to be restrained by a properly fitted and adjusted seat belt or a child restraint.",
+                        "Occupants in a car fitted with airbags are not required to wear a seat belt.",
+                        "Seat belts and child restraints are only required on short trips.",
+                        "0"});
+    }
+
+
+    public static void initializeSpeedlimits() {
+
+        speedLimits = new ArrayList<>();
+        answerListForSpeedLimits = new HashMap<>();
+
+
+        speedLimits.add(new String[] {"Driving faster than the maximum speed limit is -", ""});
+        answerListForSpeedLimits.put("Driving faster than the maximum speed limit is -",
+                new String[]{
+                        "Never legally permitted.",
+                        "Permitted only when passing another vehicle.",
+                        "Only permitted when other vehicles are going faster than the speed limit.",
+                        "0"});
+
+        speedLimits.add(new String[] {"A Shared Traffic Zone, where pedestrians and other road users can share the road safely has a speed limit of -", ""});
+        answerListForSpeedLimits.put("A Shared Traffic Zone, where pedestrians and other road users can share the road safely has a speed limit of -",
+                new String[]{
+                        "10 Km/h.",
+                        "20 Km/h.",
+                        "50 Km/h.",
+                        "0"});
+
+        speedLimits.add(new String[] {"You are driving in busy traffic in an 80 km/h zone. It begins to rain lightly. What should you do?", "sl21"});
+        answerListForSpeedLimits.put("You are driving in busy traffic in an 80 km/h zone. It begins to rain lightly. What should you do?",
+                new String[]{
+                        "Pull over and wait till it stops raining.",
+                        "Keep going at the same speed because that's how fast the signs tell you to drive.",
+                        "Slow down to a speed that suits the conditions better.",
+                        "2"});
+
+        speedLimits.add(new String[] {"You are driving in a 70 km/h zone," +
+                " keeping to the limit. Several vehicles pass you. One of your passengers " +
+                "suggests you should keep up with the other traffic. What should you do?", "sl22"});
+        answerListForSpeedLimits.put("You are driving in a 70 km/h zone, keeping to the limit." +
+                " Several vehicles pass you. One of your passengers suggests you" +
+                " should keep up with the other traffic. What should you do?",
+                new String[]{
+                        "Speed up to a little bit over the speed limit, because everyone does it.",
+                        "Follow the suggestions and keep up with the traffic.",
+                        "Decide your speed yourself, based on the speed limit and the conditions.",
+                        "2"});
+
+        speedLimits.add(new String[] {"You are driving in busy traffic in a 60 km/h zone. You feel 60 km/h is a bit too fast for the conditions. What should you do?", "sl23"});
+        answerListForSpeedLimits.put("You are driving in busy traffic in a 60 km/h zone. You feel 60 km/h is a bit too fast for the conditions. What should you do?",
+                new String[]{
+                        "Slow down to a speed that suits the conditions.",
+                        "Keep up with the other traffic because it's probably safe if the sign says 60 km/h.",
+                        "Turn off the busy street and wait for traffic to clear.",
+                        "0"});
+
+        speedLimits.add(new String[] {"What could be the penalties for driving over the speed limit -", ""});
+        answerListForSpeedLimits.put("What could be the penalties for driving over the speed limit -",
+                new String[]{
+                        "Fines, demerit points and possibly loss of licence.",
+                        "Fines only.",
+                        "A letter of warning and a small fine.",
+                        "0"});
+
+        speedLimits.add(new String[] {"Having a radar detector or jammer in your car is against the law -", ""});
+        answerListForSpeedLimits.put("Having a radar detector or jammer in your car is against the law -",
+                new String[]{
+                        "No matter what your reason is.",
+                        "Only if it is turned on.",
+                        "If you purchased it after 1998.",
+                        "0"});
+
+        speedLimits.add(new String[] {"Where there are no speed limit signs, the speed limit is 100 km/h, unless -", ""});
+        answerListForSpeedLimits.put("Where there are no speed limit signs, the speed limit is 100 km/h, unless -",
+                new String[]{
+                        "There are street lights along the road.",
+                        "The road you are driving on is gravel.",
+                        "There's an emergency, which mean speed limits don't apply.",
+                        "0"});
+
+        speedLimits.add(new String[] {"When you see this sign you must -", "sl30"});
+        answerListForSpeedLimits.put("When you see this sign you must -",
+                new String[]{
+                        "Not exceed 40 km/h and keep a special lookout for bicycle riders, pedestrians and children.",
+                        "Only enter the street if you live in the local zone.",
+                        "Drive at a speed less than 40 km/h if you are not a resident of the local zone.",
+                        "0"});
+
+        speedLimits.add(new String[] {"This sign means you must -", "sl31"});
+        answerListForSpeedLimits.put("This sign means you must -",
+                new String[]{
+                        "Share this road with other people and vehicles and not exceed 10 km/h.",
+                        "Drive at 10 km/h if there are pedestrians around.",
+                        "Reduce your speed to what you think is safe but never below 10 km/h",
+                        "0"});
+
+        speedLimits.add(new String[] {"It is 9.20am on a school day. You are driving at 60 km/h," +
+                " the same speed as traffic around you. You pass this sign but the other " +
+                "cars do not slow down much. What should you do?", "sl32"});
+        answerListForSpeedLimits.put("It is 9.20am on a school day. You are driving at 60 km/h," +
+                " the same speed as traffic around you. You pass this sign but the other" +
+                " cars do not slow down much. What should you do?",
+                new String[]{
+                        "Slow down immediately to 40 km/h or less even though other drivers want to go faster.",
+                        "Drive at the speed of the other drivers because it is safer to go with the flow of traffic than slow others up.",
+                        "Stay at 60 km/h because it is nearly 9.30am and the times on the school sign are only advisory.",
+                        "0"});
+
+        speedLimits.add(new String[] {"Speed limit signs (such as the one shown) tell drivers -", "sl34"});
+        answerListForSpeedLimits.put("Speed limit signs (such as the one shown) tell drivers -",
+                new String[]{
+                        "The maximum speed they are allowed to drive.",
+                        "The minimum speed they are allowed to drive.",
+                        "The recommended speed they are allowed to drive.",
+                        "0"});
+
+        speedLimits.add(new String[] {"If you are driving along the highway and come across road works with a reduced speed zone, you must -", ""});
+        answerListForSpeedLimits.put("If you are driving along the highway and come across road works with a reduced speed zone, you must -",
+                new String[]{
+                        "Slow down to the new speed limit.",
+                        "Drive through the road works zone as fast as you can to get past it.",
+                        "Drive at the same speed as other vehicles.",
+                        "0"});
+        
+    }
+
     public static void initializeNegligentDriving() {
+
         negligentDriving = new ArrayList<>();
         answerListForNegligentDriving = new HashMap<>();
 
@@ -351,14 +587,7 @@ public class Data {
                         "No.",
                         "Only for 10 km/h or more over the speed limit.",
                         "0"});
-//
-//        negligentDriving.add(new String[] {"", ""});
-//        answerListForNegligentDriving.put("",
-//                new String[]{
-//                        "",
-//                        "",
-//                        "",
-//                        ""});
+
     }
 
     public static void initializeTraficLights() {
@@ -626,10 +855,10 @@ public class Data {
 
     public static void initializeAlcoholAndDrugs() {
 
-        alcholList = new ArrayList<>();
+        alcoholList = new ArrayList<>();
         answerListForAlcoholAndDrug = new HashMap<>();
 
-        alcholList.add(new String[]{"To reduce the effect of alcohol before driving or riding you should -", ""});
+        alcoholList.add(new String[]{"To reduce the effect of alcohol before driving or riding you should -", ""});
         answerListForAlcoholAndDrug.put("To reduce the effect of alcohol before driving or riding you should -",
                 new String[]{
                         "Wait. The time depends on how much you have drunk.",
@@ -637,7 +866,7 @@ public class Data {
                         "Have a glass of water.",
                         "0"});
 
-        alcholList.add(new String[]{"Before driving a motor vehicle or riding a motor cycle it is safest -", ""});
+        alcoholList.add(new String[]{"Before driving a motor vehicle or riding a motor cycle it is safest -", ""});
         answerListForAlcoholAndDrug.put("Before driving a motor vehicle or riding a motor cycle it is safest -",
                 new String[]{
                         "Drink 1 middy (285 ml) of light (low alcohol) beer.",
@@ -645,7 +874,7 @@ public class Data {
                         "Not to drink any alcohol.",
                         "2"});
 
-        alcholList.add(new String[]{"Is it an offence to refuse to take a POLICE breath test?", ""});
+        alcoholList.add(new String[]{"Is it an offence to refuse to take a POLICE breath test?", ""});
         answerListForAlcoholAndDrug.put("Is it an offence to refuse to take a POLICE breath test?",
                 new String[]{
                         "Yes, always.",
@@ -653,7 +882,7 @@ public class Data {
                         "No, if you are a learner driver.",
                         "0"});
 
-        alcholList.add(new String[]{"If you take medicine and then drink alcohol -", ""});
+        alcoholList.add(new String[]{"If you take medicine and then drink alcohol -", ""});
         answerListForAlcoholAndDrug.put("If you take medicine and then drink alcohol -",
                 new String[]{
                         "It can have a particularly bad effect on your driving ability.",
@@ -661,7 +890,7 @@ public class Data {
                         "Your ability to react to emergencies will improve.",
                         "0"});
 
-        alcholList.add(new String[]{"If you are driving a bus, taxi, hire-car, heavy motor vehicle " +
+        alcoholList.add(new String[]{"If you are driving a bus, taxi, hire-car, heavy motor vehicle " +
                 "(over 13.9 tonnes Gross Vehicle Mass), or a vehicle with a dangerous load, " +
                 "it is an offence when the level of alcohol in your blood reaches -", ""});
         answerListForAlcoholAndDrug.put("If you are driving a bus, taxi, hire-car, heavy motor " +
@@ -673,7 +902,7 @@ public class Data {
                         "0.08.",
                         "0"});
 
-        alcholList.add(new String[]{"Having 1 or 2 alcoholic drinks before driving -", ""});
+        alcoholList.add(new String[]{"Having 1 or 2 alcoholic drinks before driving -", ""});
         answerListForAlcoholAndDrug.put("Having 1 or 2 alcoholic drinks before driving -",
                 new String[]{
                         "Improves your driving ability.",
@@ -681,7 +910,7 @@ public class Data {
                         "Has no effect on your driving ability.\n",
                         "1"});
 
-        alcholList.add(new String[]{"Even if you feel unaffected after drinking alcohol, you should -", ""});
+        alcoholList.add(new String[]{"Even if you feel unaffected after drinking alcohol, you should -", ""});
         answerListForAlcoholAndDrug.put("Even if you feel unaffected after drinking alcohol, you should -",
                 new String[]{
                         "Be aware that your abilities are decreased.",
@@ -689,7 +918,7 @@ public class Data {
                         "Spend more time than usual looking in the mirrors.",
                         "0"});
 
-        alcholList.add(new String[]{"Alcohol is a depressant. This means -", ""});
+        alcoholList.add(new String[]{"Alcohol is a depressant. This means -", ""});
         answerListForAlcoholAndDrug.put("Alcohol is a depressant. This means -",
                 new String[]{
                         "It slows down how quickly your brain works.",
@@ -697,7 +926,7 @@ public class Data {
                         "It makes you calm down and think more clearly.",
                         "0"});
 
-        alcholList.add(new String[]{"After drinking alcohol you could -", ""});
+        alcoholList.add(new String[]{"After drinking alcohol you could -", ""});
         answerListForAlcoholAndDrug.put("After drinking alcohol you could -",
                 new String[]{
                         "Misjudge speed (your own and others).",
@@ -705,7 +934,7 @@ public class Data {
                         "Be able to pay close attention to details in the traffic.",
                         "0"});
 
-        alcholList.add(new String[]{"If you are going out and going to drink alcohol," +
+        alcoholList.add(new String[]{"If you are going out and going to drink alcohol," +
                 " the best way to avoid having to drink and drive is to -", ""});
         answerListForAlcoholAndDrug.put("If you are going out and going to drink alcohol," +
                         " the best way to avoid having to drink and drive is to -",
@@ -715,7 +944,7 @@ public class Data {
                         "Wait for one hour after your last drink before you drive home.",
                         "0"});
 
-        alcholList.add(new String[]{"When drivers have been drinking, the crashes they are involved in are generally -", ""});
+        alcoholList.add(new String[]{"When drivers have been drinking, the crashes they are involved in are generally -", ""});
         answerListForAlcoholAndDrug.put("When drivers have been drinking, the crashes they are involved in are generally -",
                 new String[]{
                         "More serious.",
@@ -723,7 +952,7 @@ public class Data {
                         "About the same.",
                         "0"});
 
-        alcholList.add(new String[]{"On Thursday, Friday and Saturday nights, how many serious crashes involve alcohol?", ""});
+        alcoholList.add(new String[]{"On Thursday, Friday and Saturday nights, how many serious crashes involve alcohol?", ""});
         answerListForAlcoholAndDrug.put("On Thursday, Friday and Saturday nights, how many serious crashes involve alcohol?",
                 new String[]{
                         "About 50%.",
@@ -731,7 +960,7 @@ public class Data {
                         "About 10%.",
                         "0"});
 
-        alcholList.add(new String[]{"What is the safest way to stay under the legal alcohol limit?", ""});
+        alcoholList.add(new String[]{"What is the safest way to stay under the legal alcohol limit?", ""});
         answerListForAlcoholAndDrug.put("What is the safest way to stay under the legal alcohol limit?",
                 new String[]{
                         "Buying a breathalyser (alcohol measuring instrument).",
@@ -739,7 +968,7 @@ public class Data {
                         "Not drinking any alcohol.",
                         "2"});
 
-        alcholList.add(new String[]{"If you hold a learner or provisional licence class what " +
+        alcoholList.add(new String[]{"If you hold a learner or provisional licence class what " +
                 "is the Blood Alcohol Concentration (BAC) limit?", ""});
         answerListForAlcoholAndDrug.put("If you hold a learner or provisional licence class " +
                         "what is the Blood Alcohol Concentration (BAC) limit?",
@@ -749,7 +978,7 @@ public class Data {
                         "0.05.",
                         "0"});
 
-        alcholList.add(new String[]{"If you are taking any sort of medicine, you should -", ""});
+        alcoholList.add(new String[]{"If you are taking any sort of medicine, you should -", ""});
         answerListForAlcoholAndDrug.put("If you are taking any sort of medicine, you should -",
                 new String[]{
                         "Find out from your doctor or chemist whether the medicine or drug will " +
@@ -758,7 +987,7 @@ public class Data {
                         "Only drive a motor car not a heavy vehicle.",
                         "0"});
 
-        alcholList.add(new String[]{"Before taking any drugs and then driving it is most important to -", ""});
+        alcoholList.add(new String[]{"Before taking any drugs and then driving it is most important to -", ""});
         answerListForAlcoholAndDrug.put("Before taking any drugs and then driving it is most important to -",
                 new String[]{
                         "Know what the effects of the drug are.",
@@ -766,7 +995,7 @@ public class Data {
                         "Have some food in your stomach.",
                         "0"});
 
-        alcholList.add(new String[]{"If you have used illegal drugs you -", ""});
+        alcoholList.add(new String[]{"If you have used illegal drugs you -", ""});
         answerListForAlcoholAndDrug.put("If you have used illegal drugs you -",
                 new String[]{
                         "Should drink coffee before driving.",
@@ -774,7 +1003,7 @@ public class Data {
                         "Must not drive.",
                         "2"});
 
-        alcholList.add(new String[]{"If you are affected by a legal drug, such as a medicine (e.g. cold or allergy tablets) -", ""});
+        alcoholList.add(new String[]{"If you are affected by a legal drug, such as a medicine (e.g. cold or allergy tablets) -", ""});
         answerListForAlcoholAndDrug.put("If you are affected by a legal drug, such as a medicine (e.g. cold or allergy tablets) -",
                 new String[]{
                         "You must not drive.",
@@ -782,7 +1011,7 @@ public class Data {
                         "You may drive only in daylight hours.",
                         "0"});
 
-        alcholList.add(new String[]{"You want to drive your car but you have a very bad headache." +
+        alcoholList.add(new String[]{"You want to drive your car but you have a very bad headache." +
                 " A friend gives you some of their headache tablets to kill the pain. " +
                 "What should you do before you take these tablets?", ""});
         answerListForAlcoholAndDrug.put("You want to drive your car but you have a very bad " +
@@ -794,7 +1023,7 @@ public class Data {
                         "Drink a large glass of milk because this reduces the adverse effects of medicines and drugs.",
                         "0"});
 
-        alcholList.add(new String[]{"If you are taking several medications and you want to drive, you should -", ""});
+        alcoholList.add(new String[]{"If you are taking several medications and you want to drive, you should -", ""});
         answerListForAlcoholAndDrug.put("If you are taking several medications and you want to drive, you should -",
                 new String[]{
                         "Ask your doctor if the combination of drugs will make it dangerous to drive.",
