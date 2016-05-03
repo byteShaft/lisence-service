@@ -7,6 +7,7 @@ public class Data {
 
     public static final String sICAC = "ICAC";
     public static final String sGeneralKnowledge = "General Knowledge";
+    public static final String strafficSignsSection = "Traffic Signs Sections";
     public static final String sAlcholDrugs = "Alcohol and Drugs";
     public static final String sFatigueAndDefensiveDriving = "Fatigue and Defensive Driving";
     public static final String sIntersections = "Intersections";
@@ -23,10 +24,10 @@ public class Data {
     public static ArrayList<String[]> fatigue;
     public static ArrayList<String[]> intersection;
     public static ArrayList<String[]> negligentDriving;
-    public static ArrayList<String> pedestrains;
+    public static ArrayList<String[]> pedestrains;
     public static ArrayList<String> seatBelts;
     public static ArrayList<String> speedLimits;
-    public static ArrayList<String []> trafficLights;
+    public static ArrayList<String[]> trafficLights;
     public static ArrayList<String> trafficLights2;
 
 
@@ -43,6 +44,7 @@ public class Data {
     //    public static ArrayList<String> sQuestionsList;
     public static HashMap<String, String[]> answerListForGeneralKnowled;
     public static HashMap<String, String[]> answerListforICAC;
+    public static HashMap<String, String[]> answerListforPedestrains;
     public static HashMap<String, String[]> answerListforTrafficSignsSections;
     public static HashMap<String, String[]> answerListForAlcoholAndDrug;
     public static HashMap<String, String[]> answerListForFatigueAndDefensiveDriving;
@@ -60,6 +62,7 @@ public class Data {
     public static void initializeCategoriesArray() {
         categories.add(sICAC);
         categories.add(sGeneralKnowledge);
+        categories.add(strafficSignsSection);
         categories.add(sAlcholDrugs);
         categories.add(sFatigueAndDefensiveDriving);
         categories.add(sIntersections);
@@ -111,7 +114,7 @@ public class Data {
         negligentDriving = new ArrayList<>();
         answerListForNegligentDriving = new HashMap<>();
 
-        negligentDriving.add(new String[] {"When driving near parked vehicles, you should -", ""});
+        negligentDriving.add(new String[]{"When driving near parked vehicles, you should -", ""});
         answerListForNegligentDriving.put("When driving near parked vehicles, you should -",
                 new String[]{
                         " Check for parked vehicles with turn signals on, or children about to step out.",
@@ -119,7 +122,7 @@ public class Data {
                         "Sound your horn and flash your headlights to warn drivers not to pull out.",
                         "0"});
 
-        negligentDriving.add(new String[] {"You are approaching a hill or curve. You must not cross the centre line to overtake -", ""});
+        negligentDriving.add(new String[]{"You are approaching a hill or curve. You must not cross the centre line to overtake -", ""});
         answerListForNegligentDriving.put("You are approaching a hill or curve. You must not cross the centre line to overtake -",
                 new String[]{
                         "If you cannot see clear road ahead for 75 metres.",
@@ -127,7 +130,7 @@ public class Data {
                         "If you do not have a clear view of any approaching traffic.",
                         "2"});
 
-        negligentDriving.add(new String[] {"You are approaching the crest (top of a hill) on a narrow road, the safest procedure is to -", ""});
+        negligentDriving.add(new String[]{"You are approaching the crest (top of a hill) on a narrow road, the safest procedure is to -", ""});
         answerListForNegligentDriving.put("You are approaching the crest (top of a hill) on a narrow road, the safest procedure is to -",
                 new String[]{
                         "Increase your speed and sound your horn.\n",
@@ -136,7 +139,7 @@ public class Data {
                         "2"});
 
         // add images from here
-        negligentDriving.add(new String[] {"On a single laned road (as shown), you must always overtake another vehicle on its right except when -", "nd7"});
+        negligentDriving.add(new String[]{"On a single laned road (as shown), you must always overtake another vehicle on its right except when -", "nd7"});
         answerListForNegligentDriving.put("On a single laned road (as shown), you must always overtake another vehicle on its right except when -",
                 new String[]{
                         "The other vehicle is turning right.",
@@ -144,7 +147,7 @@ public class Data {
                         "The other vehicle is going slower than you.",
                         "0"});
 
-        negligentDriving.add(new String[] {"When overtaking another vehicle you should NOT move back in front of it, unless –", ""});
+        negligentDriving.add(new String[]{"When overtaking another vehicle you should NOT move back in front of it, unless –", ""});
         answerListForNegligentDriving.put("When overtaking another vehicle you should NOT move back in front of it, unless –",
                 new String[]{
                         "You can see the overtaken vehicle in your rear vision mirror.",
@@ -152,7 +155,7 @@ public class Data {
                         "The driver of the vehicle signals it is safe to do so.",
                         "0"});
 
-        negligentDriving.add(new String[] {"A driver behind you signals their intention to overtake your car. What should you do?", ""});
+        negligentDriving.add(new String[]{"A driver behind you signals their intention to overtake your car. What should you do?", ""});
         answerListForNegligentDriving.put("A driver behind you signals their intention to overtake your car. What should you do?",
                 new String[]{
                         "Keep to the left and let that driver overtake you.",
@@ -160,7 +163,7 @@ public class Data {
                         "Signal the driver to remain behind you if it is travelling too fast.",
                         "0"});
 
-        negligentDriving.add(new String[] {"The faster the vehicle in front of you is travelling, the -", ""});
+        negligentDriving.add(new String[]{"The faster the vehicle in front of you is travelling, the -", ""});
         answerListForNegligentDriving.put("The faster the vehicle in front of you is travelling, the -",
                 new String[]{
                         "More distance and time you need to overtake.",
@@ -168,7 +171,7 @@ public class Data {
                         "Closer you must get before starting to overtake.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If you are not sure you have enough distance to overtake a vehicle ahead, you should -", ""});
+        negligentDriving.add(new String[]{"If you are not sure you have enough distance to overtake a vehicle ahead, you should -", ""});
         answerListForNegligentDriving.put("If you are not sure you have enough distance to overtake a vehicle ahead, you should -",
                 new String[]{
                         "Put the vehicle in a lower gear and speed up.",
@@ -176,7 +179,7 @@ public class Data {
                         "Sound your horn to signal the driver ahead to slow down.",
                         "1"});
 
-        negligentDriving.add(new String[] {"When being overtaken by another vehicle what should you do to help?", ""});
+        negligentDriving.add(new String[]{"When being overtaken by another vehicle what should you do to help?", ""});
         answerListForNegligentDriving.put("When being overtaken by another vehicle what should you do to help?",
                 new String[]{
                         "Keep left and allow plenty of room to let the other vehicle back in.",
@@ -184,7 +187,7 @@ public class Data {
                         "Move to the left and stop.",
                         "0"});
 
-        negligentDriving.add(new String[] {"Before beginning to overtake another vehicle, you should -", ""});
+        negligentDriving.add(new String[]{"Before beginning to overtake another vehicle, you should -", ""});
         answerListForNegligentDriving.put("Before beginning to overtake another vehicle, you should -",
                 new String[]{
                         "Check to see it is safe, change gear if necessary, and signal your intention before moving out.",
@@ -192,7 +195,7 @@ public class Data {
                         "Sound your horn, move out and overtake.",
                         "0"});
 
-        negligentDriving.add(new String[] {"You are driving behind a long vehicle (as shown)" +
+        negligentDriving.add(new String[]{"You are driving behind a long vehicle (as shown)" +
                 " which has a sign saying DO NOT OVERTAKE TURNING VEHICLE. The long vehicle indicates that it is going to turn left. You –", "nd15"});
         answerListForNegligentDriving.put("",
                 new String[]{
@@ -201,7 +204,7 @@ public class Data {
                         "May pass the truck because it cannot turn left from the middle lane.",
                         ""});
 
-        negligentDriving.add(new String[] {"How should you overtake a pedal cyclist?", "nd19"});
+        negligentDriving.add(new String[]{"How should you overtake a pedal cyclist?", "nd19"});
         answerListForNegligentDriving.put("How should you overtake a pedal cyclist?",
                 new String[]{
                         "The same as you would another car, with safety.",
@@ -209,7 +212,7 @@ public class Data {
                         "Sound your horn to warn the cyclist to get off the road.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If an overtaking vehicle signals that it must move in, in front of you, you should -", "nd20"});
+        negligentDriving.add(new String[]{"If an overtaking vehicle signals that it must move in, in front of you, you should -", "nd20"});
         answerListForNegligentDriving.put("If an overtaking vehicle signals that it must move in, in front of you, you should -",
                 new String[]{
                         "Prepare to slow down to allow room.",
@@ -217,7 +220,7 @@ public class Data {
                         "Flash your lights at the overtaking vehicle.",
                         "0"});
 
-        negligentDriving.add(new String[] {"The first thing you should do before overtaking is -", ""});
+        negligentDriving.add(new String[]{"The first thing you should do before overtaking is -", ""});
         answerListForNegligentDriving.put("The first thing you should do before overtaking is -",
                 new String[]{
                         "Make sure it is safe and the way is clear of oncoming traffic.",
@@ -225,7 +228,7 @@ public class Data {
                         "Increase your speed.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If you are convicted of driving with a blood alcohol level that is over the limit for your licence, you could lose your driver’s licence. You may also -", ""});
+        negligentDriving.add(new String[]{"If you are convicted of driving with a blood alcohol level that is over the limit for your licence, you could lose your driver’s licence. You may also -", ""});
         answerListForNegligentDriving.put("If you are convicted of driving with a blood alcohol level that is over the limit for your licence, you could lose your driver’s licence. You may also -",
                 new String[]{
                         "Be sent to prison.",
@@ -233,7 +236,7 @@ public class Data {
                         " Have a personal speed limit imposed on you.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If you are convicted of dangerous driving -", ""});
+        negligentDriving.add(new String[]{"If you are convicted of dangerous driving -", ""});
         answerListForNegligentDriving.put("If you are convicted of dangerous driving -",
                 new String[]{
                         "You could be given demerit points only.",
@@ -241,19 +244,19 @@ public class Data {
                         "You could lose your licence and may be sent to prison.",
                         "2"});
 
-        negligentDriving.add(new String[] {"You are travelling in the left lane" +
+        negligentDriving.add(new String[]{"You are travelling in the left lane" +
                 " and wish to turn right at the intersection. You move to the right lane and a" +
                 " driver behind sounds their horn at you. What have you done wrong?", "nd31"});
         answerListForNegligentDriving.put("You are travelling in the left lane and wish to turn" +
-                " right at the intersection. You move to the right lane and " +
-                "a driver behind sounds their horn at you. What have you done wrong?",
+                        " right at the intersection. You move to the right lane and " +
+                        "a driver behind sounds their horn at you. What have you done wrong?",
                 new String[]{
                         "Crossed an unbroken lane line.",
                         "Driven too slowly.",
                         "Changed lanes unnecessarily.",
                         "0"});
 
-        negligentDriving.add(new String[] {"What is this driver doing that is negligent and illegal?", "nd32"});
+        negligentDriving.add(new String[]{"What is this driver doing that is negligent and illegal?", "nd32"});
         answerListForNegligentDriving.put("What is this driver doing that is negligent and illegal?",
                 new String[]{
                         "Crossing an unbroken line at a curve.",
@@ -261,7 +264,7 @@ public class Data {
                         "Overtaking on the kerb side.",
                         "0"});
 
-        negligentDriving.add(new String[] {"The speed limit on this road is 90 km/h. You have just overtaken a vehicle in the left lane. What should you do next?", "nd33"});
+        negligentDriving.add(new String[]{"The speed limit on this road is 90 km/h. You have just overtaken a vehicle in the left lane. What should you do next?", "nd33"});
         answerListForNegligentDriving.put("The speed limit on this road is 90 km/h. You have just overtaken a vehicle in the left lane. What should you do next?",
                 new String[]{
                         "Accelerate away from the other vehicle and keep driving in this lane.",
@@ -269,7 +272,7 @@ public class Data {
                         "Move into the left lane.",
                         "2"});
 
-        negligentDriving.add(new String[] {"The speed limit on this road is 100 km/h. When can you use the right lane?", "nd34"});
+        negligentDriving.add(new String[]{"The speed limit on this road is 100 km/h. When can you use the right lane?", "nd34"});
         answerListForNegligentDriving.put("The speed limit on this road is 100 km/h. When can you use the right lane?",
                 new String[]{
                         "Only when overtaking or turning right.",
@@ -277,7 +280,7 @@ public class Data {
                         "When there is no other traffic around.",
                         "0"});
 
-        negligentDriving.add(new String[] {"Another vehicle is overtaking you on your right. You commit a traffic offence if you -", ""});
+        negligentDriving.add(new String[]{"Another vehicle is overtaking you on your right. You commit a traffic offence if you -", ""});
         answerListForNegligentDriving.put("Another vehicle is overtaking you on your right. You commit a traffic offence if you -",
                 new String[]{
                         "Speed up while the other vehicle is on your right.",
@@ -285,7 +288,7 @@ public class Data {
                         "Slow down while the other vehicle is on your right.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If the police suspect you may have been involved in street or drag racing, they may take immediate action. Which one of the following is correct? The police may -", ""});
+        negligentDriving.add(new String[]{"If the police suspect you may have been involved in street or drag racing, they may take immediate action. Which one of the following is correct? The police may -", ""});
         answerListForNegligentDriving.put("If the police suspect you may have been involved in street or drag racing, they may take immediate action. Which one of the following is correct? The police may -",
                 new String[]{
                         "Take your vehicle from you and keep it stored for up to three months.",
@@ -293,7 +296,7 @@ public class Data {
                         "Take your vehicle away and sell it at an auction.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If you are convicted a second time for street or drag racing, which one of the following penalties applies?", ""});
+        negligentDriving.add(new String[]{"If you are convicted a second time for street or drag racing, which one of the following penalties applies?", ""});
         answerListForNegligentDriving.put("If you are convicted a second time for street or drag racing, which one of the following penalties applies?",
                 new String[]{
                         "Your vehicle may be taken away and sold.",
@@ -301,7 +304,7 @@ public class Data {
                         "You will not be able to register your vehicle again.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If you have been convicted for street or drag racing, which of these penalties may apply?", ""});
+        negligentDriving.add(new String[]{"If you have been convicted for street or drag racing, which of these penalties may apply?", ""});
         answerListForNegligentDriving.put("If you have been convicted for street or drag racing, which of these penalties may apply?",
                 new String[]{
                         "You will get three demerit points and a large fine.",
@@ -309,7 +312,7 @@ public class Data {
                         "You will be fined a small amount and get one demerit point.",
                         "0"});
 
-        negligentDriving.add(new String[] {"When you have started to overtake the car, you notice that its right indicator is flashing. You should -", "nd44"});
+        negligentDriving.add(new String[]{"When you have started to overtake the car, you notice that its right indicator is flashing. You should -", "nd44"});
         answerListForNegligentDriving.put("When you have started to overtake the car, you notice that its right indicator is flashing. You should -",
                 new String[]{
                         "Check your mirror and move back in behind the car.",
@@ -317,7 +320,7 @@ public class Data {
                         "Immediately brake to a stop.",
                         "0"});
 
-        negligentDriving.add(new String[] {"If you are caught speeding through a road work zone you will -", ""});
+        negligentDriving.add(new String[]{"If you are caught speeding through a road work zone you will -", ""});
         answerListForNegligentDriving.put("If you are caught speeding through a road work zone you will -",
                 new String[]{
                         "Be liable for a speeding fine and loss of demerit points.",
@@ -325,7 +328,7 @@ public class Data {
                         "Not receive any penalty as road works speed limits are only advisory.",
                         "0"});
 
-        negligentDriving.add(new String[] {"When driving through temporary road work you should -", ""});
+        negligentDriving.add(new String[]{"When driving through temporary road work you should -", ""});
         answerListForNegligentDriving.put("When driving through temporary road work you should -",
                 new String[]{
                         "Slow down and look out for hazards.",
@@ -333,7 +336,7 @@ public class Data {
                         "Sound your horn.",
                         ""});
 
-        negligentDriving.add(new String[] {"When entering or leaving a driveway you must -", ""});
+        negligentDriving.add(new String[]{"When entering or leaving a driveway you must -", ""});
         answerListForNegligentDriving.put("When entering or leaving a driveway you must -",
                 new String[]{
                         "Give way to bicycles, vehicles and pedestrians.",
@@ -341,7 +344,7 @@ public class Data {
                         "Blow your horn to warn other road users.",
                         "0"});
 
-        negligentDriving.add(new String[] {"Will a P1 licence be suspended for any speeding offence?", ""});
+        negligentDriving.add(new String[]{"Will a P1 licence be suspended for any speeding offence?", ""});
         answerListForNegligentDriving.put("Will a P1 licence be suspended for any speeding offence?",
                 new String[]{
                         "Yes.",
@@ -363,7 +366,7 @@ public class Data {
         trafficLights = new ArrayList<>();
         answerListForTraficLights = new HashMap<>();
 
-        trafficLights.add(new String[] {"How should you merge with traffic when entering a freeway?", ""});
+        trafficLights.add(new String[]{"How should you merge with traffic when entering a freeway?", ""});
         answerListForTraficLights.put("How should you merge with traffic when entering a freeway?",
                 new String[]{
                         "Watch for a gap and merge with the traffic at the speed it is travelling.",
@@ -371,7 +374,7 @@ public class Data {
                         "Stop, then enter the traffic quickly.",
                         "0"});
 
-        trafficLights.add(new String[] {"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld2"});
+        trafficLights.add(new String[]{"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld2"});
         answerListForTraficLights.put("Which movements shown in the diagram can legally be made by the driver of the purple car?",
                 new String[]{
                         "O and P only.",
@@ -379,7 +382,7 @@ public class Data {
                         "O, P and Q.",
                         "0"});
 
-        trafficLights.add(new String[] {"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld3"});
+        trafficLights.add(new String[]{"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld3"});
         answerListForTraficLights.put("Which movements shown in the diagram can legally be made by the driver of the purple car?",
                 new String[]{
                         "O, P and Q.",
@@ -387,7 +390,7 @@ public class Data {
                         "P only.",
                         ""});
 
-        trafficLights.add(new String[] {"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld4"});
+        trafficLights.add(new String[]{"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld4"});
         answerListForTraficLights.put("Which movements shown in the diagram can legally be made by the driver of the purple car?",
                 new String[]{
                         "O and P only.",
@@ -395,7 +398,7 @@ public class Data {
                         "O, P and Q.",
                         "0"});
 
-        trafficLights.add(new String[] {"Double unbroken dividing lines are marked on a roadway. You may -", ""});
+        trafficLights.add(new String[]{"Double unbroken dividing lines are marked on a roadway. You may -", ""});
         answerListForTraficLights.put("Double unbroken dividing lines are marked on a roadway. You may -",
                 new String[]{
                         "Cross them to make a U turn.",
@@ -403,29 +406,29 @@ public class Data {
                         "Cross them to turn into a driveway or property, if it is safe to do so.",
                         "2"});
 
-        trafficLights.add(new String[] {"You are on an open country road with double" +
+        trafficLights.add(new String[]{"You are on an open country road with double" +
                 " unbroken dividing lines. There are no side streets and no entrances" +
                 " to properties. Are you allowed to cross the dividing lines?", ""});
         answerListForTraficLights.put("You are on an open country road with double unbroken " +
-                "dividing lines. There are no side streets and no entrances to properties. " +
-                "Are you allowed to cross the dividing lines?",
+                        "dividing lines. There are no side streets and no entrances to properties. " +
+                        "Are you allowed to cross the dividing lines?",
                 new String[]{
                         "No, not under any circumstances.",
                         "Yes, to overtake another vehicle.",
                         "Yes, to overtake a pedal cyclist.",
                         "0"});
 
-        trafficLights.add(new String[] {"A section of road is marked with double unbroken " +
+        trafficLights.add(new String[]{"A section of road is marked with double unbroken " +
                 "dividing lines as in the diagram. When is a vehicle allowed to cross these lines?", "ld7"});
         answerListForTraficLights.put("A section of road is marked with double unbroken dividing" +
-                " lines as in the diagram. When is a vehicle allowed to cross these lines?",
+                        " lines as in the diagram. When is a vehicle allowed to cross these lines?",
                 new String[]{
                         "To enter or leave a street or driveway.",
                         "To overtake a slow vehicle ahead.",
                         "When there is no traffic coming the other way.",
                         "0"});
 
-        trafficLights.add(new String[] {"When driving in traffic lanes (as shown in the diagram), you may change your lane -", ""});
+        trafficLights.add(new String[]{"When driving in traffic lanes (as shown in the diagram), you may change your lane -", ""});
         answerListForTraficLights.put("When driving in traffic lanes (as shown in the diagram), you may change your lane -",
                 new String[]{
                         "Without looking, provided you use your indicator",
@@ -433,7 +436,7 @@ public class Data {
                         "Provided you sound your horn to warn other drivers",
                         "1"});
 
-        trafficLights.add(new String[] {"When two lanes merge into one (as shown in the diagram), who should give way?", "ld10"});
+        trafficLights.add(new String[]{"When two lanes merge into one (as shown in the diagram), who should give way?", "ld10"});
         answerListForTraficLights.put("When two lanes merge into one (as shown in the diagram), who should give way?",
                 new String[]{
                         "The vehicle which has to cross the lane line.",
@@ -441,7 +444,7 @@ public class Data {
                         "The vehicle in the right-hand lane because it is overtaking.",
                         ""});
 
-        trafficLights.add(new String[] {"Looking at the diagram, which vehicle must give way?", "ld11"});
+        trafficLights.add(new String[]{"Looking at the diagram, which vehicle must give way?", "ld11"});
         answerListForTraficLights.put("Looking at the diagram, which vehicle must give way?",
                 new String[]{
                         "Vehicle A.",
@@ -449,7 +452,7 @@ public class Data {
                         "Vehicle B.",
                         "2"});
 
-        trafficLights.add(new String[] {"You must use your indicator lights when -", ""});
+        trafficLights.add(new String[]{"You must use your indicator lights when -", ""});
         answerListForTraficLights.put("You must use your indicator lights when -",
                 new String[]{
                         "Approaching a curve.",
@@ -457,7 +460,7 @@ public class Data {
                         "Double parking.",
                         "1"});
 
-        trafficLights.add(new String[] {"If you hear the siren of an emergency vehicle, you must -", ""});
+        trafficLights.add(new String[]{"If you hear the siren of an emergency vehicle, you must -", ""});
         answerListForTraficLights.put("If you hear the siren of an emergency vehicle, you must -",
                 new String[]{
                         "Take whatever action is necessary (with safety) to make way for the emergency vehicle.",
@@ -465,7 +468,7 @@ public class Data {
                         "Increase your speed to avoid the vehicle.",
                         "0"});
 
-        trafficLights.add(new String[] {"You are in car marked A. You wish to overtake car marked B. You should -", "ld15"});
+        trafficLights.add(new String[]{"You are in car marked A. You wish to overtake car marked B. You should -", "ld15"});
         answerListForTraficLights.put("You are in car marked A. You wish to overtake car marked B. You should -",
                 new String[]{
                         "Cross the line and overtake only if it is safe.",
@@ -473,18 +476,18 @@ public class Data {
                         "Wait behind car B until it moves into the left lane.",
                         "2"});
 
-        trafficLights.add(new String[] {"When the road is marked this way are you permitted to " +
+        trafficLights.add(new String[]{"When the road is marked this way are you permitted to " +
                 "cross the lines to overtake the bicycle rider if the way forward is clear?", "ld16"});
 
         answerListForTraficLights.put("When the road is marked this way are you permitted " +
-                "to cross the lines to overtake the bicycle rider if the way forward is clear?",
+                        "to cross the lines to overtake the bicycle rider if the way forward is clear?",
                 new String[]{
                         "Yes, only if it is one-way traffic.",
                         "YES.",
                         "NO.",
                         "2"});
 
-        trafficLights.add(new String[] {"When the road is marked this way are you permitted to cross the lines and overtake?", "ld17"});
+        trafficLights.add(new String[]{"When the road is marked this way are you permitted to cross the lines and overtake?", "ld17"});
         answerListForTraficLights.put("When the road is marked this way are you permitted to cross the lines and overtake?",
                 new String[]{
                         "No.",
@@ -492,7 +495,7 @@ public class Data {
                         "Yes, only if the way ahead is clear.",
                         "0"});
 
-        trafficLights.add(new String[] {"When starting to overtake you see the dividing lines ahead change to double unbroken lines. What should you do?", "ld18"});
+        trafficLights.add(new String[]{"When starting to overtake you see the dividing lines ahead change to double unbroken lines. What should you do?", "ld18"});
         answerListForTraficLights.put("When starting to overtake you see the dividing lines ahead change to double unbroken lines. What should you do?",
                 new String[]{
                         "Continue to overtake because you started when the line was broken.",
@@ -500,20 +503,20 @@ public class Data {
                         "Do not overtake because you are not permitted to overtake on double lines.",
                         "2"});
 
-        trafficLights.add(new String[] {"You want to turn left at this intersection." +
+        trafficLights.add(new String[]{"You want to turn left at this intersection." +
                 " There is an edge line that continues through the intersection.  " +
                 "Are you permitted to turn here?", "ld22"});
 
         answerListForTraficLights.put("You want to turn left at this intersection. " +
-                "There is an edge line that continues through the intersection. " +
-                " Are you permitted to turn here?\n",
+                        "There is an edge line that continues through the intersection. " +
+                        " Are you permitted to turn here?\n",
                 new String[]{
                         "Yes, you can cross an edge line to turn into or out of a street.",
                         "No, not under any circumstances.",
                         "Yes, only if you are in a taxi, hire car, bus or you live in that street.",
                         "0"});
 
-        trafficLights.add(new String[] {"Before changing lanes you should -", "ld25"});
+        trafficLights.add(new String[]{"Before changing lanes you should -", "ld25"});
         answerListForTraficLights.put("Before changing lanes you should -",
                 new String[]{
                         "Signal in plenty of time, check your mirrors and look over your shoulder for other vehicles.",
@@ -521,23 +524,23 @@ public class Data {
                         "Signal for at least two seconds and quickly change lanes.",
                         "0"});
 
-        trafficLights.add(new String[] {"You drive into a transit lane where the T2 rule applies." +
+        trafficLights.add(new String[]{"You drive into a transit lane where the T2 rule applies." +
                 " You have one passenger plus yourself. Are you permitted to remain in the transit lane?", "ld26"});
 
         answerListForTraficLights.put("You drive into a transit lane where the T2 rule applies. " +
-                "You have one passenger plus yourself. Are you permitted to remain in the transit lane?",
+                        "You have one passenger plus yourself. Are you permitted to remain in the transit lane?",
                 new String[]{
                         "Yes, you have two people in your car so you can drive in this lane.",
                         "No, because you only have one passenger you must move out of the transit lane immediately.",
                         "Yes, you can remain in the transit lane, but only if you are turning left in 250 metres.",
                         "0"});
 
-        trafficLights.add(new String[] {"You change lanes and then see you are in a lane " +
+        trafficLights.add(new String[]{"You change lanes and then see you are in a lane " +
                 "where the T3 rule applies. There is no other traffic in this lane. You have" +
                 " one passenger. What should you  do?", "ld27"});
 
         answerListForTraficLights.put("You change lanes and then see you are in a lane where the" +
-                " T3 rule applies. There is no other traffic in this lane. You have one passenger. What should you  do?",
+                        " T3 rule applies. There is no other traffic in this lane. You have one passenger. What should you  do?",
                 new String[]{
                         "Change lanes as soon as it is safe because you are not permitted to" +
                                 " travel in a T3 lane with only two people in your car.",
@@ -546,7 +549,7 @@ public class Data {
                                 " to continue in another lane.",
                         "0"});
 
-        trafficLights.add(new String[] {"turn left at the next intersection 200 metres away. Can you travel in the transit lane at this point?", "ld28"});
+        trafficLights.add(new String[]{"turn left at the next intersection 200 metres away. Can you travel in the transit lane at this point?", "ld28"});
         answerListForTraficLights.put("turn left at the next intersection 200 metres away. Can you travel in the transit lane at this point?",
                 new String[]{
                         "No, because you can only travel in the transit lane if the intersection you are turning left at is within 100 metres.",
@@ -554,33 +557,33 @@ public class Data {
                         "Yes, if there is no traffic behind you.",
                         "0"});
 
-        trafficLights.add(new String[] {"You are in car marked Y and want" +
+        trafficLights.add(new String[]{"You are in car marked Y and want" +
                 " to turn right using a median turning lane. A car marked O," +
                 " coming towards you, is already in the median lane; it is slowing down" +
                 " and indicating. Are you permitted to enter and" +
                 " share the median turning lane?", "ld29"});
 
         answerListForTraficLights.put("You are in car marked Y and want to" +
-                " turn right using a median turning lane. A car marked O, coming towards you, " +
-                "is already in the median lane; it is slowing down and indicating." +
-                " Are you permitted to enter and share the median turning lane?",
+                        " turn right using a median turning lane. A car marked O, coming towards you, " +
+                        "is already in the median lane; it is slowing down and indicating." +
+                        " Are you permitted to enter and share the median turning lane?",
                 new String[]{
                         "Yes, but you must be prepared to slow down and stop.",
                         "No, if another car is already in the median turning lane you must not use it.",
                         "Yes, but only if you race the other car and get to the turning position first.",
                         "0"});
 
-        trafficLights.add(new String[] {"You are driving a car and want to pick up a passenger." +
+        trafficLights.add(new String[]{"You are driving a car and want to pick up a passenger." +
                 " The lane you want to stop in is a BUS LANE.  Are you permitted to stop there?", "ld32"});
         answerListForTraficLights.put("You are driving a car and want to pick up a passenger." +
-                " The lane you want to stop in is a BUS LANE.  Are you permitted to stop there?",
+                        " The lane you want to stop in is a BUS LANE.  Are you permitted to stop there?",
                 new String[]{
                         "Yes, if you pick the passenger up and then immediately drive off.",
                         "Yes, you are allowed to stop in a BUS LANE for as long as you like.",
                         "No, unless you are driving a hire car or a taxi.",
                         "2"});
 
-        trafficLights.add(new String[] {"You are going to turn right from a one-way street. Where should you be when you start your turn?", "ld38"});
+        trafficLights.add(new String[]{"You are going to turn right from a one-way street. Where should you be when you start your turn?", "ld38"});
         answerListForTraficLights.put("You are going to turn right from a one-way street. Where should you be when you start your turn?",
                 new String[]{
                         "Position R. As close as possible to the right side of the road.",
@@ -588,7 +591,7 @@ public class Data {
                         "Position M. From the middle of the road.",
                         "0"});
 
-        trafficLights.add(new String[] {"Overtaking another vehicle requires good concentration and judgement. Which of the following statements is correct?", ""});
+        trafficLights.add(new String[]{"Overtaking another vehicle requires good concentration and judgement. Which of the following statements is correct?", ""});
         answerListForTraficLights.put("Overtaking another vehicle requires good concentration and judgement. Which of the following statements is correct?",
                 new String[]{
                         "- You need to watch out for all large, long vehicles which are turning.",
@@ -596,7 +599,7 @@ public class Data {
                         "- The faster the vehicle you are overtaking is going, the less distance you need to overtake.",
                         "0"});
 
-        trafficLights.add(new String[] {"When driving on a multi-lane road with a speed limit of more than 80 km/h, which lane should you choose?", ""});
+        trafficLights.add(new String[]{"When driving on a multi-lane road with a speed limit of more than 80 km/h, which lane should you choose?", ""});
         answerListForTraficLights.put("When driving on a multi-lane road with a speed limit of more than 80 km/h, which lane should you choose?",
                 new String[]{
                         "The left lane unless overtaking.",
@@ -604,7 +607,7 @@ public class Data {
                         "Either left or right lane.",
                         "0"});
 
-        trafficLights.add(new String[] {"Signalling is -", ""});
+        trafficLights.add(new String[]{"Signalling is -", ""});
         answerListForTraficLights.put("Signalling is -",
                 new String[]{
                         "Always required before turning or lane changing.",
@@ -612,7 +615,7 @@ public class Data {
                         "- Not required when turning at T-intersections.",
                         "0"});
 
-        trafficLights.add(new String[] {"How should you merge with traffic when entering a motorway?", ""});
+        trafficLights.add(new String[]{"How should you merge with traffic when entering a motorway?", ""});
         answerListForTraficLights.put("How should you merge with traffic when entering a motorway?",
                 new String[]{
                         "Watch for a gap and increase your speed to safely merge with the traffic.",
@@ -2178,7 +2181,7 @@ public class Data {
                 " traffic on your left and right -", ""});
         intersectionAnswers.put("As you approach an intersection, you should check for" +
                 " traffic on your left and right -", new String[]{"Only when the traffic is heavy.",
-        "Only when you approach a stop sign.", "At all times before entering the intersection.", "2"});
+                "Only when you approach a stop sign.", "At all times before entering the intersection.", "2"});
 
 
         intersection.add(new String[]{"When making a right-hand turn at the intersection shown," +
@@ -2193,7 +2196,7 @@ public class Data {
                 "the left and right?", "intersection_t"});
         intersectionAnswers.put("If turning right at a T-intersection (as shown) must you give way to vehicles approaching from both " +
                 "the left and right?", new String[]{"No, but you must give way if turning.",
-        "Yes, it has the same meaning as the sign itself.", "No, you only need to give way to the" +
+                "Yes, it has the same meaning as the sign itself.", "No, you only need to give way to the" +
                 " vehicle on your right.", "1"});
 
         intersection.add(new String[]{"If turning at an intersection are you required to give way" +
@@ -2201,29 +2204,29 @@ public class Data {
         intersectionAnswers.put("If turning at an intersection are you required to give way " +
                 "to pedestrians?", new String[]{"Yes, only if turning left.", "Yes, a driver turning right or left must " +
                 "give way to pedestrians, if there is a danger of a collision",
-        "Yes, only if turning right.", "1"});
+                "Yes, only if turning right.", "1"});
 
 
         intersection.add(new String[]{"When you come to an intersection and the road beyond is choked with vehicles going in the same " +
                 "direction, what should you do?", "one_direction_intersection"});
         intersectionAnswers.put("When you come to an intersection and the road beyond is choked with vehicles going in the same " +
-                "direction, what should you do?",
+                        "direction, what should you do?",
                 new String[]{"Wait until there is room for you to " +
                         "completely cross the intersection.", "Proceed if there is no traffic on your right.",
-                "Travel into the intersection and wait until " +
-                        "traffic ahead moves.", "0"});
+                        "Travel into the intersection and wait until " +
+                                "traffic ahead moves.", "0"});
 
         intersection.add(new String[]{"Right-turns must be made from which lanes when travelling" +
                 " on a laned roadway?", ""});
         intersectionAnswers.put("Right-turns must be made from which lanes when travelling " +
                 "on a laned roadway?", new String[]{"The lane carrying the least amount of traffic.",
-        "The far left-hand lane.", "The far right-hand lane or any other lane having an arrow pointing " +
+                "The far left-hand lane.", "The far right-hand lane or any other lane having an arrow pointing " +
                 "right.", "2"});
 
         intersection.add(new String[]{"In this diagram both vehicles O and P must pass through GIVE WAY signs before entering the " +
                 "intersection. Which vehicle goes first?", "intersection_o_p"});
         intersectionAnswers.put("In this diagram both vehicles O and P must pass through GIVE WAY signs before entering the " +
-                "intersection. Which vehicle goes first?",
+                        "intersection. Which vehicle goes first?",
                 new String[]{"Vehicle O.", "Vehicle P.", "It depends on who moves first.", "1"});
 
         intersection.add(new String[]{"Vehicle O is at a STOP sign -", "intersection_o_p_q_r"});
@@ -2237,12 +2240,12 @@ public class Data {
                 "left into the street marked 'X'?", "intersection_pink"});
         intersectionAnswers.put("If both vehicles P and O in the diagram are turning right, which vehicle is in the best position to turn " +
                 "left into the street marked 'X'?", new String[]{"Vehicle P.", "Neither vehicle.",
-        "Vehicle O.", "2"});
+                "Vehicle O.", "2"});
 
 
         intersection.add(new String[]{"The diagram shows a marked pedestrian crossing at an intersection. There is also a STOP sign at " +
                 "the intersection. You have already stopped for a pedestrian. Must you stop again at the STOP line?"
-        , "intersection_stop"});
+                , "intersection_stop"});
         intersectionAnswers.put("The diagram shows a marked pedestrian crossing at an intersection. There is also a STOP sign at " +
                 "the intersection. You have already stopped for a pedestrian. Must you stop again " +
                 "at the STOP line?", new String[]{"Yes, if there is traffic on your right only.",
@@ -2266,7 +2269,7 @@ public class Data {
                 " left-hand indicator -", ""});
         intersectionAnswers.put("You want to make a left turn. You must use your left-hand indicator -",
                 new String[]{"Only when there is traffic behind you.", "At all times.",
-                "Only when arrows are marked on the roadway.", "1"});
+                        "Only when arrows are marked on the roadway.", "1"});
 
         intersection.add(new String[]{"At the T-intersection shown in the diagram which vehicle" +
                 " should give way?", "intersection_r_q"});
@@ -2277,7 +2280,7 @@ public class Data {
                 "roadway. You should position your vehicle -", ""});
         intersectionAnswers.put("You wish to make a right-hand turn from a ONE WAY STREET with no arrows marked on the " +
                 "roadway. You should position your vehicle -", new String[]{"On the right-hand side of the street.",
-        "In the middle of the street.", "On the left-hand side of the street.", "0"});
+                "In the middle of the street.", "On the left-hand side of the street.", "0"});
 
 
         intersection.add(new String[]{"When there are no arrows marked on the road, left turns" +
@@ -2290,39 +2293,39 @@ public class Data {
                 " displaying a STOP sign?", "intersection_rail"});
         intersectionAnswers.put("What should you do on approaching a railway level crossing" +
                 " displaying a STOP sign?", new String[]{"Stop at all times and proceed when safe to do so.",
-        "Slow down to 10 km/h, then proceed through the crossing.",
-        "Stop, only if a train is at the crossing.", "0"});
+                "Slow down to 10 km/h, then proceed through the crossing.",
+                "Stop, only if a train is at the crossing.", "0"});
 
         intersection.add(new String[]{"You are driving the car in the diagram. You must stop -",
                 "intersection_must_stop"});
         intersectionAnswers.put("You are driving the car in the diagram. You must stop -",
                 new String[]{"Even when there is no other traffic.",
                         "Only if there is a car on your right or left.",
-                "Only if there is danger of a collision with " +
-                        "another vehicle.", "0"});
+                        "Only if there is danger of a collision with " +
+                                "another vehicle.", "0"});
 
         intersection.add(new String[]{"If the boomgates are down and the signals are flashing," +
                 " at a railway level crossing, you may begin to cross -", ""});
         intersectionAnswers.put("If the boomgates are down and the signals are flashing," +
-                " at a railway level crossing, you may begin to cross -",
+                        " at a railway level crossing, you may begin to cross -",
                 new String[]{"If you cannot see a train approaching.",
                         "If you can safely go around the closed gate.",
-                "Only when the gate is up and the lights stop flashing.", "2"});
+                        "Only when the gate is up and the lights stop flashing.", "2"});
 
         intersection.add(new String[]{"When approaching a railway level crossing displaying" +
                 " this sign, you must -", "intersection_rail_two_tracks"});
         intersectionAnswers.put("When approaching a railway level crossing displaying this sign," +
                 " you must -", new String[]{"Increase your speed to avoid any approaching trains.",
                 "Slow down, look both ways for trains and be " +
-                "prepared to stop if necessary.", "Continue across at normal speed, do not slow down.",
-        "1"});
+                        "prepared to stop if necessary.", "Continue across at normal speed, do not slow down.",
+                "1"});
 
 
         intersection.add(new String[]{"Even if the signal at a railway level crossing does not" +
                 " indicate that a train is coming, you should -", "intersection_stop_on_red_signal"});
         intersectionAnswers.put("Even if the signal at a railway level crossing does not indicate " +
                 "that a train is coming, you should -", new String[]{"Speed up and cross the tracks quickly.",
-        "Stop completely at all times.", "Slow down, be ready to stop and give way if " +
+                "Stop completely at all times.", "Slow down, be ready to stop and give way if " +
                 "there is danger of collision.", "2"});
 
 
@@ -2346,7 +2349,6 @@ public class Data {
                 "When the vehicle behind signals you to go.", "0"});
 
 
-
         intersection.add(new String[]{"You are at a busy intersection with slow moving traffic and" +
                 " want to go straight ahead. When the traffic lights change to green you should " +
                 "make sure that -", "intersection_thirty_seven"});
@@ -2363,13 +2365,13 @@ public class Data {
                 "cross the intersection. The lights are green. What should you do?", "intersection" +
                 "_black_yellow_circle"});
         intersectionAnswers.put("The traffic on the other side of this intersection has stopped. " +
-                "You are in the car shown and want to " +
-                "cross the intersection. The lights are green. What should you do?",
+                        "You are in the car shown and want to " +
+                        "cross the intersection. The lights are green. What should you do?",
                 new String[]{"Wait until there is enough room for your " +
                         "vehicle to cross the intersection completely.",
-                "Drive through the intersection slowly and hope that it " +
-                        "will clear before the lights change.",
-                "Drive into the intersection and then turn left.", "0"});
+                        "Drive through the intersection slowly and hope that it " +
+                                "will clear before the lights change.",
+                        "Drive into the intersection and then turn left.", "0"});
 
 
         intersection.add(new String[]{"Which statement is correct?", ""});
@@ -2385,7 +2387,7 @@ public class Data {
                 " the lights turn to yellow. You should -", "intersection_yellow"});
         intersectionAnswers.put("As you drive into an intersection, the lights turn to yellow. You should -",
                 new String[]{"Continue through the intersection.", "Accelerate as hard as you can.",
-                "Brake immediately to a stop.", "0"});
+                        "Brake immediately to a stop.", "0"});
 
 
         intersection.add(new String[]{"When these lights are flashing it means -",
@@ -2393,13 +2395,13 @@ public class Data {
         intersectionAnswers.put("When these lights are flashing it means -",
                 new String[]{"Pedestrians who have started crossing must go back to " +
                         "the footpath.", "Pedestrians are not allowed in this area at this time.",
-                "Pedestrians must not start to cross.", "2"});
+                        "Pedestrians must not start to cross.", "2"});
 
 
         intersection.add(new String[]{"You wish to turn left here. The pedestrian lights are flashing " +
                 "red. You should -", "intersection_padestrian"});
         intersectionAnswers.put("You wish to turn left here. The pedestrian lights are flashing red." +
-                " You should -",
+                        " You should -",
                 new String[]{"Move into the right hand lane.", "Slowly move through the intersection turning " +
                         "left.", "Give way to pedestrians still " +
                         "crossing.", "2"});
@@ -2409,7 +2411,7 @@ public class Data {
         intersectionAnswers.put("You drive up to an intersection with a stop sign. There is no painted stop line. Where should you " +
                 "stop?", new String[]{"Before coming to and as near to the intersection as " +
                 "possible.", "At least five metres before the intersection.",
-        "At the point where you can see clearly in both directions.", "0"});
+                "At the point where you can see clearly in both directions.", "0"});
 
 
         intersection.add(new String[]{"You drive up to an intersection with a stop sign in the car marked A and you wish to turn right. The " +
@@ -2418,7 +2420,7 @@ public class Data {
         intersectionAnswers.put("You drive up to an intersection with a stop sign in the car marked A and you wish to turn right. The " +
                 "car marked B facing you also has a stop sign and is indicating to turn left." +
                 " Who can go first?", new String[]{"Whoever arrives at the intersection first.",
-        "Car B.", "Car A.", "1"});
+                "Car B.", "Car A.", "1"});
 
 
         intersection.add(new String[]{"This intersection does not have any traffic lights or signs. You are in car A and want to turn right. " +
@@ -2441,16 +2443,16 @@ public class Data {
         intersection.add(new String[]{"You are in car A and want to turn right at this intersection. Car B facing you is also indicating to " +
                 "turn right. What path should you take?", "intersection_opposite_cars"});
         intersectionAnswers.put("You are in car A and want to turn right at this intersection. Car B facing you is also indicating to " +
-                "turn right. What path should you take?",
+                        "turn right. What path should you take?",
                 new String[]{"Both pass in front of each other.", "Pass behind each other."
-                , "Choose either depending on the traffic.", "0"});
+                        , "Choose either depending on the traffic.", "0"});
 
         intersection.add(new String[]{"When police officers are at intersections giving directions" +
                 " you must -", ""});
         intersectionAnswers.put("When police officers are at intersections giving directions you must -",
                 new String[]{"Drive through the intersection as you normally would.",
-                "Wait for the traffic lights to start working again.",
-                "Always follow any instruction they give you.", "2"});
+                        "Wait for the traffic lights to start working again.",
+                        "Always follow any instruction they give you.", "2"});
 
         intersection.add(new String[]{"You are in car A and are going straight ahead through the" +
                 " intersection. Who should give way?", "intersection_same_way"});
@@ -2463,29 +2465,29 @@ public class Data {
                 "Which lane may you use?", "intersection_left_right_lane"});
         intersectionAnswers.put("You wish to turn left at this roundabout." +
                 " Which lane may you use?", new String[]{"Either lane.", "Right lane.",
-        "Left lane.", "2"});
+                "Left lane.", "2"});
 
 
         intersection.add(new String[]{"You are in the right hand lane and are planning to go " +
                 "straight ahead through this roundabout. " +
                 "When should you signal left to exit the roundabout?", "intersection_o_n_m"});
         intersectionAnswers.put("You are in the right hand lane and are planning to go straight " +
-                "ahead through this roundabout. " +
-                "When should you signal left to exit the roundabout?",
+                        "ahead through this roundabout. " +
+                        "When should you signal left to exit the roundabout?",
                 new String[]{"After point O.", "After point N.", "After point M.", "0"});
 
         intersection.add(new String[]{"When you wish to turn left at a roundabout you indicate -",
                 "intersection_zebra"});
         intersectionAnswers.put("When you wish to turn left at a roundabout you indicate -",
                 new String[]{"Only if you think it necessary.", "Left from start to finish."
-                , "Left only after you enter the roundabout.", "1"});
+                        , "Left only after you enter the roundabout.", "1"});
 
         intersection.add(new String[]{"You wish to go straight ahead at this roundabout. Which" +
                 " statement is true?", "intersection_bike"});
         intersectionAnswers.put("You wish to go straight ahead at this roundabout. Which statement" +
                 " is true?", new String[]{"You must enter in the right lane and leave in the left.",
-        "You must always leave the roundabout in the left lane",
-        "You must leave the roundabout in the same lane as you entered.", "2"});
+                "You must always leave the roundabout in the left lane",
+                "You must leave the roundabout in the same lane as you entered.", "2"});
 
 
         intersection.add(new String[]{"You want to turn left at this roundabout." +
@@ -2498,8 +2500,8 @@ public class Data {
                 " you may enter from either the left or right " +
                 "lane. As you continue around you should -", "intersection_straight_right"});
         intersectionAnswers.put("When you wish to drive straight ahead at a roundabout you may" +
-                " enter from either the left or right " +
-                "lane. As you continue around you should -",
+                        " enter from either the left or right " +
+                        "lane. As you continue around you should -",
                 new String[]{"Move into another lane with least traffic.", "Keep in the lane you entered the " +
                         "roundabout.", "Change lanes to get through quickly.", "1"});
 
@@ -2508,13 +2510,13 @@ public class Data {
                 " leave the roundabout -", "intersection_multi_cars"});
         intersectionAnswers.put("When turning left at a roundabout you should enter and" +
                 " leave the roundabout -", new String[]{"In the left lane.", "In the right lane.",
-        "In the lane with least traffic.", "0"});
+                "In the lane with least traffic.", "0"});
 
 
         intersection.add(new String[]{"You wish to go straight ahead on this roundabout with two" +
                 " lanes. Which lane may you use?", "intersection_lane"});
         intersectionAnswers.put("You wish to go straight ahead on this roundabout with two lanes." +
-                " Which lane may you use?", new String[] {"Either lane.", "Left lane only.",
+                " Which lane may you use?", new String[]{"Either lane.", "Left lane only.",
                 "Right lane only.", "0"
         });
 
@@ -2524,7 +2526,7 @@ public class Data {
                 "out for the marked car because the car -", "intersection_motorcyclist"});
         intersectionAnswers.put("The motorcyclist wants to travel straight ahead through this roundabout. The rider should watch " +
                 "out for the marked car because the car -", new String[]{"Could be going too fast.",
-        "May stop suddenly.", "May be leaving the roundabout.", "2"});
+                "May stop suddenly.", "May be leaving the roundabout.", "2"});
 
 
         intersection.add(new String[]{"To turn back into the same road from which you joined this" +
@@ -2538,18 +2540,18 @@ public class Data {
                 "right?", "intersection_round_about"});
         intersectionAnswers.put("In this roundabout with two lanes, can the marked car turn " +
                 "right?", new String[]{"No, not at any time.", "Yes, at any time.",
-        "Yes, after changing to the right hand lane.", "0"});
+                "Yes, after changing to the right hand lane.", "0"});
 
 
-       intersection.add(new String[]{"The red car wants to turn right and exit the roundabout in the " +
-               "street indicated by an arrow. Is the car positioned in the correct " +
-               "lane to do this?", "intersection_red_car"});
+        intersection.add(new String[]{"The red car wants to turn right and exit the roundabout in the " +
+                "street indicated by an arrow. Is the car positioned in the correct " +
+                "lane to do this?", "intersection_red_car"});
         intersectionAnswers.put("The red car wants to turn right and exit the roundabout in the " +
                 "street indicated by an arrow. Is the car positioned in the correct " +
                 "lane to do this?", new String[]{"Yes, the car can make the turn only from this lane."
-                ,"No, the car should enter the roundabout only from the right hand lane.",
-        "Yes, the car can make the turn from either the left hand or " +
-                "the right hand lane.", "1"});
+                , "No, the car should enter the roundabout only from the right hand lane.",
+                "Yes, the car can make the turn from either the left hand or " +
+                        "the right hand lane.", "1"});
 
 
         intersection.add(new String[]{"If you enter an intersection that is under the control of a" +
@@ -2557,14 +2559,235 @@ public class Data {
         intersectionAnswers.put("If you enter an intersection that is under the control of a" +
                 " traffic controller -", new String[]{"Follow the directions of the controller.",
                 "Sound your horn at the traffic controller and hope they get out of your way.",
-        "Stop at the intersection and then proceed slowly.", "0"});
+                "Stop at the intersection and then proceed slowly.", "0"});
 
 
         intersection.add(new String[]{"You are at an intersection and see a pedestrian crossing the road into which you are " +
                 "turning. You must -", ""});
         intersectionAnswers.put("You are at an intersection and see a pedestrian crossing the road into which you are " +
                 "turning. You must -", new String[]{"Sound your horn to warn the pedestrian to get out of the way.",
-        "Swerve around the pedestrian to avoid hitting them.",
-        "Give way to the pedestrian.", "2"});
+                "Swerve around the pedestrian to avoid hitting them.",
+                "Give way to the pedestrian.", "2"});
+    }
+
+    private static void initilizationPedestrians() {
+        pedestrains = new ArrayList<>();
+        answerListforPedestrains = new HashMap<>();
+
+        pedestrains.add(new String[]{"You must give way to pedestrians on a marked pedestrian crossing?", ""});
+        answerListforPedestrains.put("You must give way to pedestrians on a marked pedestrian crossing?",
+                new String[]{"If there is any danger of a collision..",
+                        "When they are crossing from your right only.",
+                        "When they are crossing from your left only.", "0"});
+
+        pedestrains.add(new String[]{"When approaching a marked pedestrian crossing and no pedestrians are in sight, you should?", "pd002"});
+        answerListforPedestrains.put("When approaching a marked pedestrian crossing and no pedestrians are in sight, you should?",
+                new String[]{"Slow down and be ready to make a safe\n" +
+                        "stop.",
+                        "Come to a complete stop before the crossing.",
+                        "Go faster, in case a pedestrian steps onto the\n" +
+                                "crossing.", "0"});
+
+        pedestrains.add(new String[]{"If elderly people or children are on a pedestrian crossing you will probably need to?", ""});
+        answerListforPedestrains.put("If elderly people or children are on a pedestrian crossing you will probably need to?",
+                new String[]{"Wait extra time to allow them to cross safely.",
+                        "Sound your horn to hurry them up.",
+                        "Drive around them so you don't hold up traffic.", "0"});
+
+        pedestrains.add(new String[]{"Which sign painted on the road tells you there is a pedestrian crossing ahead??", "pd004"});
+        answerListforPedestrains.put("Which sign painted on the road tells you there is a pedestrian crossing ahead??",
+                new String[]{"B.",
+                        "A.",
+                        "C.", "0"});
+
+        pedestrains.add(new String[]{"A vehicle ahead of you has stopped at a pedestrian crossing. You?", "pd005"});
+        answerListforPedestrains.put("A vehicle ahead of you has stopped at a pedestrian crossing. You?",
+                new String[]{"Must not overtake the stopped vehicle.",
+                        "May overtake the vehicle if there are no\n" +
+                                "pedestrians on the crossing.",
+                        "May overtake the vehicle provided no cars are\n" +
+                                "coming the other way.", "0"});
+
+        pedestrains.add(new String[]{"If you see a School Crossing Supervisor holding a sign like this, you must wait until the children?", "pd006"});
+        answerListforPedestrains.put("If you see a School Crossing Supervisor holding a sign like this, you must wait until the children?",
+                new String[]{"Are off the crossing and the hand held sign\n" +
+                        "is taken away.",
+                        "Reach the right-hand side of the crossing.",
+                        "Are out of sight.", "0"});
+
+        pedestrains.add(new String[]{"Which one of the following statements is correct? Bicycle riders?", ""});
+        answerListforPedestrains.put("Which one of the following statements is correct? Bicycle riders?",
+                new String[]{"Must obey the road rules.",
+                        "May not travel on heavy traffic roads.",
+                        "Must ride against the flow of traffic so they can be seen.", "0"});
+
+        pedestrains.add(new String[]{"When driving near children playing or walking near the edge of the road, you should?", ""});
+        answerListforPedestrains.put("When driving near children playing or walking near the edge of the road, you should?",
+                new String[]{"Slow down, and be ready to make a safe stop.",
+                        "Sound your horn to warn them of your presence.",
+                        "Continue at the same speed and drive around them.", "0"});
+
+        pedestrains.add(new String[]{"Pedestrians who are affected by alcohol, are?", ""});
+        answerListforPedestrains.put("Pedestrians who are affected by alcohol, are?",
+                new String[]{"One of the most common groups involved in road accidents.",
+                        "Unlikely to walk near the road and do not require your attention.",
+                        "Less dangerous than sober pedestrians because they are more careful after\n" +
+                                "drinking.", "0"});
+
+        pedestrains.add(new String[]{"When driving near pedestrian crossings, intersections, or school crossings, you should always?", ""});
+        answerListforPedestrains.put("When driving near pedestrian crossings, intersections, or school crossings, you should always?",
+                new String[]{"Slow down, watch for pedestrians and be ready to make a safe stop.",
+                        "Move into the left lane.",
+                        "Keep your eyes on the speedo.", "0"});
+
+        pedestrains.add(new String[]{"When driving in an area where there are many pedestrians (e.g. a bus stop) it is important to?", ""});
+        answerListforPedestrains.put("When driving in an area where there are many pedestrians (e.g. a bus stop) it is important to?",
+                new String[]{"Slow down and watch for an indication that they will enter the road.",
+                        "Put your headlights on high beam so they can see you better.",
+                        "Increase your speed to avoid the chance of hitting them.", "0"});
+
+        pedestrains.add(new String[]{"When driving past parked vehicles, which of the following is it most important to do?", ""});
+        answerListforPedestrains.put("When driving past parked vehicles, which of the following is it most important to do?",
+                new String[]{"Watch for pedestrians, animals and car doors opening.",
+                        "Drive in the right-hand lane, if there is one.",
+                        "Stay as close as possible to the vehicle in front of you.", "0"});
+
+        pedestrains.add(new String[]{"When driving in wet weather, you should?", ""});
+        answerListforPedestrains.put("When driving in wet weather, you should?",
+                new String[]{"Watch out for pedestrians, who may hurry and take risks.",
+                        "Drive in the middle of the road to avoid splashing pedestrians on the footpath.",
+                        "Stop and help aged pedestrians across the road.65 ", "0"});
+
+        pedestrains.add(new String[]{"At a pedestrian crossing with traffic lights, when the amber light starts 'flashing' after the red stop\n" +
+                "signal, it means?", "pd015"});
+        answerListforPedestrains.put("At a pedestrian crossing with traffic lights, when the amber light starts 'flashing' after the red stop\n" +
+                        "signal, it means?",
+                new String[]{"You may carefully drive through the\n" +
+                        "crossing, if there is no risk of colliding with\n" +
+                        "pedestrians.",
+                        "The traffic lights are out of order and pedestrians\n" +
+                                "must not use the crossing.",
+                        "The green light is due. Do not proceed until the\n" +
+                                "green light appears.", "0"});
+
+        pedestrains.add(new String[]{"Which statement is true?", "pd016"});
+        answerListforPedestrains.put("Which statement is true?",
+                new String[]{"You must give way to pedestrians if\n" +
+                        "there is any danger of hitting them.",
+                        "Pedestrians have no special rights on the\n" +
+                                "roads.",
+                        "You must give way to pedestrians only at\n" +
+                                "marked crossings.", "0"});
+
+        pedestrains.add(new String[]{"You drive towards these people on the road. What should you do?", "pd017"});
+        answerListforPedestrains.put("You drive towards these people on the road. What should you do?",
+                new String[]{"Stop and give way if there is any\n" +
+                        "danger of hitting them.",
+                        "Continue at the same speed and sound\n" +
+                                "the horn.",
+                        "Slow down until they are half way through\n" +
+                                "the crossing and drive on.", "0"});
+
+        pedestrains.add(new String[]{"You see these zig-zag markings on the road in front of you. What do they mean?", "pd018"});
+        answerListforPedestrains.put("You see these zig-zag markings on the road in front of you. What do they mean?",
+                new String[]{"Take care and look out for pedestrians at\n" +
+                        "a crossing.",
+                        "Look out for animals on the side of the road.",
+                        "Be careful because the road ahead is slippery.", "0"});
+
+
+        pedestrains.add(new String[]{"These markings on the road indicate?", "pd019"});
+        answerListforPedestrains.put("These markings on the road indicate?",
+                new String[]{"Places where pedestrians have\n" +
+                        "special rights.",
+                        "Places where you can park.",
+                        "Places where special speed limits apply.", "0"});
+
+        pedestrains.add(new String[]{"You approach a person crossing the road. You should?", "pd021"});
+        answerListforPedestrains.put("You approach a person crossing the road. You should?",
+                new String[]{"Slow down or stop to avoid hitting\n" +
+                        "the person.",
+                        "Slow down and sound your horn to hurry up\n" +
+                                "the person.",
+                        "Maintain your speed and swerve around the\n" +
+                                "person.", "0"});
+
+        pedestrains.add(new String[]{"You approach a crossing and see the scene in the picture. You should?", "pd022"});
+        answerListforPedestrains.put("You approach a crossing and see the scene in the picture. You should?",
+                new String[]{"Slow down and stop until the\n" +
+                        "supervisor takes down the sign.",
+                        "Slow down and drive through giving way to\n" +
+                                "the children.",
+                        "Stop and wait for the children until your lane\n" +
+                                "is clear.", "0"});
+
+        pedestrains.add(new String[]{"At a pedestrian crossing with traffic lights, when the lights change to red you should?", ""});
+        answerListforPedestrains.put("At a pedestrian crossing with traffic lights, when the lights change to red you should?",
+                new String[]{"Slow down and stop until the\n" +
+                        "Stop, wait for pedestrians to cross and for the green light to come on.",
+                        "Slow down and give way to pedestrians.",
+                        "Stop and continue after the pedestrians have crossed.", "0"});
+
+        pedestrains.add(new String[]{"This person is standing on a pedestrian refuge. If he steps out onto your lane you should?", "pd024"});
+        answerListforPedestrains.put("This person is standing on a pedestrian refuge. If he steps out onto your lane you should?",
+                new String[]{"Give way to the person if there is any\n" +
+                        "danger of colliding.",
+                        "Slow down and sound the horn to warn the\n" +
+                                "person to move back.",
+                        "Maintain your speed so you do not hold up\n" +
+                                "the traffic.", "0"});
+
+        pedestrains.add(new String[]{"Which of the following statements is correct?", "pd025"});
+        answerListforPedestrains.put("Which of the following statements is correct?",
+                new String[]{"You must give way to pedestrians if there\n" +
+                        "is a danger of a collision.",
+                        "Pedestrians must cross the road only at marked\n" +
+                                "crossings and intersections.",
+                        "You do not have to give way to adults crossing at\n" +
+                                "children's crossings.", "0"});
+
+        pedestrains.add(new String[]{"When you see children on or near the road?", "pd026"});
+        answerListforPedestrains.put("When you see children on or near the road?",
+                new String[]{"You should slow down and be more\n" +
+                        "careful because they may move suddenly.",
+                        "You should reduce your speed by 5 km/h.",
+                        "You should ignore them and pay attention to the\n" +
+                                "rear vision mirror.", "0"});
+
+        pedestrains.add(new String[]{"When you see older people on or near the road, you should?", "pd027"});
+        answerListforPedestrains.put("When you see older people on or near the road, you should?",
+                new String[]{"Slow down and take extra care because\n" +
+                        "they may not see you until you are very\n" +
+                        "close.",
+                        "Drive around them to keep the traffic moving.",
+                        "Sound your horn and keep going at the same\n" +
+                                "speed so you do not hold up the traffic.", "0"});
+
+        pedestrains.add(new String[]{"You must give way to pedestrians if there is a risk of hitting them. When driving in poor light, you\n" +
+                "should?", ""});
+        answerListforPedestrains.put("You must give way to pedestrians if there is a risk of hitting them. When driving in poor light, you\n" +
+                        "should?",
+                new String[]{"Look more carefully for pedestrians because they are hard to see.",
+                        "Keep your headlights on high beam all the time.",
+                        "Always drive in the right hand lane so you can be away from pedestrians.", "0"});
+
+        pedestrains.add(new String[]{"You drive up to a Light Rail vehicle that has just stopped at a tram stop. What is the most\n" +
+                "important thing you should do?", "pd030"});
+        answerListforPedestrains.put("You drive up to a Light Rail vehicle that has just stopped at a tram stop. What is the most\n" +
+                        "important thing you should do?",
+                new String[]{"Take extra care, slow down and give way to\n" +
+                        "the pedestrians.",
+                        "Keep a look out for traffic coming in the opposite\n" +
+                                "direction.",
+                        "Slow down, but keep moving so you do not delay\n" +
+                                "other drivers.", "0"});
+
+        pedestrains.add(new String[]{"You must give way to pedestrians?", "pd031"});
+        answerListforPedestrains.put("You must give way to pedestrians?",
+                new String[]{"At all times, if there is any danger of colliding with them, even if\n" +
+                        "there is no marked crossing.",
+                        "Only on marked foot crossings.",
+                        "Only on marked foot crossings and traffic light pedestrian crossings.", "0"});
+
     }
 }
