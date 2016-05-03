@@ -25,7 +25,7 @@ public class Data {
     public static ArrayList<String[]> negligentDriving;
     public static ArrayList<String> pedestrains;
     public static ArrayList<String> seatBelts;
-    public static ArrayList<String> speedLimits;
+    public static ArrayList<String[]> speedLimits;
     public static ArrayList<String []> trafficLights;
     public static ArrayList<String> trafficLights2;
 
@@ -48,6 +48,8 @@ public class Data {
     public static HashMap<String, String[]> answerListForFatigueAndDefensiveDriving;
     public static HashMap<String, String[]> answerListForTraficLights;
     public static HashMap<String, String[]> answerListForNegligentDriving;
+    public static HashMap<String, String[]> answerListForSpeedLimits;
+
     private static ArrayList<String> categories;
     private static HashMap<String, String[]> intersectionAnswers;
 
@@ -107,7 +109,216 @@ public class Data {
         }
     }
 
+    public static void initializeSpeedlimits() {
+
+        speedLimits = new ArrayList<>();
+        answerListForSpeedLimits = new HashMap<>();
+
+
+        speedLimits.add(new String[] {"Driving faster than the maximum speed limit is -", ""});
+        answerListForSpeedLimits.put("Driving faster than the maximum speed limit is -",
+                new String[]{
+                        "Never legally permitted.",
+                        "Permitted only when passing another vehicle.",
+                        "Only permitted when other vehicles are going faster than the speed limit.",
+                        "0"});
+
+        speedLimits.add(new String[] {"A Shared Traffic Zone, where pedestrians and other road users can share the road safely has a speed limit of -", ""});
+        answerListForSpeedLimits.put("A Shared Traffic Zone, where pedestrians and other road users can share the road safely has a speed limit of -",
+                new String[]{
+                        "10 Km/h.",
+                        "20 Km/h.",
+                        "50 Km/h.",
+                        "0"});
+
+        speedLimits.add(new String[] {"You are driving in busy traffic in an 80 km/h zone. It begins to rain lightly. What should you do?", "sl21"});
+        answerListForSpeedLimits.put("You are driving in busy traffic in an 80 km/h zone. It begins to rain lightly. What should you do?",
+                new String[]{
+                        "Pull over and wait till it stops raining.",
+                        "Keep going at the same speed because that's how fast the signs tell you to drive.",
+                        "Slow down to a speed that suits the conditions better.",
+                        "2"});
+
+        speedLimits.add(new String[] {"You are driving in a 70 km/h zone," +
+                " keeping to the limit. Several vehicles pass you. One of your passengers " +
+                "suggests you should keep up with the other traffic. What should you do?", "sl22"});
+        answerListForSpeedLimits.put("You are driving in a 70 km/h zone, keeping to the limit." +
+                " Several vehicles pass you. One of your passengers suggests you" +
+                " should keep up with the other traffic. What should you do?",
+                new String[]{
+                        "Speed up to a little bit over the speed limit, because everyone does it.",
+                        "Follow the suggestions and keep up with the traffic.",
+                        "Decide your speed yourself, based on the speed limit and the conditions.",
+                        "2"});
+
+        speedLimits.add(new String[] {"You are driving in busy traffic in a 60 km/h zone. You feel 60 km/h is a bit too fast for the conditions. What should you do?", "sl23"});
+        answerListForSpeedLimits.put("You are driving in busy traffic in a 60 km/h zone. You feel 60 km/h is a bit too fast for the conditions. What should you do?",
+                new String[]{
+                        "Slow down to a speed that suits the conditions.",
+                        "Keep up with the other traffic because it's probably safe if the sign says 60 km/h.",
+                        "Turn off the busy street and wait for traffic to clear.",
+                        "0"});
+
+        speedLimits.add(new String[] {"What could be the penalties for driving over the speed limit -", ""});
+        answerListForSpeedLimits.put("What could be the penalties for driving over the speed limit -",
+                new String[]{
+                        "Fines, demerit points and possibly loss of licence.",
+                        "Fines only.",
+                        "A letter of warning and a small fine.",
+                        "0"});
+
+        speedLimits.add(new String[] {"Having a radar detector or jammer in your car is against the law -", ""});
+        answerListForSpeedLimits.put("Having a radar detector or jammer in your car is against the law -",
+                new String[]{
+                        "No matter what your reason is.",
+                        "Only if it is turned on.",
+                        "If you purchased it after 1998.",
+                        "0"});
+
+        speedLimits.add(new String[] {"Where there are no speed limit signs, the speed limit is 100 km/h, unless -", ""});
+        answerListForSpeedLimits.put("Where there are no speed limit signs, the speed limit is 100 km/h, unless -",
+                new String[]{
+                        "There are street lights along the road.",
+                        "The road you are driving on is gravel.",
+                        "There's an emergency, which mean speed limits don't apply.",
+                        "0"});
+
+        speedLimits.add(new String[] {"When you see this sign you must -", "sl30"});
+        answerListForSpeedLimits.put("When you see this sign you must -",
+                new String[]{
+                        "Not exceed 40 km/h and keep a special lookout for bicycle riders, pedestrians and children.",
+                        "Only enter the street if you live in the local zone.",
+                        "Drive at a speed less than 40 km/h if you are not a resident of the local zone.",
+                        "0"});
+
+        speedLimits.add(new String[] {"This sign means you must -", "sl31"});
+        answerListForSpeedLimits.put("This sign means you must -",
+                new String[]{
+                        "Share this road with other people and vehicles and not exceed 10 km/h.",
+                        "Drive at 10 km/h if there are pedestrians around.",
+                        "Reduce your speed to what you think is safe but never below 10 km/h",
+                        "0"});
+
+        speedLimits.add(new String[] {"It is 9.20am on a school day. You are driving at 60 km/h," +
+                " the same speed as traffic around you. You pass this sign but the other " +
+                "cars do not slow down much. What should you do?", "sl32"});
+        answerListForSpeedLimits.put("It is 9.20am on a school day. You are driving at 60 km/h," +
+                " the same speed as traffic around you. You pass this sign but the other" +
+                " cars do not slow down much. What should you do?",
+                new String[]{
+                        "Slow down immediately to 40 km/h or less even though other drivers want to go faster.",
+                        "Drive at the speed of the other drivers because it is safer to go with the flow of traffic than slow others up.",
+                        "Stay at 60 km/h because it is nearly 9.30am and the times on the school sign are only advisory.",
+                        "0"});
+
+        speedLimits.add(new String[] {"Speed limit signs (such as the one shown) tell drivers -", "sl34"});
+        answerListForSpeedLimits.put("Speed limit signs (such as the one shown) tell drivers -",
+                new String[]{
+                        "The maximum speed they are allowed to drive.",
+                        "The minimum speed they are allowed to drive.",
+                        "The recommended speed they are allowed to drive.",
+                        "0"});
+
+        speedLimits.add(new String[] {"If you are driving along the highway and come across road works with a reduced speed zone, you must -", ""});
+        answerListForSpeedLimits.put("If you are driving along the highway and come across road works with a reduced speed zone, you must -",
+                new String[]{
+                        "Slow down to the new speed limit.",
+                        "Drive through the road works zone as fast as you can to get past it.",
+                        "Drive at the same speed as other vehicles.",
+                        "0"});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+        speedLimits.add(new String[] {"", ""});
+        answerListForSpeedLimits.put("",
+                new String[]{
+                        "",
+                        "",
+                        "",
+                        ""});
+
+    }
+
     public static void initializeNegligentDriving() {
+
         negligentDriving = new ArrayList<>();
         answerListForNegligentDriving = new HashMap<>();
 
@@ -348,14 +559,7 @@ public class Data {
                         "No.",
                         "Only for 10 km/h or more over the speed limit.",
                         "0"});
-//
-//        negligentDriving.add(new String[] {"", ""});
-//        answerListForNegligentDriving.put("",
-//                new String[]{
-//                        "",
-//                        "",
-//                        "",
-//                        ""});
+
     }
 
     public static void initializeTraficLights() {
