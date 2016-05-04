@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.byteshaft.lisenceservice.MainActivity"
     android:background="@drawable/background"
@@ -16,11 +16,38 @@
 
     <TextView
         android:id="@+id/title"
-        android:text="Roads and Traffic Authority of NSW"
+        android:text="Title of organization goes here."
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:paddingTop="30dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="10dp"
+        android:text="Welcome messages goes here"
+        android:textStyle="bold"
         android:gravity="center_horizontal"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/start_test"
+        android:text="Click here to start the Test"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_effect"
+        android:layout_centerInParent="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:drawableRight="@drawable/pressed_arrow"
+        android:drawableEnd="@drawable/pressed_arrow"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <TextView
+        android:id="@+id/text"
+        android:text="@string/sample_screen_msg"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:id="@+id/car_photo"
+        android:layout_below="@+id/text"
+        android:src="@drawable/vehicle_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_effect"
+        android:text="Sample"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/car_photo"
+        android:drawableRight="@drawable/pressed_arrow"
+        android:drawableEnd="@drawable/pressed_arrow"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/test"
+        android:layout_alignStart="@+id/test"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/test"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/sample"
+        android:drawableRight="@drawable/pressed_arrow"
+        android:drawableEnd="@drawable/pressed_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_effect"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Start Test" />
+
+</RelativeLayout>
