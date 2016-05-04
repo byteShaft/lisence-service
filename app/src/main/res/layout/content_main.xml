@@ -10,10 +10,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.byteshaft.lisenceservice.MainActivity"
+    android:background="@drawable/background"
     tools:showIn="@layout/activity_main">
 
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/title"
+        android:text="Roads and Traffic Authority of NSW"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
 </RelativeLayout>

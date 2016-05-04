@@ -7,7 +7,7 @@ public class Data {
 
     public static final String sICAC = "ICAC";
     public static final String sGeneralKnowledge = "General Knowledge";
-    public static final String strafficSignsSection = "Traffic Signs Sections";
+    public static final String sTrafficSignsSection = "Traffic Signs Sections";
     public static final String sAlcholDrugs = "Alcohol and Drugs";
     public static final String sFatigueAndDefensiveDriving = "Fatigue and Defensive Driving";
     public static final String sIntersections = "Intersections";
@@ -65,7 +65,7 @@ public class Data {
     public static void initializeCategoriesArray() {
         categories.add(sICAC);
         categories.add(sGeneralKnowledge);
-        categories.add(strafficSignsSection);
+        categories.add(sTrafficSignsSection);
         categories.add(sAlcholDrugs);
         categories.add(sFatigueAndDefensiveDriving);
         categories.add(sIntersections);
@@ -2244,7 +2244,7 @@ public class Data {
                         "Merging traffic, give way to your right.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si046"});
+        trafficSignsSection.add(new String[]{"What does this sign mean?", "si045"});
         answerListforTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
                         "Vehicles are not allowed to stop at the kerb\n" +
@@ -2623,7 +2623,7 @@ public class Data {
                 "intersection_dont_walk"});
         intersectionAnswers.put("When these lights are flashing it means -",
                 new String[]{"Pedestrians who have started crossing must go back to " +
-                        "the footpath.", "Pedestrians are not allowed in this area at this time.",
+                        "the footpath.", "`",
                         "Pedestrians must not start to cross.", "2"});
 
 
