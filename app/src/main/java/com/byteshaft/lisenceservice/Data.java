@@ -115,10 +115,10 @@ public class Data {
     }
 
     public static void initializeTrafficLightsTwo() {
-        trafficLights = new ArrayList<>();
+        trafficLights2 = new ArrayList<>();
         answerListForTrafficLights2 = new HashMap<>();
 
-        trafficLights.add(new String[] {"You are facing traffic lights (as shown). What do they mean?", "tl1"});
+        trafficLights2.add(new String[] {"You are facing traffic lights (as shown). What do they mean?", "tl1"});
         answerListForTrafficLights2.put("You are facing traffic lights (as shown). What do they mean?",
                 new String[] {
                         "You may proceed only in the direction of the green arrow.",
@@ -126,7 +126,7 @@ public class Data {
                         "You must give way to oncoming traffic.",
                         "0"});
 
-        trafficLights.add(new String[] {"At traffic lights what is meant when a red light appears?", "tl2"});
+        trafficLights2.add(new String[] {"At traffic lights what is meant when a red light appears?", "tl2"});
         answerListForTrafficLights2.put("At traffic lights what is meant when a red light appears?",
                 new String[] {
                         "Stop, make sure there is no traffic, then drive straight ahead",
@@ -134,7 +134,7 @@ public class Data {
                         "Stop, wait behind the stop line until the lights change to green.",
                         "2"});
 
-        trafficLights.add(new String[] {"What should you do when approaching traffic lights which change from green to yellow?", "tl3"});
+        trafficLights2.add(new String[] {"What should you do when approaching traffic lights which change from green to yellow?", "tl3"});
         answerListForTrafficLights2.put("What should you do when approaching traffic lights which change from green to yellow?",
                 new String[] {
                         "Stop, only if a red light camera is in use.",
@@ -142,7 +142,7 @@ public class Data {
                         "Stop at the stop line unless you are so close that sudden or sharp braking might cause an accident.",
                         "2"});
 
-        trafficLights.add(new String[] {"What may you do at an intersection with traffic lights at which this sign is displayed?", "tl4"});
+        trafficLights2.add(new String[] {"What may you do at an intersection with traffic lights at which this sign is displayed?", "tl4"});
         answerListForTrafficLights2.put("What may you do at an intersection with traffic lights at which this sign is displayed?",
                 new String[] {
                         "You should slow down and check if anyone is coming before turning left.",
@@ -150,7 +150,7 @@ public class Data {
                         "You may turn left only if a green arrow is shown.",
                         "1"});
 
-        trafficLights.add(new String[] {"Are you permitted to make a U-Turn at traffic lights?", ""});
+        trafficLights2.add(new String[] {"Are you permitted to make a U-Turn at traffic lights?", ""});
         answerListForTrafficLights2.put("Are you permitted to make a U-Turn at traffic lights?",
                 new String[] {
                         "No, unless there is a U-TURN PERMITTED sign at the intersection.",
@@ -158,7 +158,7 @@ public class Data {
                         "Yes, if there is no danger of colliding with another vehicle.",
                         ""});
 
-        trafficLights.add(new String[] {"These lights mean that you -", "tl6"});
+        trafficLights2.add(new String[] {"These lights mean that you -", "tl6"});
         answerListForTrafficLights2.put("These lights mean that you -",
                 new String[] {
                         "Can turn left or go straight ahead.",
@@ -166,7 +166,7 @@ public class Data {
                         "Can turn left only if a sign 'TURN LEFT AT ANY TIME WITH CARE' is displayed.",
                         "1"});
 
-        trafficLights.add(new String[] {"This light means, you -", "tl7"});
+        trafficLights2.add(new String[] {"This light means, you -", "tl7"});
         answerListForTrafficLights2.put("This light means, you -",
                 new String[] {
                         "Can go straight ahead, or turn left or turn right, if it is safe to do so.",
@@ -174,7 +174,7 @@ public class Data {
                         "Can make a U turn provided it is safe to do so.",
                         "0"});
 
-        trafficLights.add(new String[] {"It is 3 o'clock in the morning. You cannot see any other traffic. You want to turn right. You may -", "tl8"});
+        trafficLights2.add(new String[] {"It is 3 o'clock in the morning. You cannot see any other traffic. You want to turn right. You may -", "tl8"});
         answerListForTrafficLights2.put("It is 3 o'clock in the morning. You cannot see any other traffic. You want to turn right. You may -",
                 new String[] {
                         "Turn right if it is safe to do so.",
@@ -182,7 +182,7 @@ public class Data {
                         "Not turn right while the arrow is red.",
                         "2"});
 
-        trafficLights.add(new String[] {"As you approach an intersection with traffic lights, the yellow light turns to red. You must -", "tl10"});
+        trafficLights2.add(new String[] {"As you approach an intersection with traffic lights, the yellow light turns to red. You must -", "tl10"});
         answerListForTrafficLights2.put("As you approach an intersection with traffic lights, the yellow light turns to red. You must -",
                 new String[] {
                         "Stop and wait for the green light.",
@@ -190,7 +190,7 @@ public class Data {
                         "Sound your horn and proceed through the red light.",
                         "0"});
 
-        trafficLights.add(new String[] {"You approach an intersection showing a red light and the sign shown. You wish to turn left. You must -", "tl11"});
+        trafficLights2.add(new String[] {"You approach an intersection showing a red light and the sign shown. You wish to turn left. You must -", "tl11"});
         answerListForTrafficLights2.put("You approach an intersection showing a red light and the sign shown. You wish to turn left. You must -",
                 new String[] {
                         "Stop and turn left only if it is safe.",
@@ -198,7 +198,7 @@ public class Data {
                         "Slow down and turn left or right if it is safe.",
                         "0"});
 
-        trafficLights.add(new String[] {"It is early morning and there is no other traffic about. You approach an intersection when the traffic lights change from green to yellow. What should you do?", ""});
+        trafficLights2.add(new String[] {"It is early morning and there is no other traffic about. You approach an intersection when the traffic lights change from green to yellow. What should you do?", ""});
         answerListForTrafficLights2.put("It is early morning and there is no other traffic about. You approach an intersection when the traffic lights change from green to yellow. What should you do?",
                 new String[] {
                         "Keep going.",
@@ -206,7 +206,7 @@ public class Data {
                         "Drive through and sound your horn.",
                         "1"});
 
-        trafficLights.add(new String[] {"You are waiting at an intersection and the lights are red. The traffic lights change to green. You should -", "tl13"});
+        trafficLights2.add(new String[] {"You are waiting at an intersection and the lights are red. The traffic lights change to green. You should -", "tl13"});
         answerListForTrafficLights2.put("You are waiting at an intersection and the lights are red. The traffic lights change to green. You should -",
                 new String[] {
                         "Cross the intersection as quickly as possible.",
@@ -214,7 +214,7 @@ public class Data {
                         "Wait until the traffic behind you makes you move.",
                         "1"});
 
-        trafficLights.add(new String[] {"You want to turn right at an intersection and see this traffic light. You should -", "tl14"});
+        trafficLights2.add(new String[] {"You want to turn right at an intersection and see this traffic light. You should -", "tl14"});
         answerListForTrafficLights2.put("You want to turn right at an intersection and see this traffic light. You should -",
                 new String[] {
                         "Stay behind the stop line until the green arrow shows.",
@@ -222,7 +222,7 @@ public class Data {
                         "Enter the intersection and wait for the green arrow.",
                         "0"});
 
-        trafficLights.add(new String[] {"You wish to turn left at this intersection. The traffic lights are red and you see this sign. You should -", "tl15"});
+        trafficLights2.add(new String[] {"You wish to turn left at this intersection. The traffic lights are red and you see this sign. You should -", "tl15"});
         answerListForTrafficLights2.put("You wish to turn left at this intersection. The traffic lights are red and you see this sign. You should -",
                 new String[] {
                         "Stop then go straight ahead.",
@@ -230,7 +230,7 @@ public class Data {
                         "Stop, then if you see it is safe turn left.",
                         "2"});
 
-        trafficLights.add(new String[] {"You wish to turn left at this intersection and the traffic lights are green. What should you do?", "tl16"});
+        trafficLights2.add(new String[] {"You wish to turn left at this intersection and the traffic lights are green. What should you do?", "tl16"});
         answerListForTrafficLights2.put("You wish to turn left at this intersection and the traffic lights are green. What should you do?",
                 new String[] {
                         "Wait behind the stop line until there is room for you to enter the new road.",
@@ -238,7 +238,7 @@ public class Data {
                         "Enter the intersection and sound the horn.",
                         "0"});
 
-        trafficLights.add(new String[] {"As you approach a set of traffic lights at an intersection, they change from green to yellow (amber). You must -", "tl17"});
+        trafficLights2.add(new String[] {"As you approach a set of traffic lights at an intersection, they change from green to yellow (amber). You must -", "tl17"});
         answerListForTrafficLights2.put("As you approach a set of traffic lights at an intersection, they change from green to yellow (amber). You must -",
                 new String[] {
                         "Accelerate to clear the intersection before the lights change to red.",
@@ -246,7 +246,7 @@ public class Data {
                         "Drive through the intersection without accelerating.",
                         "1"});
 
-        trafficLights.add(new String[] {"Temporary traffic lights at road works -", "tl18"});
+        trafficLights2.add(new String[] {"Temporary traffic lights at road works -", "tl18"});
         answerListForTrafficLights2.put("Temporary traffic lights at road works -",
                 new String[] {
                         "Apply to road works vehicles only.",
@@ -254,7 +254,7 @@ public class Data {
                         "Are installed to warn motorists of construction works.",
                         "1"});
 
-        trafficLights.add(new String[] {"Where do you stop at temporary traffic lights?", "tl19"});
+        trafficLights2.add(new String[] {"Where do you stop at temporary traffic lights?", "tl19"});
         answerListForTrafficLights2.put("Where do you stop at temporary traffic lights?",
                 new String[] {
                         "At the ‘Stop here on red signal’ sign.",
