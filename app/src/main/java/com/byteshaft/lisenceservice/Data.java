@@ -2623,7 +2623,7 @@ public class Data {
                 "intersection_dont_walk"});
         intersectionAnswers.put("When these lights are flashing it means -",
                 new String[]{"Pedestrians who have started crossing must go back to " +
-                        "the footpath.", "Pedestrians are not allowed in this area at this time.",
+                        "the footpath.", "`",
                         "Pedestrians must not start to cross.", "2"});
 
 
