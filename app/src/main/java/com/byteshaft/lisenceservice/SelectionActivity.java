@@ -12,7 +12,6 @@ public class SelectionActivity  extends Activity implements View.OnClickListener
     private Button mSampleButton;
     private Button mTestButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,6 @@ public class SelectionActivity  extends Activity implements View.OnClickListener
         mTestButton = (Button) findViewById(R.id.test);
         mSampleButton.setOnClickListener(this);
         mTestButton.setOnClickListener(this);
-
     }
 
     @Override
@@ -30,6 +28,7 @@ public class SelectionActivity  extends Activity implements View.OnClickListener
         switch (view.getId()) {
             case R.id.sample:
                 intent.putExtra(AppGlobals.INTENT_KEY, "sample");
+                AppGlobals.testModeSample = true;
                 break;
             case R.id.test:
                 intent.putExtra(AppGlobals.INTENT_KEY, "test");

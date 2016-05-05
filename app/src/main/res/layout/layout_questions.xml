@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center"
+                android:layout_marginTop="10dp"
+                android:padding="4dp"
+                android:background="@color/steel_blue"
+                android:textColor="@android:color/white"
+                android:text="Question Goes here jfjh h h h h h dndjdjd d hfbh fh fh fh fh fh nf
+                h ch sn hjd h chc?"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question"
+                android:layout_marginTop="5dp">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+
+                    <RadioButton
+                        android:id="@+id/radio_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/png_selector"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:text="please select one option for one ndnhf"
+                        android:padding="5dp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/png_selector"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:text="please select one option for one ndnhf hhh fhf  h h "
+                        android:padding="5dp"  />
+
+                    <RadioButton
+                        android:id="@+id/radio_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/png_selector"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:text="please select one option for one ndnhf hhh fhf  h h "
+                        android:padding="5dp" />
+                </RadioGroup>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -18,7 +18,7 @@ public class Data {
     public static final String sTrafficLightsLanes = "Traffic Lights / Lanes";
     public static final String sTrafficLightsLanes2 = "Traffic Lights / Lanes-2";
     public static ArrayList<String> ICAC;
-    private static ArrayList<String[]> generalList;
+    public static ArrayList<String[]> generalList;
     public static ArrayList<String[]> trafficSignsSection;
     public static ArrayList<String[]> alcoholList;
     public static ArrayList<String[]> fatigue;
@@ -57,13 +57,8 @@ public class Data {
     private static ArrayList<String> categories;
     private static HashMap<String, String[]> intersectionAnswers;
 
-    public Data() {
+    public static ArrayList<String> initializeCategoriesArray() {
         categories = new ArrayList<>();
-        generalList = new ArrayList<>();
-        answerListForGeneralKnowled = new HashMap<>();
-    }
-
-    public static void initializeCategoriesArray() {
         categories.add(sICAC);
         categories.add(sGeneralKnowledge);
         categories.add(sTrafficSignsSection);
@@ -77,12 +72,13 @@ public class Data {
         categories.add(sSpeedLimits);
         categories.add(sTrafficLightsLanes);
         categories.add(sTrafficLightsLanes2);
+        return categories;
     }
 
     public static void initializeSelected(String selectedCategory) {
         switch (selectedCategory) {
             case sGeneralKnowledge:
-
+                initializeGeneralKnowledge();
                 break;
             case sAlcholDrugs:
 

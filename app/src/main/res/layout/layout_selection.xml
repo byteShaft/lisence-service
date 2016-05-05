@@ -8,23 +8,23 @@
     <TextView
         android:id="@+id/text"
         android:text="@string/sample_screen_msg"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="5dp"
-        android:layout_margin="4dp"
+        android:layout_marginTop="98dp"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/sample"
+        android:layout_alignEnd="@+id/sample" />
 
 
     <ImageView
         android:id="@+id/car_photo"
-        android:layout_below="@+id/text"
         android:src="@drawable/vehicle_c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
