@@ -8,6 +8,7 @@ public class AppGlobals extends Application {
 
     private static Context sContext;
     public static String INTENT_KEY = "intent_key";
+    public static boolean testModeSample = false;
 
     @Override
     public void onCreate() {
