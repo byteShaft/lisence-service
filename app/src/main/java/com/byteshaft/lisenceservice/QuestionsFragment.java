@@ -101,4 +101,19 @@ public class QuestionsFragment extends Fragment {
                 R.anim.slide_in_right);
         mRelativeLayout.startAnimation(RightSwipe);
     }
+
+    public int getAnswerIndex() {
+        switch (radioGroup.getCheckedRadioButtonId()) {
+            case R.id.radio_one:
+                return 0;
+            case R.id.radio_two:
+                return 1;
+            case R.id.radio_three:
+                return 2;
+            default:
+                return 5;
+        }
+    }
+
+
 }

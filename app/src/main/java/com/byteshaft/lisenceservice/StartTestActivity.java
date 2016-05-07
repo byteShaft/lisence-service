@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +45,9 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private int questionIndex = 0;
     private int currentCategoryIndex = 0;
     private  ArrayList<String> categories;
+    private HashMap<String, Integer> answersHashMap;
+    private int currentQuestionTrueAnswers = 5;
+    private int trueAnswersForCategory = 0;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -62,6 +66,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
         instance = this;
+        answersHashMap = new HashMap<>();
         nextButton = (Button) findViewById(R.id.button_next);
         nextButton.setOnClickListener(this);
         categories = Data.initializeCategoriesArray();
@@ -87,11 +92,12 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         }
         Log.i("Question", question);
         Log.i("answer one", answersForSelected.get(question)[0]);
+        currentQuestionTrueAnswers = Integer.parseInt(answersForSelected.get(question)[3]);
         QuestionsFragment.getInstance().setValuesToDisplay(question
                 , answersForSelected.get(question)[0],
                 answersForSelected.get(question)[1],
                 answersForSelected.get(question)[2],
-                Integer.parseInt(answersForSelected.get(question)[3]),
+                currentQuestionTrueAnswers,
                 drawableName, currentCategory);
     }
 
@@ -193,6 +199,15 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_next:
+                if (QuestionsFragment.getInstance().getAnswerIndex() == 5) {
+                    Toast.makeText(StartTestActivity.this, "please select a correct answer",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
+                    currentQuestionTrueAnswers++;
+                    answersHashMap.put(currentCategory, currentQuestionTrueAnswers);
+                }
                 QuestionsFragment.getInstance().hideCurrentQuestion();
                 questionIndex++;
                 Log.i("ASKED", getCurrentCategoryAskedQuestion(currentCategory)+"");
@@ -202,6 +217,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     loadDataForQuestion(questionIndex);
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
+                    currentQuestionTrueAnswers = 0;
                     questionIndex = 0;
                     int nextIndex = currentCategoryIndex + 1;
                     currentCategory = categories.get(nextIndex);
@@ -209,7 +225,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     loadDataForQuestion(questionIndex);
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 }
-
+                Log.i("AnswersMap", String.valueOf(answersHashMap));
                 break;
         }
     }
