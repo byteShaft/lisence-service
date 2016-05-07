@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/question_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,7 +11,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:id="@+id/question"
@@ -24,11 +25,21 @@
                 android:text="Question Goes here jfjh h h h h h dndjdjd d hfbh fh fh fh fh fh nf
                 h ch sn hjd h chc?"
                 android:textSize="16sp" />
+            <TextView
+                android:id="@+id/category"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:gravity="center_horizontal|center"
+                android:textSize="14sp"
+                android:layout_below="@+id/question"
+                android:layout_width="match_parent"
+                android:padding="2dp"
+                android:layout_height="wrap_content" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/question"
+                android:layout_below="@+id/category"
                 android:layout_marginTop="5dp">
 
                 <RadioGroup
@@ -47,6 +58,7 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/png_selector"
                         android:gravity="center"
+                        android:textStyle="italic"
                         android:button="@null"
                         android:text="please select one option for one ndnhf"
                         android:padding="5dp" />
@@ -57,6 +69,7 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/png_selector"
                         android:gravity="center"
+                        android:textStyle="italic"
                         android:button="@null"
                         android:text="please select one option for one ndnhf hhh fhf  h h "
                         android:padding="5dp"  />
@@ -67,11 +80,17 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/png_selector"
                         android:gravity="center"
+                        android:textStyle="italic"
                         android:button="@null"
                         android:text="please select one option for one ndnhf hhh fhf  h h "
                         android:padding="5dp" />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:id="@+id/image"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

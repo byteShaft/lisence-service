@@ -86,7 +86,8 @@ public class Data {
                 Log.i("DATA", Arrays.toString(answerListForICAC.get(ICAC.get(0))));
                 break;
             case sGeneralKnowledge:
-
+                initializeGeneralKnowledge();
+                StartTestActivity.setValuesForCurrentCategory(generalList, answerListForGeneralKnowledge);
                 break;
             case sAlcholDrugs:
                 initializeAlcoholAndDrugs();
