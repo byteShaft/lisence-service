@@ -1,6 +1,9 @@
 package com.byteshaft.lisenceservice;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Data {
@@ -74,13 +77,14 @@ public class Data {
         return categories;
     }
 
-    public static HashMap<ArrayList<String[]>, HashMap<String, String[]>> getSelectedCategoryDetails(String category) {
+    public static void getSelectedCategoryDetails(String category) {
         switch (category) {
             case sICAC:
                 initializeICAC();
-                HashMap<ArrayList<String[]>, HashMap<String, String[]>> icAcMapHashMap = new HashMap<>();
-                icAcMapHashMap.put(ICAC, answerListForICAC);
-                return icAcMapHashMap;
+                StartTestActivity.setValuesForCurrentCategory(ICAC, answerListForICAC);
+                Log.i("Data", String.valueOf(ICAC));
+                Log.i("DATA", Arrays.toString(answerListForICAC.get(ICAC.get(0))));
+                break;
             case sGeneralKnowledge:
 
                 break;
@@ -112,7 +116,6 @@ public class Data {
                 initializeTrafficLightsTwo();
                 break;
         }
-        return null;
     }
 
     public static void initializeTrafficLightsTwo() {
@@ -1392,7 +1395,6 @@ public class Data {
     }
 
     public static void initializeICAC() {
-
         ICAC = new ArrayList<>();
         answerListForICAC = new HashMap<>();
 
