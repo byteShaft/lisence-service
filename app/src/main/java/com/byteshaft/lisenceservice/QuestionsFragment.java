@@ -2,6 +2,7 @@ package com.byteshaft.lisenceservice;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,7 +87,6 @@ public class QuestionsFragment extends Fragment {
                 radioTwo.setText("");
                 radioThree.setText("");
                 answerIndex = 5;
-
             }
 
             @Override
@@ -105,10 +105,13 @@ public class QuestionsFragment extends Fragment {
     public int getAnswerIndex() {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.radio_one:
+                Log.i("Checked", "one");
                 return 0;
             case R.id.radio_two:
+                Log.i("Checked", "two");
                 return 1;
             case R.id.radio_three:
+                Log.i("Checked", "three");
                 return 2;
             default:
                 return 5;
