@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -48,6 +51,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private HashMap<String, Integer> answersHashMap;
     private int currentQuestionTrueAnswers = 5;
     private int trueAnswersForCategory = 0;
+    private int trueAnswers = 0;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -72,6 +76,24 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         categories = Data.initializeCategoriesArray();
         currentCategory = categories.get(currentCategoryIndex);
         loadFragment(new QuestionsFragment());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_main, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_instant_questions:
+
+                return true;
+        }
+        return false;
 
     }
 
@@ -87,7 +109,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         Data.getSelectedCategoryDetails(currentCategory);
         String drawableName = "";
         String question = questionsArrayForCurrent.get(questionNum)[0];
-        if (!questionsArrayForCurrent.get(0)[1].trim().isEmpty()) {
+        if (!questionsArrayForCurrent.get(questionNum)[1].trim().isEmpty()) {
             drawableName = questionsArrayForCurrent.get(questionNum)[1];
         }
         Log.i("Question", question);
@@ -204,9 +226,11 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
-                    currentQuestionTrueAnswers++;
-                    answersHashMap.put(currentCategory, currentQuestionTrueAnswers);
+                if (QuestionsFragment.getInstance().getAnswerIndex() != 5) {
+                    if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
+                        trueAnswersForCategory++;
+                        answersHashMap.put(currentCategory, trueAnswersForCategory);
+                    }
                 }
                 QuestionsFragment.getInstance().hideCurrentQuestion();
                 questionIndex++;
@@ -217,7 +241,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     loadDataForQuestion(questionIndex);
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
-                    currentQuestionTrueAnswers = 0;
+                    trueAnswersForCategory = 0;
                     questionIndex = 0;
                     int nextIndex = currentCategoryIndex + 1;
                     currentCategory = categories.get(nextIndex);
