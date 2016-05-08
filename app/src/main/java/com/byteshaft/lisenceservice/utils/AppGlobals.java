@@ -2,6 +2,7 @@ package com.byteshaft.lisenceservice.utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.widget.RadioButton;
 
 
 public class AppGlobals extends Application {
@@ -10,6 +11,7 @@ public class AppGlobals extends Application {
     public static String INTENT_KEY = "intent_key";
     public static boolean testModeSample = false;
     public static String KEY_INSTANT_ANSWER_ENABLED = "instant_answer_enabled";
+    public static RadioButton wrongAnswerButton;
 
     @Override
     public void onCreate() {

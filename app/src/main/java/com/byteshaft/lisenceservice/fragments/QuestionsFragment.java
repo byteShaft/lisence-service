@@ -2,6 +2,7 @@ package com.byteshaft.lisenceservice.fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,13 +17,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.byteshaft.lisenceservice.R;
+import com.byteshaft.lisenceservice.utils.AppGlobals;
 
 
-public class QuestionsFragment extends Fragment {
+public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedChangeListener {
 
     private View mBaseView;
     private TextView question;
-    private RadioGroup radioGroup;
+    public RadioGroup radioGroup;
     private RadioButton radioOne;
     private RadioButton radioTwo;
     private RadioButton radioThree;
@@ -85,6 +87,12 @@ public class QuestionsFragment extends Fragment {
         return mBaseView;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        radioGroup.setOnCheckedChangeListener(this);
+    }
+
     public void hideCurrentQuestion() {
         Animation RightSwipe = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                 R.anim.anim);
@@ -117,6 +125,19 @@ public class QuestionsFragment extends Fragment {
         mRelativeLayout.startAnimation(RightSwipe);
     }
 
+    public RadioButton getAnswerRadioButton() {
+        switch (radioGroup.getCheckedRadioButtonId()) {
+            case R.id.radio_one:
+                return radioOne;
+            case R.id.radio_two:
+                return radioTwo;
+            case R.id.radio_three:
+                return radioThree;
+            default:
+                return null;
+        }
+    }
+
     public int getAnswerIndex() {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.radio_one:
@@ -133,5 +154,11 @@ public class QuestionsFragment extends Fragment {
         }
     }
 
-
+    @Override
+    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+        if (AppGlobals.wrongAnswerButton != null) {
+            AppGlobals.wrongAnswerButton.
+                    setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
+        }
+    }
 }

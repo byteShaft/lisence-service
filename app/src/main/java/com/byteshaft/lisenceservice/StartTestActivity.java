@@ -2,7 +2,6 @@ package com.byteshaft.lisenceservice;
 
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.byteshaft.lisenceservice.fragments.QuestionsFragment;
+import com.byteshaft.lisenceservice.utils.AppGlobals;
 import com.byteshaft.lisenceservice.utils.Data;
 import com.byteshaft.lisenceservice.utils.Helpers;
 
@@ -80,6 +80,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         answersHashMap = new HashMap<>();
         nextButton = (Button) findViewById(R.id.button_next);
         okButton = (Button) findViewById(R.id.button_ok);
+        if (Helpers.isInstantAnswerEnabled()) {
+            okButton.setVisibility(View.VISIBLE);
+            nextButton.setVisibility(View.GONE);
+        } else {
+            nextButton.setVisibility(View.VISIBLE);
+            okButton.setVisibility(View.GONE);
+        }
         exitButton = (Button) findViewById(R.id.button_exit);
         nextButton.setOnClickListener(this);
         okButton.setOnClickListener(this);
@@ -90,8 +97,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
-    public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onPostCreate(savedInstanceState, persistentState);
+    protected void onResume() {
+        super.onResume();
         loadDataForQuestion(questionIndex);
     }
 
@@ -116,9 +123,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 if (Helpers.isInstantAnswerEnabled()) {
                     Helpers.saveInstantAnswerValue(false);
                     item.setTitle("Enable Instant Answer");
+                    nextButton.setVisibility(View.VISIBLE);
+                    okButton.setVisibility(View.GONE);
                 } else {
                     Helpers.saveInstantAnswerValue(true);
                     item.setTitle("Disable Instant Answer");
+                    okButton.setVisibility(View.VISIBLE);
+                    nextButton.setVisibility(View.GONE);
                 }
                 return true;
         }
@@ -254,6 +265,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         answersHashMap.put(currentCategory, trueAnswersForCategory);
                     }
                 }
+                QuestionsFragment.getInstance().getAnswerRadioButton().
+                        setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
                 QuestionsFragment.getInstance().hideCurrentQuestion();
                 questionIndex++;
                 Log.i("ASKED", getCurrentCategoryAskedQuestion(currentCategory)+"");
@@ -273,7 +286,33 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 }
                 Log.i("AnswersMap", String.valueOf(answersHashMap));
                 break;
-            
+            case R.id.button_ok:
+                if (QuestionsFragment.getInstance().getAnswerIndex() == 5) {
+                    Toast.makeText(StartTestActivity.this, "please select a correct answer",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (QuestionsFragment.getInstance().getAnswerIndex() != 5) {
+                    if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
+                       nextButton.setVisibility(View.VISIBLE);
+                        okButton.setVisibility(View.GONE);
+                        QuestionsFragment.getInstance().getAnswerRadioButton().
+                                setCompoundDrawablesWithIntrinsicBounds(R.drawable.tick_button, 0, 0, 0);
+                        okButton.setVisibility(View.GONE);
+                        nextButton.setVisibility(View.VISIBLE);
+                    } else {
+                       QuestionsFragment.getInstance().getAnswerRadioButton().
+                               setCompoundDrawablesWithIntrinsicBounds(R.drawable.cross_button, 0, 0, 0);
+                        AppGlobals.wrongAnswerButton = QuestionsFragment.getInstance()
+                                .getAnswerRadioButton();
+                    }
+                }
+
+                break;
+
+            case R.id.button_exit:
+                this.finish();
+                break;
         }
     }
 }
