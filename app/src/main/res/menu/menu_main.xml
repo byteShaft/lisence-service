@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action_instant_questions"
         android:orderInCategory="100"
-        android:title="Instant Answer"
+        android:title="Enable Instant Answer"
         app:showAsAction="never" />
 </menu>

@@ -1,6 +1,8 @@
-package com.byteshaft.lisenceservice;
+package com.byteshaft.lisenceservice.utils;
 
 import android.util.Log;
+
+import com.byteshaft.lisenceservice.StartTestActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
