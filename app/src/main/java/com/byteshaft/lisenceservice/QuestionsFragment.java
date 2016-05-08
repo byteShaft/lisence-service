@@ -1,5 +1,6 @@
 package com.byteshaft.lisenceservice;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -31,6 +33,7 @@ public class QuestionsFragment extends Fragment {
     private String drawableName;
     public RelativeLayout mRelativeLayout;
     private TextView category;
+    private ImageView imageView;
 
     public void setValuesToDisplay(String question, String answerOne, String answerTwo,
                              String answerThree, int answerIndex, String drawableName, String category) {
@@ -41,13 +44,22 @@ public class QuestionsFragment extends Fragment {
         this.que = question;
         this.drawableName = drawableName;
         this.question.setText(que);
-        radioOne.setChecked(false);
-        radioTwo.setChecked(false);
-        radioThree.setChecked(false);
+        radioGroup.clearCheck();
+        imageView.setVisibility(View.GONE);
         radioOne.setText(answerOne);
         radioTwo.setText(answerTwo);
         radioThree.setText(answerThree);
         this.category.setText(category);
+        Log.i("TAG",drawableName+ " "+ drawableName.trim().isEmpty());
+        if (!drawableName.trim().isEmpty()) {
+            Log.i("TAG", "setting drawable");
+            int resId = getResources().getIdentifier(drawableName, "drawable",
+                    getActivity().getPackageName());
+            System.out.println(resId);
+            Drawable d = getActivity().getResources().getDrawable(resId);
+            imageView.setImageDrawable(d);
+            imageView.setVisibility(View.VISIBLE);
+        }
     }
 
     public static QuestionsFragment getInstance() {
@@ -67,6 +79,7 @@ public class QuestionsFragment extends Fragment {
         radioTwo = (RadioButton) mBaseView.findViewById(R.id.radio_two);
         radioThree = (RadioButton) mBaseView.findViewById(R.id.radio_three);
         category = (TextView) mBaseView.findViewById(R.id.category);
+        imageView = (ImageView) mBaseView.findViewById(R.id.image);
         return mBaseView;
     }
 
