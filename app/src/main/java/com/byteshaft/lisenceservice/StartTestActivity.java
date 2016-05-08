@@ -2,6 +2,7 @@ package com.byteshaft.lisenceservice;
 
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.byteshaft.lisenceservice.fragments.QuestionsFragment;
+import com.byteshaft.lisenceservice.utils.Data;
+import com.byteshaft.lisenceservice.utils.Helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +57,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private int currentQuestionTrueAnswers = 5;
     private int trueAnswersForCategory = 0;
     private int trueAnswers = 0;
+    private Button exitButton;
+    private Button okButton;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -72,16 +79,32 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         instance = this;
         answersHashMap = new HashMap<>();
         nextButton = (Button) findViewById(R.id.button_next);
+        okButton = (Button) findViewById(R.id.button_ok);
+        exitButton = (Button) findViewById(R.id.button_exit);
         nextButton.setOnClickListener(this);
+        okButton.setOnClickListener(this);
+        exitButton.setOnClickListener(this);
         categories = Data.initializeCategoriesArray();
         currentCategory = categories.get(currentCategoryIndex);
         loadFragment(new QuestionsFragment());
     }
 
     @Override
+    public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onPostCreate(savedInstanceState, persistentState);
+        loadDataForQuestion(questionIndex);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_main, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_instant_questions);
+        if (Helpers.isInstantAnswerEnabled()) {
+            menuItem.setTitle("Disable Instant Answer");
+        } else {
+            menuItem.setTitle("Enable Instant Answer");
+        }
         return true;
 
     }
@@ -90,17 +113,16 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_instant_questions:
-
+                if (Helpers.isInstantAnswerEnabled()) {
+                    Helpers.saveInstantAnswerValue(false);
+                    item.setTitle("Enable Instant Answer");
+                } else {
+                    Helpers.saveInstantAnswerValue(true);
+                    item.setTitle("Disable Instant Answer");
+                }
                 return true;
         }
         return false;
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadDataForQuestion(questionIndex);
     }
 
     private void loadDataForQuestion(int questionNum) {
@@ -251,6 +273,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 }
                 Log.i("AnswersMap", String.valueOf(answersHashMap));
                 break;
+            
         }
     }
 }

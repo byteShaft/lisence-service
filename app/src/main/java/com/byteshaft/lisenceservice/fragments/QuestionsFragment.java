@@ -1,4 +1,4 @@
-package com.byteshaft.lisenceservice;
+package com.byteshaft.lisenceservice.fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.byteshaft.lisenceservice.R;
 
 
 public class QuestionsFragment extends Fragment {
