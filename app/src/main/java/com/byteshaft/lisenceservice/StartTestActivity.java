@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.byteshaft.lisenceservice.fragments.QuestionsFragment;
+import com.byteshaft.lisenceservice.utils.AppGlobals;
 import com.byteshaft.lisenceservice.utils.Data;
 import com.byteshaft.lisenceservice.utils.Helpers;
 
@@ -264,6 +265,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         answersHashMap.put(currentCategory, trueAnswersForCategory);
                     }
                 }
+                QuestionsFragment.getInstance().getAnswerRadioButton().
+                        setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
                 QuestionsFragment.getInstance().hideCurrentQuestion();
                 questionIndex++;
                 Log.i("ASKED", getCurrentCategoryAskedQuestion(currentCategory)+"");
@@ -293,16 +296,22 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
                        nextButton.setVisibility(View.VISIBLE);
                         okButton.setVisibility(View.GONE);
+                        QuestionsFragment.getInstance().getAnswerRadioButton().
+                                setCompoundDrawablesWithIntrinsicBounds(R.drawable.tick_button, 0, 0, 0);
+                        okButton.setVisibility(View.GONE);
+                        nextButton.setVisibility(View.VISIBLE);
                     } else {
                        QuestionsFragment.getInstance().getAnswerRadioButton().
-                               setBackgroundResource(R.drawable.cross_button);
+                               setCompoundDrawablesWithIntrinsicBounds(R.drawable.cross_button, 0, 0, 0);
+                        AppGlobals.wrongAnswerButton = QuestionsFragment.getInstance()
+                                .getAnswerRadioButton();
                     }
                 }
 
                 break;
 
             case R.id.button_exit:
-
+                this.finish();
                 break;
         }
     }
