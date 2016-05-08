@@ -22,7 +22,7 @@ public class QuestionsFragment extends Fragment {
 
     private View mBaseView;
     private TextView question;
-    private RadioGroup radioGroup;
+    public RadioGroup radioGroup;
     private RadioButton radioOne;
     private RadioButton radioTwo;
     private RadioButton radioThree;
@@ -115,6 +115,19 @@ public class QuestionsFragment extends Fragment {
         Animation RightSwipe = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                 R.anim.slide_in_right);
         mRelativeLayout.startAnimation(RightSwipe);
+    }
+
+    public RadioButton getAnswerRadioButton() {
+        switch (radioGroup.getCheckedRadioButtonId()) {
+            case R.id.radio_one:
+                return radioOne;
+            case R.id.radio_two:
+                return radioTwo;
+            case R.id.radio_three:
+                return radioThree;
+            default:
+                return null;
+        }
     }
 
     public int getAnswerIndex() {
