@@ -20,6 +20,7 @@ import com.byteshaft.licenseservice.utils.Helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class StartTestActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -60,6 +61,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private Button exitButton;
     private Button okButton;
     private String intentValue;
+    private int totalAskedQuestions = 0;
+    private boolean wrongAnswer = false;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -150,15 +153,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
             QuestionsFragment.getInstance().disableRadioGroup();
         }
         setCurrentCategoryAskedQuestion(currentCategory, questionNum);
-        Log.i("loadDataForQuestion", ""+ questionNum);
         Data.getSelectedCategoryDetails(currentCategory);
         String drawableName = "";
+        int totalQuestion = questionsArrayForCurrent.size();
         String question = questionsArrayForCurrent.get(questionNum)[0];
         if (!questionsArrayForCurrent.get(questionNum)[1].trim().isEmpty()) {
             drawableName = questionsArrayForCurrent.get(questionNum)[1];
         }
-        Log.i("Question", question);
-        Log.i("answer one", answersForSelected.get(question)[0]);
         currentQuestionTrueAnswers = Integer.parseInt(answersForSelected.get(question)[3]);
         QuestionsFragment.getInstance().setValuesToDisplay(question
                 , answersForSelected.get(question)[0],
@@ -166,6 +167,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 answersForSelected.get(question)[2],
                 currentQuestionTrueAnswers,
                 drawableName, currentCategory);
+    }
+
+    public static int randInt(int min, int max) {
+        Random rand = null;
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+
+        return randomNum;
     }
 
     // Method to load the fragment required Fragment as parameter
@@ -266,10 +274,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_next:
-                if (QuestionsFragment.getInstance().getAnswerIndex() == 5) {
-                    Toast.makeText(StartTestActivity.this, "please select a correct answer",
-                            Toast.LENGTH_SHORT).show();
-                    return;
+                Log.i("Total Question", ""+ totalAskedQuestions);
+                if (!intentValue.equals("sample")) {
+                    if (QuestionsFragment.getInstance().getAnswerIndex() == 5) {
+                        Toast.makeText(StartTestActivity.this, "please select a correct answer",
+                                Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                 }
                 if (QuestionsFragment.getInstance().getAnswerIndex() != 5) {
                     if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
@@ -277,12 +288,14 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         answersHashMap.put(currentCategory, trueAnswersForCategory);
                     }
                 }
-                QuestionsFragment.getInstance().getAnswerRadioButton().
-                        setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
+                totalAskedQuestions = totalAskedQuestions + 1;
+                if (wrongAnswer) {
+                    QuestionsFragment.getInstance().getAnswerRadioButton().
+                            setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
+                    wrongAnswer = false;
+                }
                 QuestionsFragment.getInstance().hideCurrentQuestion();
                 questionIndex++;
-                Log.i("ASKED", getCurrentCategoryAskedQuestion(currentCategory)+"");
-                Log.i("Total Que", ""+getCurrentCategoryMaxQuestion(currentCategory));
                 if (getCurrentCategoryAskedQuestion(currentCategory)
                         < getCurrentCategoryMaxQuestion(currentCategory)) {
                     loadDataForQuestion(questionIndex);
@@ -290,13 +303,21 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 } else {
                     trueAnswersForCategory = 0;
                     questionIndex = 0;
-                    int nextIndex = currentCategoryIndex + 1;
-                    currentCategory = categories.get(nextIndex);
-                    Log.i("Currentcategory", currentCategory);
-                    loadDataForQuestion(questionIndex);
-                    QuestionsFragment.getInstance().showCurrentQuestion();
+                    int nextIndex;
+                    Log.i("current index", currentCategoryIndex + "");
+                    nextIndex = currentCategoryIndex+1;
+                    currentCategoryIndex = nextIndex;
+                    Log.i("Total array", String.valueOf(categories));
+                    if (nextIndex < 13) {
+                        currentCategory = categories.get(nextIndex);
+                        Log.i("Else Part", currentCategory);
+                        Log.i("index", "" + nextIndex);
+                        loadDataForQuestion(questionIndex);
+                        QuestionsFragment.getInstance().showCurrentQuestion();
+                    } else {
+
+                    }
                 }
-                Log.i("AnswersMap", String.valueOf(answersHashMap));
                 break;
             case R.id.button_ok:
                 if (QuestionsFragment.getInstance().getAnswerIndex() == 5) {
@@ -317,6 +338,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                                setCompoundDrawablesWithIntrinsicBounds(R.drawable.cross_button, 0, 0, 0);
                         AppGlobals.wrongAnswerButton = QuestionsFragment.getInstance()
                                 .getAnswerRadioButton();
+                        wrongAnswer = true;
                     }
                 }
                 break;

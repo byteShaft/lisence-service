@@ -54,12 +54,9 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
         radioTwo.setText(answerTwo);
         radioThree.setText(answerThree);
         this.category.setText(category);
-        Log.i("TAG", drawableName + " " + drawableName.trim().isEmpty());
         if (!drawableName.trim().isEmpty()) {
-            Log.i("TAG", "setting drawable");
             int resId = getResources().getIdentifier(drawableName, "drawable",
                     getActivity().getPackageName());
-            System.out.println(resId);
             if (resId != 0) {
                 Drawable d = getActivity().getResources().getDrawable(resId);
                 imageView.setImageDrawable(d);
