@@ -60,17 +60,17 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
             int resId = getResources().getIdentifier(drawableName, "drawable",
                     getActivity().getPackageName());
             System.out.println(resId);
-            Drawable d = getActivity().getResources().getDrawable(resId);
-            imageView.setImageDrawable(d);
-            imageView.setVisibility(View.VISIBLE);
+            if (resId != 0) {
+                Drawable d = getActivity().getResources().getDrawable(resId);
+                imageView.setImageDrawable(d);
+                imageView.setVisibility(View.VISIBLE);
+            }
         }
     }
 
     public static QuestionsFragment getInstance() {
         return instance;
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

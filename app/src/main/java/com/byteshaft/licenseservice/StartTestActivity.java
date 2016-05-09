@@ -137,6 +137,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void loadDataForQuestion(int questionNum) {
+        if (Helpers.isInstantAnswerEnabled()) {
+            okButton.setVisibility(View.VISIBLE);
+            nextButton.setVisibility(View.GONE);
+        } else {
+            nextButton.setVisibility(View.VISIBLE);
+            okButton.setVisibility(View.GONE);
+        }
         setCurrentCategoryAskedQuestion(currentCategory, questionNum);
         Log.i("loadDataForQuestion", ""+ questionNum);
         Data.getSelectedCategoryDetails(currentCategory);
