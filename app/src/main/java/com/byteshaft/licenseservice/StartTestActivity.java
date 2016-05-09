@@ -20,7 +20,6 @@ import com.byteshaft.licenseservice.utils.Helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 public class StartTestActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -51,7 +50,6 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private static ArrayList<String[]> questionsArrayForCurrent;
     private static HashMap<String, String[]> answersForSelected;
     private Button nextButton;
-    private int questionIndex = 0;
     private int currentCategoryIndex = 0;
     private  ArrayList<String> categories;
     private HashMap<String, Integer> answersHashMap;
@@ -63,6 +61,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private String intentValue;
     private int totalAskedQuestions = 0;
     private boolean wrongAnswer = false;
+    private static ArrayList<String> askedItems;
+    private int questionAskedForCurrentCategory = 0;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -74,6 +74,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         answersForSelected = new HashMap<>();
         questionsArrayForCurrent = arrayList;
         answersForSelected = hashMap;
+        askedItems = new ArrayList<>();
+        Log.i("Data", "Called");
     }
 
     @Override
@@ -104,7 +106,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onResume() {
         super.onResume();
-        loadDataForQuestion(questionIndex);
+        loadDataForQuestion();
     }
 
     @Override
@@ -141,7 +143,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         return false;
     }
 
-    private void loadDataForQuestion(int questionNum) {
+    private void loadDataForQuestion() {
         if (Helpers.isInstantAnswerEnabled()) {
             okButton.setVisibility(View.VISIBLE);
             nextButton.setVisibility(View.GONE);
@@ -152,10 +154,16 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         if (intentValue.equals("sample")) {
             QuestionsFragment.getInstance().disableRadioGroup();
         }
-        setCurrentCategoryAskedQuestion(currentCategory, questionNum);
-        Data.getSelectedCategoryDetails(currentCategory);
+        if (!AppGlobals.sCurrentCategoryInitialized) {
+            Data.getSelectedCategoryDetails(currentCategory);
+        }
         String drawableName = "";
         int totalQuestion = questionsArrayForCurrent.size();
+        int questionNum = getNextRandomIntegerForQuestion(totalQuestion);
+        askedItems.add(String.valueOf(questionNum));
+        Log.i("Asked Array", String.valueOf(askedItems));
+        setCurrentCategoryAskedQuestion(currentCategory, questionAskedForCurrentCategory);
+        questionAskedForCurrentCategory = questionAskedForCurrentCategory+1;
         String question = questionsArrayForCurrent.get(questionNum)[0];
         if (!questionsArrayForCurrent.get(questionNum)[1].trim().isEmpty()) {
             drawableName = questionsArrayForCurrent.get(questionNum)[1];
@@ -169,11 +177,15 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 drawableName, currentCategory);
     }
 
-    public static int randInt(int min, int max) {
-        Random rand = null;
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-
-        return randomNum;
+    private int getNextRandomIntegerForQuestion(int maximum) {
+        int randomIndex = 0;
+        do {
+            randomIndex = (int) (Math.random() * maximum);
+            Log.i("Log", "Maximum "+ maximum + "Random "+ randomIndex);
+            Log.i("LOG", "contains "+ askedItems);
+        }
+        while(askedItems.contains(String.valueOf(randomIndex)));
+        return randomIndex;
     }
 
     // Method to load the fragment required Fragment as parameter
@@ -295,14 +307,16 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     wrongAnswer = false;
                 }
                 QuestionsFragment.getInstance().hideCurrentQuestion();
-                questionIndex++;
                 if (getCurrentCategoryAskedQuestion(currentCategory)
                         < getCurrentCategoryMaxQuestion(currentCategory)) {
-                    loadDataForQuestion(questionIndex);
+                    Log.i("IF", getCurrentCategoryAskedQuestion(currentCategory)+ " ");
+                    loadDataForQuestion();
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
+                    AppGlobals.sCurrentCategoryInitialized = false;
+                    questionAskedForCurrentCategory = 0;
+                    Log.i("else", getCurrentCategoryAskedQuestion(currentCategory)+ " ");
                     trueAnswersForCategory = 0;
-                    questionIndex = 0;
                     int nextIndex;
                     Log.i("current index", currentCategoryIndex + "");
                     nextIndex = currentCategoryIndex+1;
@@ -312,7 +326,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         currentCategory = categories.get(nextIndex);
                         Log.i("Else Part", currentCategory);
                         Log.i("index", "" + nextIndex);
-                        loadDataForQuestion(questionIndex);
+                        loadDataForQuestion();
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
 

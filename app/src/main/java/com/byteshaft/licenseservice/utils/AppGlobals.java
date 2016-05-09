@@ -12,6 +12,7 @@ public class AppGlobals extends Application {
     public static boolean testModeSample = false;
     public static String KEY_INSTANT_ANSWER_ENABLED = "instant_answer_enabled";
     public static RadioButton wrongAnswerButton;
+    public static boolean sCurrentCategoryInitialized = false;
 
     @Override
     public void onCreate() {

@@ -79,51 +79,63 @@ public class Data {
     public static void getSelectedCategoryDetails(String category) {
         switch (category) {
             case sICAC:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeICAC();
                 StartTestActivity.setValuesForCurrentCategory(ICAC, answerListForICAC);
                 break;
             case sTrafficSignsSection:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initilizationTrafficSignsSection();
                 StartTestActivity.setValuesForCurrentCategory(trafficSignsSection,
                         answerListForTrafficSignsSections);
                 break;
             case sGeneralKnowledge:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeGeneralKnowledge();
                 StartTestActivity.setValuesForCurrentCategory(generalList, answerListForGeneralKnowledge);
                 break;
             case sAlcholDrugs:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeAlcoholAndDrugs();
                 StartTestActivity.setValuesForCurrentCategory(alcoholList, answerListForAlcoholAndDrug);
                 break;
             case sFatigueAndDefensiveDriving:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initilizeFatigueAndDefensiveDriving();
                 StartTestActivity.setValuesForCurrentCategory(fatigue, answerListForFatigueAndDefensiveDriving);
                 break;
             case sIntersections:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeIntersection();
                 StartTestActivity.setValuesForCurrentCategory(intersection, intersectionAnswers);
                 break;
             case sTrafficLightsLanes:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeTraficLights();
                 StartTestActivity.setValuesForCurrentCategory(trafficLights, answerListForTrafficLights);
                 break;
             case sNegligentDriving:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeNegligentDriving();
                 StartTestActivity.setValuesForCurrentCategory(negligentDriving, answerListForNegligentDriving);
                 break;
             case sPedestrians:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initilizationPedestrians();
                 StartTestActivity.setValuesForCurrentCategory(pedestrains, answerListForPedestrians);
                 break;
             case sSeatBeltsRestraints:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeSeatBelts();
                 StartTestActivity.setValuesForCurrentCategory(seatBelts, answerListForSeatBelt);
                 break;
             case sSpeedLimits:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeSpeedlimits();
                 StartTestActivity.setValuesForCurrentCategory(speedLimits, answerListForSpeedLimits);
                 break;
             case sTrafficLightsLanes2:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeTrafficLightsTwo();
                 StartTestActivity.setValuesForCurrentCategory(trafficLights2, answerListForTrafficLights2);
                 break;
@@ -734,7 +746,7 @@ public class Data {
                         "Slow down and look out for hazards.",
                         "Maintain current speed if the road is clear.",
                         "Sound your horn.",
-                        ""});
+                        "0"});
 
         negligentDriving.add(new String[]{"When entering or leaving a driveway you must -", ""});
         answerListForNegligentDriving.put("When entering or leaving a driveway you must -",
