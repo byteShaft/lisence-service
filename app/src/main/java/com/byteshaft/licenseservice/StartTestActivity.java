@@ -59,6 +59,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private int trueAnswers = 0;
     private Button exitButton;
     private Button okButton;
+    private String intentValue;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -77,6 +78,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
         instance = this;
+        intentValue = getIntent().getStringExtra(AppGlobals.INTENT_KEY);
         answersHashMap = new HashMap<>();
         nextButton = (Button) findViewById(R.id.button_next);
         okButton = (Button) findViewById(R.id.button_ok);
@@ -143,6 +145,9 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         } else {
             nextButton.setVisibility(View.VISIBLE);
             okButton.setVisibility(View.GONE);
+        }
+        if (intentValue.equals("sample")) {
+            QuestionsFragment.getInstance().disableRadioGroup();
         }
         setCurrentCategoryAskedQuestion(currentCategory, questionNum);
         Log.i("loadDataForQuestion", ""+ questionNum);
@@ -314,9 +319,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                                 .getAnswerRadioButton();
                     }
                 }
-
                 break;
-
             case R.id.button_exit:
                 this.finish();
                 break;

@@ -30,7 +30,7 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
     private RadioButton radioThree;
     private String answerOne = "";
     private String answerTwo = "";
-    private String answerThree =  "";
+    private String answerThree = "";
     private String que = "";
     private int answerIndex = 5;
     private static QuestionsFragment instance;
@@ -40,7 +40,7 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
     private ImageView imageView;
 
     public void setValuesToDisplay(String question, String answerOne, String answerTwo,
-                             String answerThree, int answerIndex, String drawableName, String category) {
+                                   String answerThree, int answerIndex, String drawableName, String category) {
         this.answerOne = answerOne;
         this.answerTwo = answerTwo;
         this.answerThree = answerThree;
@@ -54,7 +54,7 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
         radioTwo.setText(answerTwo);
         radioThree.setText(answerThree);
         this.category.setText(category);
-        Log.i("TAG",drawableName+ " "+ drawableName.trim().isEmpty());
+        Log.i("TAG", drawableName + " " + drawableName.trim().isEmpty());
         if (!drawableName.trim().isEmpty()) {
             Log.i("TAG", "setting drawable");
             int resId = getResources().getIdentifier(drawableName, "drawable",
@@ -85,6 +85,18 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
         category = (TextView) mBaseView.findViewById(R.id.category);
         imageView = (ImageView) mBaseView.findViewById(R.id.image);
         return mBaseView;
+    }
+
+    public void disableRadioGroup() {
+        for (int i = 0; i < radioGroup.getChildCount(); i++) {
+            radioGroup.getChildAt(i).setEnabled(false);
+        }
+    }
+
+    public void enableRadioGroup() {
+        for (int i = 0; i < radioGroup.getChildCount(); i++) {
+            radioGroup.getChildAt(i).setEnabled(true);
+        }
     }
 
     @Override
