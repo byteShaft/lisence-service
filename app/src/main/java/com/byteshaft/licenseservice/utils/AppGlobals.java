@@ -1,4 +1,4 @@
-package com.byteshaft.lisenceservice.utils;
+package com.byteshaft.licenseservice.utils;
 
 import android.app.Application;
 import android.content.Context;

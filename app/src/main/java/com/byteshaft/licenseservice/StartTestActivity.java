@@ -1,4 +1,4 @@
-package com.byteshaft.lisenceservice;
+package com.byteshaft.licenseservice;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.byteshaft.lisenceservice.fragments.QuestionsFragment;
-import com.byteshaft.lisenceservice.utils.AppGlobals;
-import com.byteshaft.lisenceservice.utils.Data;
-import com.byteshaft.lisenceservice.utils.Helpers;
+import com.byteshaft.licenseservice.fragments.QuestionsFragment;
+import com.byteshaft.licenseservice.utils.AppGlobals;
+import com.byteshaft.licenseservice.utils.Data;
+import com.byteshaft.licenseservice.utils.Helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;

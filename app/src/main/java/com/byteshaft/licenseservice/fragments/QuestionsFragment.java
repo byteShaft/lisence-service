@@ -1,4 +1,4 @@
-package com.byteshaft.lisenceservice.fragments;
+package com.byteshaft.licenseservice.fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.byteshaft.lisenceservice.R;
-import com.byteshaft.lisenceservice.utils.AppGlobals;
+import com.byteshaft.licenseservice.R;
+import com.byteshaft.licenseservice.utils.AppGlobals;
 
 
 public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedChangeListener {
