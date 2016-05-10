@@ -301,7 +301,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 }
                 if (QuestionsFragment.getInstance().getAnswerIndex() != 5) {
                     if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
-                        trueAnswersForCategory++;
+                        trueAnswersForCategory = trueAnswersForCategory+1;
                         answersHashMap.put(currentCategory, trueAnswersForCategory);
                     }
                 }
@@ -318,6 +318,12 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     loadDataForQuestion();
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
+                    if (currentCategory.equals(Data.sICAC)) {
+                        if (answersHashMap.get(Data.sICAC) < ICAC_QUESTIONS) {
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), TryAgain.class));
+                        }
+                    }
                     AppGlobals.sCurrentCategoryInitialized = false;
                     questionAskedForCurrentCategory = 0;
                     Log.i("else", getCurrentCategoryAskedQuestion(currentCategory)+ " ");
