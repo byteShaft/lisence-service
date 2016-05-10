@@ -20,7 +20,9 @@ import com.byteshaft.licenseservice.utils.Data;
 import com.byteshaft.licenseservice.utils.Helpers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 public class StartTestActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -62,7 +64,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private String intentValue;
     private int totalAskedQuestions = 0;
     private boolean wrongAnswer = false;
-    private static ArrayList<String> askedItems;
+    private static ArrayList<Integer> askedItems;
     private int questionAskedForCurrentCategory = 0;
 
     public static StartTestActivity getInstance() {
@@ -161,7 +163,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         String drawableName = "";
         int totalQuestion = questionsArrayForCurrent.size();
         int questionNum = getNextRandomIntegerForQuestion(totalQuestion);
-        askedItems.add(String.valueOf(questionNum));
+        askedItems.add(questionNum);
         Log.i("Asked Array", String.valueOf(askedItems));
         setCurrentCategoryAskedQuestion(currentCategory, questionAskedForCurrentCategory);
         questionAskedForCurrentCategory = questionAskedForCurrentCategory+1;
@@ -173,6 +175,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         if (answersForSelected == null) {
             Data.getSelectedCategoryDetails(currentCategory);
         }
+        Log.i("ARRAY", Arrays.toString(answersForSelected.get(question)));
         currentQuestionTrueAnswers = Integer.parseInt(answersForSelected.get(question)[3]);
         QuestionsFragment.getInstance().setValuesToDisplay(question
                 , answersForSelected.get(question)[0],
@@ -183,13 +186,13 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     }
 
     private int getNextRandomIntegerForQuestion(int maximum) {
+        Random random = new Random();
         int randomIndex;
         do {
-            randomIndex = (int) (Math.random() * maximum);
+            randomIndex = random.nextInt(maximum);
             Log.i("Log", "Maximum "+ maximum + "Random "+ randomIndex);
             Log.i("LOG", "contains "+ askedItems);
-        }
-        while(askedItems.contains(String.valueOf(randomIndex)));
+        } while(askedItems.contains(randomIndex));
         return randomIndex;
     }
 
@@ -318,8 +321,20 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     loadDataForQuestion();
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
-                    if (currentCategory.equals(Data.sICAC)) {
-                        if (answersHashMap.get(Data.sICAC) < ICAC_QUESTIONS) {
+                    if (currentCategory.equals(Data.sICAC) && !intentValue.equals("sample")) {
+                        if (answersHashMap.containsKey(Data.sICAC)) {
+                            if (answersHashMap.get(Data.sICAC) < ICAC_QUESTIONS) {
+                                questionsArrayForCurrent = new ArrayList<>();
+                                answersForSelected = new HashMap<>();
+                                askedItems = new ArrayList<>();
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), TryAgain.class));
+
+                            }
+                        } else {
+                            questionsArrayForCurrent = new ArrayList<>();
+                            answersForSelected = new HashMap<>();
+                            askedItems = new ArrayList<>();
                             finish();
                             startActivity(new Intent(getApplicationContext(), TryAgain.class));
                         }
@@ -341,6 +356,9 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
                         if (totalAskedQuestions == 42) {
+                            questionsArrayForCurrent = new ArrayList<>();
+                            answersForSelected = new HashMap<>();
+                            askedItems = new ArrayList<>();
                             Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                             intent.putExtra(AppGlobals.ANSWER_DATA, answersHashMap);
                             intent.putExtra(AppGlobals.TOTAL_CATEGORIES, categories);
@@ -374,6 +392,9 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 }
                 break;
             case R.id.button_exit:
+                questionsArrayForCurrent = new ArrayList<>();
+                answersForSelected = new HashMap<>();
+                askedItems = new ArrayList<>();
                 this.finish();
                 break;
         }

@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.byteshaft.licenseservice.SelectionActivity" />
-        <activity android:name="com.byteshaft.licenseservice.StartTestActivity" />
+        <activity android:name="com.byteshaft.licenseservice.StartTestActivity"
+            android:noHistory="true" android:launchMode="singleInstance"/>
         <activity android:name=".ResultActivity"/>
         <activity android:name=".TryAgain"/>
 
