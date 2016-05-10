@@ -66,7 +66,6 @@ public class Data {
         categories.add(sAlcholDrugs);
         categories.add(sFatigueAndDefensiveDriving);
         categories.add(sIntersections);
-        categories.add(sTrafficLightsLanes);
         categories.add(sNegligentDriving);
         categories.add(sPedestrians);
         categories.add(sSeatBeltsRestraints);
@@ -85,7 +84,7 @@ public class Data {
                 break;
             case sTrafficSignsSection:
                 AppGlobals.sCurrentCategoryInitialized = true;
-                initilizationTrafficSignsSection();
+                initializationTrafficSignsSection();
                 StartTestActivity.setValuesForCurrentCategory(trafficSignsSection,
                         answerListForTrafficSignsSections);
                 break;
@@ -101,7 +100,7 @@ public class Data {
                 break;
             case sFatigueAndDefensiveDriving:
                 AppGlobals.sCurrentCategoryInitialized = true;
-                initilizeFatigueAndDefensiveDriving();
+                initializeFatigueAndDefensiveDriving();
                 StartTestActivity.setValuesForCurrentCategory(fatigue, answerListForFatigueAndDefensiveDriving);
                 break;
             case sIntersections:
@@ -793,7 +792,7 @@ public class Data {
                         "O, P and Q.",
                         "O and P only.",
                         "P only.",
-                        ""});
+                        "0"});
 
         trafficLights.add(new String[]{"Which movements shown in the diagram can legally be made by the driver of the purple car?", "ld4"});
         answerListForTrafficLights.put("Which movements shown in the diagram can legally be made by the driver of the purple car?",
@@ -847,7 +846,7 @@ public class Data {
                         "The vehicle which has to cross the lane line.",
                         "The faster vehicle.",
                         "The vehicle in the right-hand lane because it is overtaking.",
-                        ""});
+                        "0"});
 
         trafficLights.add(new String[]{"Looking at the diagram, which vehicle must give way?", "ld11"});
         answerListForTrafficLights.put("Looking at the diagram, which vehicle must give way?",
@@ -1208,7 +1207,7 @@ public class Data {
                         "0"});
     }
 
-    public static void initilizeFatigueAndDefensiveDriving() {
+    public static void initializeFatigueAndDefensiveDriving() {
 
         fatigue = new ArrayList<>();
         answerListForFatigueAndDefensiveDriving = new HashMap<>();
@@ -1326,7 +1325,7 @@ public class Data {
                         "Check over your shoulder.",
                         "Adjust your seat.",
                         "Put on your seat belt.",
-                        ""});
+                        "0"});
 
         fatigue.add(new String[]{"What is the best way to avoid hitting other vehicles, people or animals when moving off from the kerb?", ""});
         answerListForFatigueAndDefensiveDriving.put("What is the best way to avoid hitting other vehicles, people or animals when moving off from the kerb?",
@@ -1359,7 +1358,7 @@ public class Data {
                         "Drive mainly on streets that you know well.",
                         "Drive mainly in unfamiliar streets.",
                         "Drive long distances to improve your concentration.",
-                        ""});
+                        "0"});
 
         fatigue.add(new String[]{"You set out on a fairly long drive to see some friends. After a while you start feeling tired. What should you do?", ""});
         answerListForFatigueAndDefensiveDriving.put("You set out on a fairly long drive to see some friends. After a while you start feeling tired. What should you do?",
@@ -2101,7 +2100,7 @@ public class Data {
                         "0"});
     }
 
-    public static void initilizationTrafficSignsSection() {
+    public static void initializationTrafficSignsSection() {
 
         trafficSignsSection = new ArrayList<>();
         answerListForTrafficSignsSections = new HashMap<>();

@@ -19,10 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.byteshaft.licenseservice.SelectionActivity"
-            />
-        <activity android:name="com.byteshaft.licenseservice.StartTestActivity"
-            />
+        <activity android:name="com.byteshaft.licenseservice.SelectionActivity" />
+        <activity android:name="com.byteshaft.licenseservice.StartTestActivity" />
+        <activity android:name=".ResultActivity"/>
+
     </application>
 
 </manifest>
