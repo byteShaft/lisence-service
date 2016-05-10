@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_marginTop="50dp"
-        android:background="@android:color/darker_gray"
+        android:background="@color/question_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
