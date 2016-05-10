@@ -319,7 +319,20 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
                     if (currentCategory.equals(Data.sICAC)) {
-                        if (answersHashMap.get(Data.sICAC) < ICAC_QUESTIONS) {
+                        System.out.println(answersHashMap == null);
+                        if (answersHashMap.containsKey(Data.sICAC)) {
+                            if (answersHashMap.get(Data.sICAC) < ICAC_QUESTIONS) {
+                                questionsArrayForCurrent = new ArrayList<>();
+                                answersForSelected = new HashMap<>();
+                                askedItems = new ArrayList<>();
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), TryAgain.class));
+
+                            }
+                        } else {
+                            questionsArrayForCurrent = new ArrayList<>();
+                            answersForSelected = new HashMap<>();
+                            askedItems = new ArrayList<>();
                             finish();
                             startActivity(new Intent(getApplicationContext(), TryAgain.class));
                         }
