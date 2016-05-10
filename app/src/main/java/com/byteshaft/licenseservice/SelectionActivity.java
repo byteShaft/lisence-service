@@ -30,10 +30,12 @@ public class SelectionActivity  extends Activity implements View.OnClickListener
         switch (view.getId()) {
             case R.id.sample:
                 intent.putExtra(AppGlobals.INTENT_KEY, "sample");
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 AppGlobals.testModeSample = true;
                 break;
             case R.id.test:
                 intent.putExtra(AppGlobals.INTENT_KEY, "test");
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 break;
         }
         startActivity(intent);
