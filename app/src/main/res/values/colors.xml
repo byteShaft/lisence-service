@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0EBFE9</color>
-    <color name="colorPrimaryDark">#50A6C2</color>
+    <color name="colorPrimary">#A1A4A4</color>
+    <color name="colorPrimaryDark">#979A9A      </color>
     <color name="colorAccent">#009ACD</color>
     <color name="steel_blue">#236B8E</color>
     <color name="pressed_color">#3299CC</color>
+
+    <color name="question_bg">#F9FFCC</color>
 </resources>
