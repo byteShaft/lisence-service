@@ -1,4 +1,4 @@
-package com.byteshaft.lisenceservice.utils;
+package com.byteshaft.licenseservice.utils;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;

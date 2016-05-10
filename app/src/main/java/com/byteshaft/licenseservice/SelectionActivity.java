@@ -1,4 +1,4 @@
-package com.byteshaft.lisenceservice;
+package com.byteshaft.licenseservice;
 
 
 import android.app.Activity;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.byteshaft.lisenceservice.utils.AppGlobals;
+import com.byteshaft.licenseservice.utils.AppGlobals;
 
 public class SelectionActivity  extends Activity implements View.OnClickListener {
 

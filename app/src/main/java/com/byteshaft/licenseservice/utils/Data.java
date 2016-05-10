@@ -1,11 +1,8 @@
-package com.byteshaft.lisenceservice.utils;
+package com.byteshaft.licenseservice.utils;
 
-import android.util.Log;
-
-import com.byteshaft.lisenceservice.StartTestActivity;
+import com.byteshaft.licenseservice.StartTestActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Data {
@@ -82,41 +79,65 @@ public class Data {
     public static void getSelectedCategoryDetails(String category) {
         switch (category) {
             case sICAC:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeICAC();
                 StartTestActivity.setValuesForCurrentCategory(ICAC, answerListForICAC);
-                Log.i("Data", String.valueOf(ICAC));
-                Log.i("DATA", Arrays.toString(answerListForICAC.get(ICAC.get(0))));
+                break;
+            case sTrafficSignsSection:
+                AppGlobals.sCurrentCategoryInitialized = true;
+                initilizationTrafficSignsSection();
+                StartTestActivity.setValuesForCurrentCategory(trafficSignsSection,
+                        answerListForTrafficSignsSections);
                 break;
             case sGeneralKnowledge:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeGeneralKnowledge();
                 StartTestActivity.setValuesForCurrentCategory(generalList, answerListForGeneralKnowledge);
                 break;
             case sAlcholDrugs:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeAlcoholAndDrugs();
+                StartTestActivity.setValuesForCurrentCategory(alcoholList, answerListForAlcoholAndDrug);
                 break;
             case sFatigueAndDefensiveDriving:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initilizeFatigueAndDefensiveDriving();
+                StartTestActivity.setValuesForCurrentCategory(fatigue, answerListForFatigueAndDefensiveDriving);
                 break;
             case sIntersections:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeIntersection();
+                StartTestActivity.setValuesForCurrentCategory(intersection, intersectionAnswers);
                 break;
             case sTrafficLightsLanes:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeTraficLights();
+                StartTestActivity.setValuesForCurrentCategory(trafficLights, answerListForTrafficLights);
                 break;
             case sNegligentDriving:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeNegligentDriving();
+                StartTestActivity.setValuesForCurrentCategory(negligentDriving, answerListForNegligentDriving);
                 break;
             case sPedestrians:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initilizationPedestrians();
+                StartTestActivity.setValuesForCurrentCategory(pedestrains, answerListForPedestrians);
                 break;
             case sSeatBeltsRestraints:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeSeatBelts();
+                StartTestActivity.setValuesForCurrentCategory(seatBelts, answerListForSeatBelt);
                 break;
             case sSpeedLimits:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeSpeedlimits();
+                StartTestActivity.setValuesForCurrentCategory(speedLimits, answerListForSpeedLimits);
                 break;
             case sTrafficLightsLanes2:
+                AppGlobals.sCurrentCategoryInitialized = true;
                 initializeTrafficLightsTwo();
+                StartTestActivity.setValuesForCurrentCategory(trafficLights2, answerListForTrafficLights2);
                 break;
         }
     }
@@ -725,7 +746,7 @@ public class Data {
                         "Slow down and look out for hazards.",
                         "Maintain current speed if the road is clear.",
                         "Sound your horn.",
-                        ""});
+                        "0"});
 
         negligentDriving.add(new String[]{"When entering or leaving a driveway you must -", ""});
         answerListForNegligentDriving.put("When entering or leaving a driveway you must -",
@@ -1193,7 +1214,7 @@ public class Data {
         answerListForFatigueAndDefensiveDriving = new HashMap<>();
 
         fatigue.add(new String[]{"Under good conditions, when driving behind any vehicle, at any speed, you should -", ""});
-        answerListForAlcoholAndDrug.put("Under good conditions, when driving behind any vehicle, at any speed, you should -",
+        answerListForFatigueAndDefensiveDriving.put("Under good conditions, when driving behind any vehicle, at any speed, you should -",
                 new String[]{
                         "Stay at least three seconds behind the vehicle in front of you.",
                         "Drive as close to the vehicle in front as possible.",
@@ -1202,7 +1223,7 @@ public class Data {
 
 
         fatigue.add(new String[]{"When driving in wet weather, your vehicle will -", ""});
-        answerListForAlcoholAndDrug.put("When driving in wet weather, your vehicle will -",
+        answerListForFatigueAndDefensiveDriving.put("When driving in wet weather, your vehicle will -",
                 new String[]{
                         "Take longer and further to stop, so slow down.",
                         "Stop in the same distance as on a dry road.",
@@ -1210,7 +1231,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"At night, if an oncoming vehicle's headlights dazzle you, you should -", ""});
-        answerListForAlcoholAndDrug.put("At night, if an oncoming vehicle's headlights dazzle you, you should -",
+        answerListForFatigueAndDefensiveDriving.put("At night, if an oncoming vehicle's headlights dazzle you, you should -",
                 new String[]{
                         "Slow down, until your eyes recover.",
                         "Watch the centre line of the road.",
@@ -1218,7 +1239,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"If you get sleepy while driving, it is best to -", ""});
-        answerListForAlcoholAndDrug.put("If you get sleepy while driving, it is best to -",
+        answerListForFatigueAndDefensiveDriving.put("If you get sleepy while driving, it is best to -",
                 new String[]{
                         "Stop, rest, and change drivers if possible.",
                         "Turn on the radio very loud.",
@@ -1226,7 +1247,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"In wet weather when it becomes hard for you to see, you should -", ""});
-        answerListForAlcoholAndDrug.put("In wet weather when it becomes hard for you to see, you should -",
+        answerListForFatigueAndDefensiveDriving.put("In wet weather when it becomes hard for you to see, you should -",
                 new String[]{
                         "Turn on your headlights, slow down, and double your following distance behind the vehicle in front.",
                         "Turn your headlights on high beam.",
@@ -1234,7 +1255,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"If you are driving and it starts to rain, you should -", ""});
-        answerListForAlcoholAndDrug.put("If you are driving and it starts to rain, you should -",
+        answerListForFatigueAndDefensiveDriving.put("If you are driving and it starts to rain, you should -",
                 new String[]{
                         "Slow down using the brake gently, since rain and oil may create a slippery surface.",
                         "Put your lights on high beam so you can see better.",
@@ -1242,7 +1263,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"When driving on a slippery wet road, for example, one covered in early morning dew, your vehicle will -", ""});
-        answerListForAlcoholAndDrug.put("When driving on a slippery wet road, for example, one covered in early morning dew, your vehicle will -",
+        answerListForFatigueAndDefensiveDriving.put("When driving on a slippery wet road, for example, one covered in early morning dew, your vehicle will -",
                 new String[]{
                         "Be easier to steer and handle.",
                         "Be heavier to steer.",
@@ -1251,7 +1272,7 @@ public class Data {
 
 
         fatigue.add(new String[]{"Why should you avoid heavy braking on a wet road?", ""});
-        answerListForAlcoholAndDrug.put("Why should you avoid heavy braking on a wet road?",
+        answerListForFatigueAndDefensiveDriving.put("Why should you avoid heavy braking on a wet road?",
                 new String[]{
                         "Your wheels may skid and cause a loss of control.",
                         "If the wheels lock up your handbrake may not work.",
@@ -1259,7 +1280,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"At night you should -", ""});
-        answerListForAlcoholAndDrug.put("At night you should -",
+        answerListForFatigueAndDefensiveDriving.put("At night you should -",
                 new String[]{
                         "Drive closer to the vehicle in front so they can see you better.",
                         "Leave a longer gap behind the vehicle in front.",
@@ -1267,7 +1288,7 @@ public class Data {
                         "1"});
 
         fatigue.add(new String[]{"When it is very foggy during the day or night and your vehicle has no fog lights, you should -", ""});
-        answerListForAlcoholAndDrug.put("When it is very foggy during the day or night and your vehicle has no fog lights, you should -",
+        answerListForFatigueAndDefensiveDriving.put("When it is very foggy during the day or night and your vehicle has no fog lights, you should -",
                 new String[]{
                         "Slow down and use your low beam headlights and hazard warning lights to make your vehicle seen.",
                         "Put on your high beam lights.",
@@ -1275,7 +1296,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"When going on a long trip, out of the following which is the most important to do?", ""});
-        answerListForAlcoholAndDrug.put("When going on a long trip, out of the following which is the most important to do?",
+        answerListForFatigueAndDefensiveDriving.put("When going on a long trip, out of the following which is the most important to do?",
                 new String[]{
                         "Make sure your horn is working.",
                         "Have a good meal before driving.",
@@ -1283,7 +1304,7 @@ public class Data {
                         "2"});
 
         fatigue.add(new String[]{"At night, when you approach an oncoming vehicle, you should -", ""});
-        answerListForAlcoholAndDrug.put("At night, when you approach an oncoming vehicle, you should -",
+        answerListForFatigueAndDefensiveDriving.put("At night, when you approach an oncoming vehicle, you should -",
                 new String[]{
                         "Carefully watch the vehicle by looking directly at its headlights.",
                         "Put your lights on high beam, to make your vehicle more easily seen.",
@@ -1291,7 +1312,7 @@ public class Data {
                         "2"});
 
         fatigue.add(new String[]{"Which of the following attitudes is most likely to make you a safer driver?", ""});
-        answerListForAlcoholAndDrug.put("Which of the following attitudes is most likely to make you a safer driver?",
+        answerListForFatigueAndDefensiveDriving.put("Which of the following attitudes is most likely to make you a safer driver?",
                 new String[]{
                         "When I drive, I have the main responsibility for my safety and the safety of other road users.",
                         "It is up to other drivers to avoid crashing into me.",
@@ -1300,7 +1321,7 @@ public class Data {
 
         // added pic FD028
         fatigue.add(new String[]{"You are about to move away from the kerb in your car. What is the last thing you should do before you move into traffic?", "fd28"});
-        answerListForAlcoholAndDrug.put("You are about to move away from the kerb in your car. What is the last thing you should do before you move into traffic?",
+        answerListForFatigueAndDefensiveDriving.put("You are about to move away from the kerb in your car. What is the last thing you should do before you move into traffic?",
                 new String[]{
                         "Check over your shoulder.",
                         "Adjust your seat.",
@@ -1308,7 +1329,7 @@ public class Data {
                         ""});
 
         fatigue.add(new String[]{"What is the best way to avoid hitting other vehicles, people or animals when moving off from the kerb?", ""});
-        answerListForAlcoholAndDrug.put("What is the best way to avoid hitting other vehicles, people or animals when moving off from the kerb?",
+        answerListForFatigueAndDefensiveDriving.put("What is the best way to avoid hitting other vehicles, people or animals when moving off from the kerb?",
                 new String[]{
                         "Check your mirrors and look over your shoulder before moving off from the kerb.",
                         "Have a good look around while you walk up to your car and then drive off as soon as you can.",
@@ -1316,7 +1337,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"Many people crash within the first few years of driving. What is the best way of learning to drive on your own without crashing?", ""});
-        answerListForAlcoholAndDrug.put("Many people crash within the first few years of driving. What is the best way of learning to drive on your own without crashing?",
+        answerListForFatigueAndDefensiveDriving.put("Many people crash within the first few years of driving. What is the best way of learning to drive on your own without crashing?",
                 new String[]{
                         "Drive in every kind of traffic situation as soon as you get your licence.",
                         "Drive as much as you can with friends on the way to parties.",
@@ -1324,7 +1345,7 @@ public class Data {
                         "2"});
 
         fatigue.add(new String[]{"It is important to scan while driving so you can see everything that is happening on the road. What does scanning involve?", ""});
-        answerListForAlcoholAndDrug.put("It is important to scan while driving so you can see everything that is happening on the road. What does scanning involve?",
+        answerListForFatigueAndDefensiveDriving.put("It is important to scan while driving so you can see everything that is happening on the road. What does scanning involve?",
                 new String[]{
                         "Continually looking ahead, to the sides and using all mirrors when driving.",
                         "Looking in the rear and side mirrors continually when driving.",
@@ -1333,7 +1354,7 @@ public class Data {
 
         // added pic FD033
         fatigue.add(new String[]{"If you are a new driver and first start to drive at night you should -", "fd33"});
-        answerListForAlcoholAndDrug.put("If you are a new driver and first start to drive at night you should -",
+        answerListForFatigueAndDefensiveDriving.put("If you are a new driver and first start to drive at night you should -",
                 new String[]{
                         "Drive mainly on streets that you know well.",
                         "Drive mainly in unfamiliar streets.",
@@ -1341,7 +1362,7 @@ public class Data {
                         ""});
 
         fatigue.add(new String[]{"You set out on a fairly long drive to see some friends. After a while you start feeling tired. What should you do?", ""});
-        answerListForAlcoholAndDrug.put("You set out on a fairly long drive to see some friends. After a while you start feeling tired. What should you do?",
+        answerListForFatigueAndDefensiveDriving.put("You set out on a fairly long drive to see some friends. After a while you start feeling tired. What should you do?",
                 new String[]{
                         "Stop at a shop and get a drink that contains caffeine to help keep you awake.",
                         "Pull off the road, stop and rest until you no longer feel tired.",
@@ -1349,7 +1370,7 @@ public class Data {
                         "1"});
 
         fatigue.add(new String[]{"You are driving an older relative for an appointment and are running late. They ask you to go faster to get there on time. You should -", ""});
-        answerListForAlcoholAndDrug.put("You are driving an older relative for an appointment and are running late. They ask you to go faster to get there on time. You should -",
+        answerListForFatigueAndDefensiveDriving.put("You are driving an older relative for an appointment and are running late. They ask you to go faster to get there on time. You should -",
                 new String[]{
                         "Choose a safe speed and say you will not go any faster.",
                         "Take the advice of a more experience driver and go faster where you can.",
@@ -1358,7 +1379,7 @@ public class Data {
 
         fatigue.add(new String[]{"You are planning to drive from Sydney to the Gold Coast with" +
                 " some friends. To minimise fatigue and make the trip as safe as possible you should -", ""});
-        answerListForAlcoholAndDrug.put("You are planning to drive from Sydney to the Gold Coast " +
+        answerListForFatigueAndDefensiveDriving.put("You are planning to drive from Sydney to the Gold Coast " +
                         "with some friends. To minimise fatigue and make the trip as safe as possible you should -",
                 new String[]{
                         "Aim to drive for as long as possible when you are feeling good so you can arrive earlier.",
@@ -1368,7 +1389,7 @@ public class Data {
 
         // added pic FD037
         fatigue.add(new String[]{"You should leave a gap between your vehicle and the one you are following. In good conditions the gap should be -", "fd37"});
-        answerListForAlcoholAndDrug.put("You should leave a gap between your vehicle and the one you are following. In good conditions the gap should be -",
+        answerListForFatigueAndDefensiveDriving.put("You should leave a gap between your vehicle and the one you are following. In good conditions the gap should be -",
                 new String[]{
                         "3 seconds.",
                         "1 seconds.",
@@ -1378,7 +1399,7 @@ public class Data {
         fatigue.add(new String[]{"It is night time and you are driving home from the movies." +
                 " You are travelling in a line of vehicles. What size gap should you leave " +
                 "between your vehicle and the vehicles in front of you?", ""});
-        answerListForAlcoholAndDrug.put("It is night time and you are driving home from " +
+        answerListForFatigueAndDefensiveDriving.put("It is night time and you are driving home from " +
                         "the movies. You are travelling in a line of vehicles. What size gap should you " +
                         "leave between your vehicle and the vehicles in front of you?",
                 new String[]{
@@ -1388,7 +1409,7 @@ public class Data {
                         "0"});
 
         fatigue.add(new String[]{"While driving, you come across aggressive, selfish or ignorant driving behaviour by another driver. You should -", ""});
-        answerListForAlcoholAndDrug.put("While driving, you come across aggressive, selfish or ignorant driving behaviour by another driver. You should -",
+        answerListForFatigueAndDefensiveDriving.put("While driving, you come across aggressive, selfish or ignorant driving behaviour by another driver. You should -",
                 new String[]{
                         "Stay calm and in control of your vehicle at all times.",
                         "Respond by using your horn and/or flashing your lights to let the driver know how you feel.",
