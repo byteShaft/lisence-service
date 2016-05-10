@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,11 +47,11 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
         this.que = question;
         this.drawableName = drawableName;
         this.question.setText(que);
-        radioGroup.clearCheck();
-        imageView.setVisibility(View.GONE);
-        radioOne.setText(answerOne);
-        radioTwo.setText(answerTwo);
-        radioThree.setText(answerThree);
+        this.radioGroup.clearCheck();
+        this.imageView.setVisibility(View.GONE);
+        this.radioOne.setText(answerOne);
+        this.radioTwo.setText(answerTwo);
+        this.radioThree.setText(answerThree);
         this.category.setText(category);
         if (!drawableName.trim().isEmpty()) {
             int resId = getResources().getIdentifier(drawableName, "drawable",
@@ -150,13 +149,10 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
     public int getAnswerIndex() {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.radio_one:
-                Log.i("Checked", "one");
                 return 0;
             case R.id.radio_two:
-                Log.i("Checked", "two");
                 return 1;
             case R.id.radio_three:
-                Log.i("Checked", "three");
                 return 2;
             default:
                 return 5;

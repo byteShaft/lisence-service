@@ -15,14 +15,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.byteshaft.licenseservice.SelectionActivity"
-            />
-        <activity android:name="com.byteshaft.licenseservice.StartTestActivity"
-            />
+        <activity android:name="com.byteshaft.licenseservice.SelectionActivity" />
+        <activity android:name="com.byteshaft.licenseservice.StartTestActivity" />
+        <activity android:name=".ResultActivity"/>
+        <activity android:name=".TryAgain"/>
+
     </application>
 
 </manifest>

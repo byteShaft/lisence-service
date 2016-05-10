@@ -13,6 +13,8 @@ public class AppGlobals extends Application {
     public static String KEY_INSTANT_ANSWER_ENABLED = "instant_answer_enabled";
     public static RadioButton wrongAnswerButton;
     public static boolean sCurrentCategoryInitialized = false;
+    public static final String ANSWER_DATA = "answer_data";
+    public static final String TOTAL_CATEGORIES = "total_categories";
 
     @Override
     public void onCreate() {
