@@ -22,10 +22,9 @@
                 android:gravity="center_horizontal|center"
                 android:layout_marginTop="10dp"
                 android:padding="4dp"
-                android:background="@color/steel_blue"
-                android:textColor="@android:color/white"
-                android:text="Question Goes here jfjh h h h h h dndjdjd d hfbh fh fh fh fh fh nf
-                h ch sn hjd h chc?"
+                android:background="@color/question_bg"
+                android:textColor="@android:color/black"
+                android:text="A simple place holder for questions That will appear for Car test "
                 android:textSize="16sp" />
             <TextView
                 android:id="@+id/category"
@@ -43,12 +42,15 @@
                 android:id="@+id/image_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:layout_centerHorizontal="true">
 
                 <ImageView
                     android:id="@+id/image"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:background="@drawable/img_bg"
                     android:src="@drawable/fd37" />
 
             </RelativeLayout>
