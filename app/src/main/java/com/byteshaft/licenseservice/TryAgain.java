@@ -29,7 +29,8 @@ public class TryAgain extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.try_again:
-                StartTestActivity.getInstance().finishActivity(0);
+                StartTestActivity.getInstance().finish();
+                android.os.Process.killProcess(android.os.Process.myPid());
                 startActivity(new Intent(getApplicationContext(), SelectionActivity.class));
                 break;
         }
