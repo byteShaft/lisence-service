@@ -21,7 +21,7 @@
         <activity android:name="com.byteshaft.licenseservice.SelectionActivity" />
         <activity android:name="com.byteshaft.licenseservice.StartTestActivity"
             android:noHistory="true" android:launchMode="singleInstance"/>
-        <activity android:name=".ResultActivity"/>
+        <activity android:name=".ResultActivity" android:theme="@style/ResultTheme"/>
         <activity android:name=".TryAgain"/>
 
     </application>

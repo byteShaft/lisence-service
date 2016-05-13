@@ -614,7 +614,7 @@ public class Data {
                         "Must let the long vehicle turn first.",
                         "May move to the left-hand side of the road and pass the long vehicle.",
                         "May pass the truck because it cannot turn left from the middle lane.",
-                        ""});
+                        "0"});
 
         negligentDriving.add(new String[]{"How should you overtake a pedal cyclist?", "nd19"});
         answerListForNegligentDriving.put("How should you overtake a pedal cyclist?",
@@ -884,8 +884,8 @@ public class Data {
         trafficLights.add(new String[]{"When the road is marked this way are you permitted to " +
                 "cross the lines to overtake the bicycle rider if the way forward is clear?", "ld16"});
 
-        answerListForTrafficLights.put("When the road is marked this way are you permitted " +
-                        "to cross the lines to overtake the bicycle rider if the way forward is clear?",
+        answerListForTrafficLights.put("When the road is marked this way are you permitted to " +
+                        "cross the lines to overtake the bicycle rider if the way forward is clear?",
                 new String[]{
                         "Yes, only if it is one-way traffic.",
                         "YES.",
