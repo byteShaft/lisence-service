@@ -102,29 +102,11 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
     }
 
     public void hideCurrentQuestion() {
-        Animation RightSwipe = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
-                R.anim.anim);
-        mRelativeLayout.startAnimation(RightSwipe);
-        mRelativeLayout.setLayoutAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                question.setText("");
-                radioOne.setText("");
-                radioTwo.setText("");
-                radioThree.setText("");
-                answerIndex = 5;
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
+        question.setText("");
+        radioOne.setText("");
+        radioTwo.setText("");
+        radioThree.setText("");
+        answerIndex = 5;
     }
 
     public void showCurrentQuestion() {

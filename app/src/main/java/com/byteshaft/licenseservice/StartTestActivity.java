@@ -123,6 +123,9 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         } else {
             menuItem.setTitle("Enable Instant Answer");
         }
+        if (intentValue.equals("sample")) {
+            menuItem.setVisible(false);
+        }
         return true;
 
     }
@@ -369,7 +372,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         loadDataForQuestion();
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
-                        if (totalAskedQuestions == 42) {
+                        if (totalAskedQuestions == 42 && !intentValue.equals("sample")) {
                             questionsArrayForCurrent = new ArrayList<>();
                             answersForSelected = new HashMap<>();
                             askedItems = new ArrayList<>();

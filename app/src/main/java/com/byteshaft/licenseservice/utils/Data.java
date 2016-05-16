@@ -110,7 +110,7 @@ public class Data {
                 break;
             case sTrafficLightsLanes:
                 AppGlobals.sCurrentCategoryInitialized = true;
-                initializeTraficLights();
+                initializeTrafficLights();
                 StartTestActivity.setValuesForCurrentCategory(trafficLights, answerListForTrafficLights);
                 break;
             case sNegligentDriving:
@@ -766,7 +766,7 @@ public class Data {
 
     }
 
-    public static void initializeTraficLights() {
+    public static void initializeTrafficLights() {
 
         trafficLights = new ArrayList<>();
         answerListForTrafficLights = new HashMap<>();
@@ -909,12 +909,12 @@ public class Data {
                         "2"});
 
         trafficLights.add(new String[]{"You want to turn left at this intersection." +
-                " There is an edge line that continues through the intersection.  " +
-                "Are you permitted to turn here?", "ld22"});
+                " There is an edge line that continues through the intersection." +
+                " Are you permitted to turn here?", "ld22"});
 
-        answerListForTrafficLights.put("You want to turn left at this intersection. " +
-                        "There is an edge line that continues through the intersection. " +
-                        " Are you permitted to turn here? ",
+        answerListForTrafficLights.put("You want to turn left at this intersection." +
+                        " There is an edge line that continues through the intersection." +
+                        " Are you permitted to turn here?",
                 new String[]{
                         "Yes, you can cross an edge line to turn into or out of a street.",
                         "No, not under any circumstances.",
