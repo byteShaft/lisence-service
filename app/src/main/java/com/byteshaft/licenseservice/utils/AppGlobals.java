@@ -15,6 +15,7 @@ public class AppGlobals extends Application {
     public static boolean sCurrentCategoryInitialized = false;
     public static final String ANSWER_DATA = "answer_data";
     public static final String TOTAL_CATEGORIES = "total_categories";
+    public static final String TOTAL_QUESTIONS = "total_questions";
 
     @Override
     public void onCreate() {

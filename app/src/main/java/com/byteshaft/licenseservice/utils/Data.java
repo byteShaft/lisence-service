@@ -110,7 +110,7 @@ public class Data {
                 break;
             case sTrafficLightsLanes:
                 AppGlobals.sCurrentCategoryInitialized = true;
-                initializeTraficLights();
+                initializeTrafficLights();
                 StartTestActivity.setValuesForCurrentCategory(trafficLights, answerListForTrafficLights);
                 break;
             case sNegligentDriving:
@@ -183,7 +183,7 @@ public class Data {
                         "No, unless there is a U-TURN PERMITTED sign at the intersection.",
                         "Yes, at all times.",
                         "Yes, if there is no danger of colliding with another vehicle.",
-                        ""});
+                        "0"});
 
         trafficLights2.add(new String[]{"These lights mean that you -", "tl6"});
         answerListForTrafficLights2.put("These lights mean that you -",
@@ -544,7 +544,7 @@ public class Data {
         negligentDriving.add(new String[]{"You are approaching the crest (top of a hill) on a narrow road, the safest procedure is to -", ""});
         answerListForNegligentDriving.put("You are approaching the crest (top of a hill) on a narrow road, the safest procedure is to -",
                 new String[]{
-                        "Increase your speed and sound your horn.\n",
+                        "Increase your speed and sound your horn. ",
                         "Flash your headlights to warn oncoming traffic.",
                         "Keep to the left and slow down.",
                         "2"});
@@ -608,12 +608,13 @@ public class Data {
 
         negligentDriving.add(new String[]{"You are driving behind a long vehicle (as shown)" +
                 " which has a sign saying DO NOT OVERTAKE TURNING VEHICLE. The long vehicle indicates that it is going to turn left. You –", "nd15"});
-        answerListForNegligentDriving.put("",
+        answerListForNegligentDriving.put("You are driving behind a long vehicle (as shown)" +
+                " which has a sign saying DO NOT OVERTAKE TURNING VEHICLE. The long vehicle indicates that it is going to turn left. You –",
                 new String[]{
                         "Must let the long vehicle turn first.",
                         "May move to the left-hand side of the road and pass the long vehicle.",
                         "May pass the truck because it cannot turn left from the middle lane.",
-                        ""});
+                        "0"});
 
         negligentDriving.add(new String[]{"How should you overtake a pedal cyclist?", "nd19"});
         answerListForNegligentDriving.put("How should you overtake a pedal cyclist?",
@@ -765,7 +766,7 @@ public class Data {
 
     }
 
-    public static void initializeTraficLights() {
+    public static void initializeTrafficLights() {
 
         trafficLights = new ArrayList<>();
         answerListForTrafficLights = new HashMap<>();
@@ -883,8 +884,8 @@ public class Data {
         trafficLights.add(new String[]{"When the road is marked this way are you permitted to " +
                 "cross the lines to overtake the bicycle rider if the way forward is clear?", "ld16"});
 
-        answerListForTrafficLights.put("When the road is marked this way are you permitted " +
-                        "to cross the lines to overtake the bicycle rider if the way forward is clear?",
+        answerListForTrafficLights.put("When the road is marked this way are you permitted to " +
+                        "cross the lines to overtake the bicycle rider if the way forward is clear?",
                 new String[]{
                         "Yes, only if it is one-way traffic.",
                         "YES.",
@@ -908,12 +909,12 @@ public class Data {
                         "2"});
 
         trafficLights.add(new String[]{"You want to turn left at this intersection." +
-                " There is an edge line that continues through the intersection.  " +
-                "Are you permitted to turn here?", "ld22"});
+                " There is an edge line that continues through the intersection." +
+                " Are you permitted to turn here?", "ld22"});
 
-        answerListForTrafficLights.put("You want to turn left at this intersection. " +
-                        "There is an edge line that continues through the intersection. " +
-                        " Are you permitted to turn here?\n",
+        answerListForTrafficLights.put("You want to turn left at this intersection." +
+                        " There is an edge line that continues through the intersection." +
+                        " Are you permitted to turn here?",
                 new String[]{
                         "Yes, you can cross an edge line to turn into or out of a street.",
                         "No, not under any circumstances.",
@@ -1082,7 +1083,7 @@ public class Data {
                 new String[]{
                         "Improves your driving ability.",
                         "Will affect your reactions and judgement.",
-                        "Has no effect on your driving ability.\n",
+                        "Has no effect on your driving ability. ",
                         "1"});
 
         alcoholList.add(new String[]{"Even if you feel unaffected after drinking alcohol, you should -", ""});
@@ -1340,7 +1341,7 @@ public class Data {
                 new String[]{
                         "Drive in every kind of traffic situation as soon as you get your licence.",
                         "Drive as much as you can with friends on the way to parties.",
-                        "Start driving in daylight where it is not too busy and only drive in busier traffic as your driving gets better.\n",
+                        "Start driving in daylight where it is not too busy and only drive in busier traffic as your driving gets better. ",
                         "2"});
 
         fatigue.add(new String[]{"It is important to scan while driving so you can see everything that is happening on the road. What does scanning involve?", ""});
@@ -1653,7 +1654,7 @@ public class Data {
         generalList.add(new String[]{"If a vehicle you are driving is involved in an accident and a person is injured, what must you do after stopping?", "gk046"});
         answerListForGeneralKnowledge.put("If a vehicle you are driving is involved in an accident and a person is injured, what must you do after stopping?",
                 new String[]{
-                        "Render every assistance and take immediate steps to have an ambulance notified. Then call the Police.\n",
+                        "Render every assistance and take immediate steps to have an ambulance notified. Then call the Police. ",
                         "Only call the Police if the accident also resulted in over $500 worth of property damage.",
                         "Report the accident to Police within seven days.",
                         "0"});
@@ -1873,9 +1874,9 @@ public class Data {
                         "Continue at the same speed.",
                         "0"});
 
-        generalList.add(new String[]{"You are driving along this road. You hear an ambulance's siren and see the ambulance in your\n" +
+        generalList.add(new String[]{"You are driving along this road. You hear an ambulance's siren and see the ambulance in your " +
                 "mirror. You should?", "gk091"});
-        answerListForGeneralKnowledge.put("You are driving along this road. You hear an ambulance's siren and see the ambulance in your\n" +
+        answerListForGeneralKnowledge.put("You are driving along this road. You hear an ambulance's siren and see the ambulance in your " +
                         "mirror. You should?",
                 new String[]{
                         "Move to the left and make way for the ambulance.",
@@ -1883,9 +1884,9 @@ public class Data {
                         "- Move to the right and make way for the ambulance.",
                         "0"});
 
-        generalList.add(new String[]{"You are about to make a right hand turn at this intersection. You have the green light. You hear a\n" +
+        generalList.add(new String[]{"You are about to make a right hand turn at this intersection. You have the green light. You hear a " +
                 "siren and then see that a fire truck will soon overtake you. You should?", "gk092"});
-        answerListForGeneralKnowledge.put("You are about to make a right hand turn at this intersection. You have the green light. You hear a\n" +
+        answerListForGeneralKnowledge.put("You are about to make a right hand turn at this intersection. You have the green light. You hear a " +
                         "siren and then see that a fire truck will soon overtake you. You should?",
                 new String[]{
                         "Stop and let the fire truck overtake you.",
@@ -1893,7 +1894,7 @@ public class Data {
                         "Speed up to beat the fire truck.",
                         "0"});
 
-        generalList.add(new String[]{"When you come across roadworks?", "gk093"});
+        generalList.add(new String[]{"When you come across roadworks?", "belcha"});
         answerListForGeneralKnowledge.put("When you come across roadworks?",
                 new String[]{
                         "You must obey the signs that are displayed at all times.",
@@ -1909,12 +1910,12 @@ public class Data {
                         "Let the emergency vehicle pass and follow it closely behind.",
                         "0"});
 
-        generalList.add(new String[]{"You are approaching a green light in vehicle A. An ambulance sounding its siren is approaching\n" +
-                "the same intersection and has a red light. You should?", "95"});
-        answerListForGeneralKnowledge.put("You are approaching a green light in vehicle A. An ambulance sounding its siren is approaching\n" +
+        generalList.add(new String[]{"You are approaching a green light in vehicle A. An ambulance sounding its siren is approaching " +
+                "the same intersection and has a red light. You should?", "gk095"});
+        answerListForGeneralKnowledge.put("You are approaching a green light in vehicle A. An ambulance sounding its siren is approaching " +
                         "the same intersection and has a red light. You should?",
                 new String[]{
-                        "Slow down and stop if necessary to prevent\n" +
+                        "Slow down and stop if necessary to prevent " +
                                 "getting in its way.",
                         "Keep driving because you have the green light.",
                         "Pull over to the left before you reach the intersection.",
@@ -1928,9 +1929,9 @@ public class Data {
                         "Stop and wait for the lights to stop flashing.",
                         "0"});
 
-        generalList.add(new String[]{"You are driving at night and there is no other traffic around you. When can you use your headlights\n" +
+        generalList.add(new String[]{"You are driving at night and there is no other traffic around you. When can you use your headlights " +
                 "on high beam?", "gk100"});
-        answerListForGeneralKnowledge.put("You are driving at night and there is no other traffic around you. When can you use your headlights\n" +
+        answerListForGeneralKnowledge.put("You are driving at night and there is no other traffic around you. When can you use your headlights " +
                         "on high beam?",
                 new String[]{
                         "On any road, even if there are street lights.",
@@ -1941,7 +1942,7 @@ public class Data {
         generalList.add(new String[]{"You want to park your vehicle for a short time. It is night time. You should?", "gk102"});
         answerListForGeneralKnowledge.put("You want to park your vehicle for a short time. It is night time. You should?",
                 new String[]{
-                        "Pick a visible position or leave the parking\n" +
+                        "Pick a visible position or leave the parking " +
                                 "or hazard lights on.",
                         "Park on the footpath.",
                         "Leave your headlights on high beam.",
@@ -1979,11 +1980,11 @@ public class Data {
                         "Stop and wait for the lights to stop flashing.",
                         "0"});
 
-        generalList.add(new String[]{"You are driving your vehicle along a street and want to stop for\n" +
-                "a short time. Are you allowed to double park your vehicle (that\n" +
+        generalList.add(new String[]{"You are driving your vehicle along a street and want to stop for " +
+                "a short time. Are you allowed to double park your vehicle (that " +
                 "is stand it on the road alongside a parked car)?", "gk112"});
-        answerListForGeneralKnowledge.put("You are driving your vehicle along a street and want to stop for\n" +
-                        "a short time. Are you allowed to double park your vehicle (that\n" +
+        answerListForGeneralKnowledge.put("You are driving your vehicle along a street and want to stop for " +
+                        "a short time. Are you allowed to double park your vehicle (that " +
                         "is stand it on the road alongside a parked car)?",
                 new String[]{
                         "No, never.",
@@ -1991,11 +1992,11 @@ public class Data {
                         "Yes, provided you stop for a short time only and turn on your hazard warning lights.",
                         "0"});
 
-        generalList.add(new String[]{"Looking at the diagrams, how far from the approach\n" +
-                "side of a bus stop or a railway crossing are you allowed\n" +
+        generalList.add(new String[]{"Looking at the diagrams, how far from the approach " +
+                "side of a bus stop or a railway crossing are you allowed " +
                 "to stand or park your vehicle?", "gk113"});
-        answerListForGeneralKnowledge.put("Looking at the diagrams, how far from the approach\n" +
-                        "side of a bus stop or a railway crossing are you allowed\n" +
+        answerListForGeneralKnowledge.put("Looking at the diagrams, how far from the approach " +
+                        "side of a bus stop or a railway crossing are you allowed " +
                         "to stand or park your vehicle?",
                 new String[]{
                         "At least 20 metres.",
@@ -2004,7 +2005,7 @@ public class Data {
                         "0"});
 
         generalList.add(new String[]{"Are you allowed to use a hand-held mobile phone while driving a car?", ""});
-        answerListForGeneralKnowledge.put("Are you allowed to use a hand-held mobile phone while driving a car?   ",
+        answerListForGeneralKnowledge.put("Are you allowed to use a hand-held mobile phone while driving a car?",
                 new String[]{
                         "No.",
                         "Yes, but only when you stop at intersections.",
@@ -2019,31 +2020,31 @@ public class Data {
                         "No, being licensed is enough.",
                         "0"});
 
-        generalList.add(new String[]{"Bicycle and motorcycle riders have the same rights to use the road as other motor vehicle\n" +
+        generalList.add(new String[]{"Bicycle and motorcycle riders have the same rights to use the road as other motor vehicle " +
                 "drivers. They are, however, more at risk in traffic because?", ""});
-        answerListForGeneralKnowledge.put("Bicycle and motorcycle riders have the same rights to use the road as other motor vehicle\n" +
+        answerListForGeneralKnowledge.put("Bicycle and motorcycle riders have the same rights to use the road as other motor vehicle " +
                         "drivers. They are, however, more at risk in traffic because?",
                 new String[]{
-                        "They are harder to see in traffic and do not have the same protection as\n" +
+                        "They are harder to see in traffic and do not have the same protection as " +
                                 "many drivers.",
                         "They are careless and do not obey road rules.",
                         "They ride too fast and do not turn their lights on.",
                         "0"});
 
-        generalList.add(new String[]{"To drive safely, you need to concentrate and be able to monitor everything that is\n" +
+        generalList.add(new String[]{"To drive safely, you need to concentrate and be able to monitor everything that is " +
                 "happening on the road. To do this, you need to?", ""});
-        answerListForGeneralKnowledge.put("To drive safely, you need to concentrate and be able to monitor everything that is\n" +
+        answerListForGeneralKnowledge.put("To drive safely, you need to concentrate and be able to monitor everything that is " +
                         "happening on the road. To do this, you need to?",
                 new String[]{
-                        "Continually scan the road, looking ahead, to the sides, checking side\n" +
+                        "Continually scan the road, looking ahead, to the sides, checking side " +
                                 "and rear mirrors and anticipate what may happen.",
                         "Turn all your attention only to the road ahead.",
                         "Ask other occupants in the vehicle to watch out for possible dangers.",
                         "0"});
 
-        generalList.add(new String[]{"If you are driving towards a road works zone and a traffic controller displays a stop sign\n" +
+        generalList.add(new String[]{"If you are driving towards a road works zone and a traffic controller displays a stop sign " +
                 "you must?", ""});
-        answerListForGeneralKnowledge.put("If you are driving towards a road works zone and a traffic controller displays a stop sign\n" +
+        answerListForGeneralKnowledge.put("If you are driving towards a road works zone and a traffic controller displays a stop sign " +
                         "you must?",
                 new String[]{
                         "Stop your vehicle and follow the directions of the traffic controller.",
@@ -2051,14 +2052,14 @@ public class Data {
                         "Slow down and continue through the road works zone.",
                         "0"});
 
-        generalList.add(new String[]{"If you are driving through a road work zone in the left\n" +
+        generalList.add(new String[]{"If you are driving through a road work zone in the left " +
                 "hand lane and you see this sign you should?", "gk119"});
-        answerListForGeneralKnowledge.put("If you are driving through a road work zone in the left\n" +
+        answerListForGeneralKnowledge.put("If you are driving through a road work zone in the left " +
                         "hand lane and you see this sign you should?",
                 new String[]{
-                        "Merge to the right and give way to other\n" +
+                        "Merge to the right and give way to other " +
                                 "traffic..",
-                        "Speed up to get in front of any cars traveling in\n" +
+                        "Speed up to get in front of any cars traveling in " +
                                 "the right hand lane.",
                         "Stop and wait for directions.",
                         "0"});
@@ -2079,9 +2080,9 @@ public class Data {
                         "Most of the letter.",
                         "0"});
 
-        generalList.add(new String[]{"Do bicycle riders have the same rights and responsibilities as drivers and motorcycle\n" +
+        generalList.add(new String[]{"Do bicycle riders have the same rights and responsibilities as drivers and motorcycle " +
                 "riders?", ""});
-        answerListForGeneralKnowledge.put("Do bicycle riders have the same rights and responsibilities as drivers and motorcycle\n" +
+        answerListForGeneralKnowledge.put("Do bicycle riders have the same rights and responsibilities as drivers and motorcycle " +
                         "riders?",
                 new String[]{
                         "Yes.",
@@ -2090,10 +2091,9 @@ public class Data {
                         "0"});
 
         generalList.add(new String[]{"Before getting out of your vehicle you must?", ""});
-        answerListForGeneralKnowledge.put("Do bicycle riders have the same rights and responsibilities as drivers and motorcycle\n" +
-                        "riders?",
+        answerListForGeneralKnowledge.put("Before getting out of your vehicle you must?",
                 new String[]{
-                        "Check your mirrors and blind spots for pedestrians, bicycles or other\n" +
+                        "Check your mirrors and blind spots for pedestrians, bicycles or other " +
                                 "vehicles.",
                         "Check your seatbelt is back in place.",
                         "Check your headlights are turned off.",
@@ -2125,7 +2125,7 @@ public class Data {
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
                         "All right lane traffic must turn right at the next intersection.",
-                        "Right lane traffic may turn right or go straight ahead at the\n" +
+                        "Right lane traffic may turn right or go straight ahead at the " +
                                 "next intersection.",
                         "One way traffic ahead.",
                         "0"});
@@ -2189,7 +2189,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si016"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Drive carefully, and watch out for kangaroos\n" +
+                        "Drive carefully, and watch out for kangaroos " +
                                 "entering the road for the next 30 km.",
                         "Zoo 30 km ahead.",
                         "Nature reserve 30 km ahead.",
@@ -2198,8 +2198,8 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si017"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "T-intersection ahead. If you are on the\n" +
-                                "terminating road, you must give way to all\n" +
+                        "T-intersection ahead. If you are on the " +
+                                "terminating road, you must give way to all " +
                                 "vehicles approaching from your right or left.",
                         "No through road ahead, slow down.",
                         "Tollway ahead, be prepared to stop and pay toll.",
@@ -2208,7 +2208,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"When you see this sign you?", "si018"});
         answerListForTrafficSignsSections.put("When you see this sign you?",
                 new String[]{
-                        "Must not stop your vehicle at the kerb during the\n" +
+                        "Must not stop your vehicle at the kerb during the " +
                                 "times shown.",
                         "Must not stop here at any time.",
                         "May stop at any time to pick up or drop off passengers.",
@@ -2217,8 +2217,8 @@ public class Data {
         trafficSignsSection.add(new String[]{"You are most likely to find this sign?", "si019"});
         answerListForTrafficSignsSections.put("You are most likely to find this sign?",
                 new String[]{
-                        "On the approach to a bridge which has room for\n" +
-                                "only two vehicles, slow down and proceed with\n" +
+                        "On the approach to a bridge which has room for " +
+                                "only two vehicles, slow down and proceed with " +
                                 "caution.",
                         "When a bridge is not safe to drive on.",
                         "If there is a footbridge for pedestrians ahead.",
@@ -2227,7 +2227,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si020"});
         answerListForTrafficSignsSections.put("What does this sign mean??",
                 new String[]{
-                        "Road may be slippery when wet, slow down and\n" +
+                        "Road may be slippery when wet, slow down and " +
                                 "drive carefully.",
                         "Sharp turns in the road ahead.",
                         "Road under repair, drive carefully.",
@@ -2236,7 +2236,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"You are most likely to find this sign?", "si021"});
         answerListForTrafficSignsSections.put("You are most likely to find this sign?",
                 new String[]{
-                        "As you approach a winding road, slow down and\n" +
+                        "As you approach a winding road, slow down and " +
                                 "drive with caution.",
                         "If there is a steep hill ahead.",
                         "If an unsealed road is ahead.",
@@ -2245,7 +2245,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si022"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "A sharp depression in the road is ahead, be\n" +
+                        "A sharp depression in the road is ahead, be " +
                                 "prepared, slow down.",
                         "Do not drive with your lights on high beam.",
                         "Police station ahead.",
@@ -2254,7 +2254,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si024"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Sharp bend to the right ahead, slow down and\n" +
+                        "Sharp bend to the right ahead, slow down and " +
                                 "drive carefully.",
                         "Turn around and go back, you are going the wrong way.",
                         "No right turn allowed.",
@@ -2263,7 +2263,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"You are most likely to find this sign, where?", "si025"});
         answerListForTrafficSignsSections.put("You are most likely to find this sign, where?",
                 new String[]{
-                        "Children may be crossing the road ahead, slow\n" +
+                        "Children may be crossing the road ahead, slow " +
                                 "down and be prepared to make a safe stop.",
                         "There is an athletic field ahead.",
                         "Pedestrians are not allowed.",
@@ -2272,7 +2272,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si026"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Crossroads ahead, reduce your speed and watch\n" +
+                        "Crossroads ahead, reduce your speed and watch " +
                                 "out for other traffic and pedestrians.",
                         "Hospital ahead, drive carefully.",
                         "Cemetery ahead.",
@@ -2280,12 +2280,12 @@ public class Data {
 
         trafficSignsSection.add(new String[]{"If the red lights on this sign are flashing what are" +
                 " you required to do?", "si027"});
-        answerListForTrafficSignsSections.put("If the red lights on this sign are flashing what are you required\n" +
+        answerListForTrafficSignsSections.put("If the red lights on this sign are flashing what are you required " +
                         "to do?",
                 new String[]{
-                        "Stop until red lights stop flashing then drive on if\n" +
+                        "Stop until red lights stop flashing then drive on if " +
                                 "it is safe to do so.",
-                        "Slow down and drive carefully over the crossing if you\n" +
+                        "Slow down and drive carefully over the crossing if you " +
                                 "cannot see a train approaching.",
                         "Stop until train has passed then proceed immediately.",
                         "0"});
@@ -2293,17 +2293,17 @@ public class Data {
         trafficSignsSection.add(new String[]{"You should expect this sign, if?", "si028"});
         answerListForTrafficSignsSections.put("You should expect this sign, if?",
                 new String[]{
-                        "A give way sign at an intersection is ahead, slow\n" +
+                        "A give way sign at an intersection is ahead, slow " +
                                 "down and be prepared to stop.",
                         "You are approaching a school or playground.",
-                        "You are approaching an intersection with traffic lights, be\n" +
+                        "You are approaching an intersection with traffic lights, be " +
                                 "prepared to stop.",
                         "0"});
 
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si030"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Slow down and beware of trucks entering from\n" +
+                        "Slow down and beware of trucks entering from " +
                                 "the side.",
                         "Trucks must use low gear.",
                         "Heavy vehicle checking station ahead.",
@@ -2312,7 +2312,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si031"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Slow down and look out for pedestrians crossing\n" +
+                        "Slow down and look out for pedestrians crossing " +
                                 "the road ahead.",
                         "Stop and help aged pedestrians across the road.",
                         "Hospital ahead, slow down and proceed with caution.",
@@ -2321,7 +2321,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si032"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Pedestrian crossing ahead, slow down and be\n" +
+                        "Pedestrian crossing ahead, slow down and be " +
                                 "prepared to stop.",
                         "Overhead footbridge for pedestrians ahead.",
                         "Joggers ahead, drive carefully.",
@@ -2330,7 +2330,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"You should expect this sign?", "si033"});
         answerListForTrafficSignsSections.put("You should expect this sign?",
                 new String[]{
-                        "When a divided road ends and two way traffic is\n" +
+                        "When a divided road ends and two way traffic is " +
                                 "ahead.",
                         "If a one way street is ahead.",
                         "If a one lane bridge is ahead.",
@@ -2339,9 +2339,9 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si035"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Workers ahead, slow down and be prepared to\n" +
+                        "Workers ahead, slow down and be prepared to " +
                                 "stop.",
-                        "Children's playground ahead, slow down and be prepared\n" +
+                        "Children's playground ahead, slow down and be prepared " +
                                 "to stop.",
                         "Do not litter. ",
                         "0"});
@@ -2349,7 +2349,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si036"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Watch out for bicycle riders along the roadway or\n" +
+                        "Watch out for bicycle riders along the roadway or " +
                                 "when turning.",
                         "Bicycle riders not allowed on the roadway.",
                         "You are approaching a children's playground, slow down.",
@@ -2358,8 +2358,8 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si038"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "If traffic lights are out of order or the amber light\n" +
-                                "is flashing, you must stop and give way to traffic\n" +
+                        "If traffic lights are out of order or the amber light " +
+                                "is flashing, you must stop and give way to traffic " +
                                 "as if you are at an intersection with stop signs.",
                         "Stop, red light camera in operation.",
                         "Stop at all times and give way to all traffic.",
@@ -2376,7 +2376,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si040"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Traffic controller ahead, slow down and be\n" +
+                        "Traffic controller ahead, slow down and be " +
                                 "prepared to stop.",
                         "School children crossing the road ahead, prepare to stop.",
                         "Traffic lights out of order, Police on duty ahead.",
@@ -2393,18 +2393,18 @@ public class Data {
         trafficSignsSection.add(new String[]{"You should expect this sign, when?", "si042"});
         answerListForTrafficSignsSections.put("You should expect this sign, when?",
                 new String[]{
-                        "A divided road is ahead, prepare for a change in\n" +
+                        "A divided road is ahead, prepare for a change in " +
                                 "traffic conditions.",
                         "A two lane bridge is ahead, slow down and drive carefully.",
-                        "Freeway conditions are ahead, maximum speed is 100\n" +
+                        "Freeway conditions are ahead, maximum speed is 100 " +
                                 "km/h.",
                         "0"});
 
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si043"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Railway level crossing with flashing signals\n" +
-                                "ahead, slow down, drive carefully, and be\n" +
+                        "Railway level crossing with flashing signals " +
+                                "ahead, slow down, drive carefully, and be " +
                                 "prepared to stop.",
                         "Intersection ahead with traffic lights, prepare to stop.",
                         "Red light camera in use at traffic lights ahead.",
@@ -2413,7 +2413,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si045"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Road narrows ahead, slow down and prepare for\n" +
+                        "Road narrows ahead, slow down and prepare for " +
                                 "a change in traffic conditions.",
                         "Form one lane of traffic.",
                         "Merging traffic, give way to your right.",
@@ -2422,18 +2422,18 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si045"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Vehicles are not allowed to stop at the kerb\n" +
+                        "Vehicles are not allowed to stop at the kerb " +
                                 "except in a medical emergency.",
-                        "Vehicles must not stop at the kerb, except if picking up a\n" +
+                        "Vehicles must not stop at the kerb, except if picking up a " +
                                 "passenger.",
-                        "Vehicles must not stop at the kerb, unless picking up\n" +
+                        "Vehicles must not stop at the kerb, unless picking up " +
                                 "goods.",
                         "0"});
 
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si048"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Vehicles carrying three or more people, and\n" +
+                        "Vehicles carrying three or more people, and " +
                                 "motorcycles may use this lane.",
                         "Motor cars carrying one passenger may use this lane.",
                         "This lane is reserved for bicycle riders only.",
@@ -2442,7 +2442,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si049"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Railway level crossing ahead, slow down and\n" +
+                        "Railway level crossing ahead, slow down and " +
                                 "look out for trains, be prepared to stop.",
                         "Cattle or sheep crossing the road ahead, drive slowly.",
                         "Give way sign ahead, slow down and be prepared to stop.",
@@ -2451,7 +2451,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"When you see this sign, you should?", "si050"});
         answerListForTrafficSignsSections.put("When you see this sign, you should?",
                 new String[]{
-                        "Drive carefully and watch out for traffic entering\n" +
+                        "Drive carefully and watch out for traffic entering " +
                                 "from a side-road intersection ahead.",
                         "Take care, trucks crossing the road ahead.",
                         "Take a break, rest area ahead.",
@@ -2461,28 +2461,28 @@ public class Data {
         answerListForTrafficSignsSections.put("When you see this sign you must?",
                 new String[]{
                         "Stop at the stop line and give way to all traffic.",
-                        "Stop at the stop line and give way to all traffic on your right\n" +
+                        "Stop at the stop line and give way to all traffic on your right " +
                                 "only.",
-                        "Slow down and be prepared to stop only if there is any\n" +
+                        "Slow down and be prepared to stop only if there is any " +
                                 "danger of a collision with another vehicle or pedestrian.",
                         "0"});
 
         trafficSignsSection.add(new String[]{"When you see this sign you must?", "si052"});
         answerListForTrafficSignsSections.put("When you see this sign you must?",
                 new String[]{
-                        "Slow down and be prepared to stop and give way to\n" +
+                        "Slow down and be prepared to stop and give way to " +
                                 "all traffic if there is any danger of a collision.",
                         "Stop and give way to all traffic even if the intersection is clear.",
-                        "Slow down and be prepared to give way to traffic on your\n" +
+                        "Slow down and be prepared to give way to traffic on your " +
                                 "right only, if there is any danger of a collision.",
                         "0"});
 
         trafficSignsSection.add(new String[]{"When you see this sign you should?", "si053"});
         answerListForTrafficSignsSections.put("When you see this sign you should?",
                 new String[]{
-                        "Come to a complete stop, look both ways for trains\n" +
+                        "Come to a complete stop, look both ways for trains " +
                                 "and proceed with caution if no trains are approaching.",
-                        "Slow down, then drive slowly over the crossing looking both\n" +
+                        "Slow down, then drive slowly over the crossing looking both " +
                                 "ways for trains.",
                         "Stop, only if a train is at the crossing.",
                         "0"});
@@ -2490,7 +2490,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si056"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Slow down, the maximum safe speed around the\n" +
+                        "Slow down, the maximum safe speed around the " +
                                 "next curve in the road is 35km/h.",
                         "Winding road ahead for next 35 km.",
                         "Next main town 35 km to the right.",
@@ -2499,18 +2499,18 @@ public class Data {
         trafficSignsSection.add(new String[]{"When you see this sign you should?", "si057"});
         answerListForTrafficSignsSections.put("When you see this sign you should?",
                 new String[]{
-                        "Slow down and be prepared to stop if the lights\n" +
+                        "Slow down and be prepared to stop if the lights " +
                                 "start flashing, warning you of an approaching train.",
-                        "Continue at the same speed and not look both ways for\n" +
+                        "Continue at the same speed and not look both ways for " +
                                 "approaching trains.",
-                        "Stop in the middle of the railway tracks and look both ways\n" +
+                        "Stop in the middle of the railway tracks and look both ways " +
                                 "for approaching trains",
                         "0"});
 
         trafficSignsSection.add(new String[]{"What does this sign means?", "si058"});
         answerListForTrafficSignsSections.put("What does this sign means?",
                 new String[]{
-                        "You must stay in or move to the left lane, unless you are\n" +
+                        "You must stay in or move to the left lane, unless you are " +
                                 "overtaking another vehicle.",
                         "You must stay in the left lane and must not overtake any vehicles.",
                         "You can overtake vehicles only on the left side.",
@@ -2520,7 +2520,7 @@ public class Data {
         answerListForTrafficSignsSections.put("When you see this sign, what must you do?",
                 new String[]{
                         "Slow down and be ready to stop and give way to a train.",
-                        "Stop before the railway crossing, wait for 1 minute and proceed if the\n" +
+                        "Stop before the railway crossing, wait for 1 minute and proceed if the " +
                                 "crossing is clear.",
                         "Drive quickly over the railway crossing.",
                         "0"});
@@ -2528,8 +2528,8 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si060"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Slow down, be ready to stop and give way to all vehicles\n" +
-                                "already on the roundabout if there is a danger of a\n" +
+                        "Slow down, be ready to stop and give way to all vehicles " +
+                                "already on the roundabout if there is a danger of a " +
                                 "collision.",
                         "All traffic must turn back at the roundabout.",
                         "Stop at all times and give way to all traffic on your right.",
@@ -2538,7 +2538,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"When you see this sign you should?", "si061"});
         answerListForTrafficSignsSections.put("When you see this sign you should?",
                 new String[]{
-                        "Drive carefully, you are reaching the top of the hill and\n" +
+                        "Drive carefully, you are reaching the top of the hill and " +
                                 "will not be able to see a safe distance in front of you.",
                         "Watch out, the road ahead may be flooded.",
                         "Slow down, there is a dangerous curve ahead.",
@@ -2547,7 +2547,7 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si062"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "There is a hump (sudden slope up and down) in the road\n" +
+                        "There is a hump (sudden slope up and down) in the road " +
                                 "ahead, slow down.",
                         "There is a tunnel ahead, turn on your headlights.",
                         "The road ahead is closed, go back.",
@@ -2556,9 +2556,9 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign tell you?", "si063"});
         answerListForTrafficSignsSections.put("What does this sign tell you?",
                 new String[]{
-                        "There may be animals on or near the road ahead,\n" +
+                        "There may be animals on or near the road ahead, " +
                                 "slow down and be prepared to stop to avoid collision.",
-                        "Animals are crossing the road ahead, stop and wait for\n" +
+                        "Animals are crossing the road ahead, stop and wait for " +
                                 "directions.",
                         "You are approaching an animal farm.    ",
                         "0"});
@@ -2566,8 +2566,8 @@ public class Data {
         trafficSignsSection.add(new String[]{"What does this sign mean?", "si064"});
         answerListForTrafficSignsSections.put("What does this sign mean?",
                 new String[]{
-                        "Only vehicles carrying a disable person and\n" +
-                                "displaying a mobility parking authority may park in\n" +
+                        "Only vehicles carrying a disable person and " +
+                                "displaying a mobility parking authority may park in " +
                                 "this area.",
                         "Motorcyclists may park in this area.",
                         "Vehicles may park in this area for up to ten minutes.",
@@ -2986,10 +2986,10 @@ public class Data {
 
         pedestrains.add(new String[]{"When approaching a marked pedestrian crossing and no pedestrians are in sight, you should?", "pd002"});
         answerListForPedestrians.put("When approaching a marked pedestrian crossing and no pedestrians are in sight, you should?",
-                new String[]{"Slow down and be ready to make a safe\n" +
+                new String[]{"Slow down and be ready to make a safe " +
                         "stop.",
                         "Come to a complete stop before the crossing.",
-                        "Go faster, in case a pedestrian steps onto the\n" +
+                        "Go faster, in case a pedestrian steps onto the " +
                                 "crossing.", "0"});
 
         pedestrains.add(new String[]{"If elderly people or children are on a pedestrian crossing you will probably need to?", ""});
@@ -3007,14 +3007,14 @@ public class Data {
         pedestrains.add(new String[]{"A vehicle ahead of you has stopped at a pedestrian crossing. You?", "pd005"});
         answerListForPedestrians.put("A vehicle ahead of you has stopped at a pedestrian crossing. You?",
                 new String[]{"Must not overtake the stopped vehicle.",
-                        "May overtake the vehicle if there are no\n" +
+                        "May overtake the vehicle if there are no " +
                                 "pedestrians on the crossing.",
-                        "May overtake the vehicle provided no cars are\n" +
+                        "May overtake the vehicle provided no cars are " +
                                 "coming the other way.", "0"});
 
         pedestrains.add(new String[]{"If you see a School Crossing Supervisor holding a sign like this, you must wait until the children?", "pd006"});
         answerListForPedestrians.put("If you see a School Crossing Supervisor holding a sign like this, you must wait until the children?",
-                new String[]{"Are off the crossing and the hand held sign\n" +
+                new String[]{"Are off the crossing and the hand held sign " +
                         "is taken away.",
                         "Reach the right-hand side of the crossing.",
                         "Are out of sight.", "0"});
@@ -3035,7 +3035,7 @@ public class Data {
         answerListForPedestrians.put("Pedestrians who are affected by alcohol, are?",
                 new String[]{"One of the most common groups involved in road accidents.",
                         "Unlikely to walk near the road and do not require your attention.",
-                        "Less dangerous than sober pedestrians because they are more careful after\n" +
+                        "Less dangerous than sober pedestrians because they are more careful after " +
                                 "drinking.", "0"});
 
         pedestrains.add(new String[]{"When driving near pedestrian crossings, intersections, or school crossings, you should always?", ""});
@@ -3062,39 +3062,39 @@ public class Data {
                         "Drive in the middle of the road to avoid splashing pedestrians on the footpath.",
                         "Stop and help aged pedestrians across the road.65 ", "0"});
 
-        pedestrains.add(new String[]{"At a pedestrian crossing with traffic lights, when the amber light starts 'flashing' after the red stop\n" +
+        pedestrains.add(new String[]{"At a pedestrian crossing with traffic lights, when the amber light starts 'flashing' after the red stop " +
                 "signal, it means?", "pd015"});
-        answerListForPedestrians.put("At a pedestrian crossing with traffic lights, when the amber light starts 'flashing' after the red stop\n" +
+        answerListForPedestrians.put("At a pedestrian crossing with traffic lights, when the amber light starts 'flashing' after the red stop " +
                         "signal, it means?",
-                new String[]{"You may carefully drive through the\n" +
-                        "crossing, if there is no risk of colliding with\n" +
+                new String[]{"You may carefully drive through the " +
+                        "crossing, if there is no risk of colliding with " +
                         "pedestrians.",
-                        "The traffic lights are out of order and pedestrians\n" +
+                        "The traffic lights are out of order and pedestrians " +
                                 "must not use the crossing.",
-                        "The green light is due. Do not proceed until the\n" +
+                        "The green light is due. Do not proceed until the " +
                                 "green light appears.", "0"});
 
         pedestrains.add(new String[]{"Which statement is true?", "pd016"});
         answerListForPedestrians.put("Which statement is true?",
-                new String[]{"You must give way to pedestrians if\n" +
+                new String[]{"You must give way to pedestrians if " +
                         "there is any danger of hitting them.",
-                        "Pedestrians have no special rights on the\n" +
+                        "Pedestrians have no special rights on the " +
                                 "roads.",
-                        "You must give way to pedestrians only at\n" +
+                        "You must give way to pedestrians only at " +
                                 "marked crossings.", "0"});
 
         pedestrains.add(new String[]{"You drive towards these people on the road. What should you do?", "pd017"});
         answerListForPedestrians.put("You drive towards these people on the road. What should you do?",
-                new String[]{"Stop and give way if there is any\n" +
+                new String[]{"Stop and give way if there is any " +
                         "danger of hitting them.",
-                        "Continue at the same speed and sound\n" +
+                        "Continue at the same speed and sound " +
                                 "the horn.",
-                        "Slow down until they are half way through\n" +
+                        "Slow down until they are half way through " +
                                 "the crossing and drive on.", "0"});
 
         pedestrains.add(new String[]{"You see these zig-zag markings on the road in front of you. What do they mean?", "pd018"});
         answerListForPedestrians.put("You see these zig-zag markings on the road in front of you. What do they mean?",
-                new String[]{"Take care and look out for pedestrians at\n" +
+                new String[]{"Take care and look out for pedestrians at " +
                         "a crossing.",
                         "Look out for animals on the side of the road.",
                         "Be careful because the road ahead is slippery.", "0"});
@@ -3102,93 +3102,93 @@ public class Data {
 
         pedestrains.add(new String[]{"These markings on the road indicate?", "pd019"});
         answerListForPedestrians.put("These markings on the road indicate?",
-                new String[]{"Places where pedestrians have\n" +
+                new String[]{"Places where pedestrians have " +
                         "special rights.",
                         "Places where you can park.",
                         "Places where special speed limits apply.", "0"});
 
         pedestrains.add(new String[]{"You approach a person crossing the road. You should?", "pd021"});
         answerListForPedestrians.put("You approach a person crossing the road. You should?",
-                new String[]{"Slow down or stop to avoid hitting\n" +
+                new String[]{"Slow down or stop to avoid hitting " +
                         "the person.",
-                        "Slow down and sound your horn to hurry up\n" +
+                        "Slow down and sound your horn to hurry up " +
                                 "the person.",
-                        "Maintain your speed and swerve around the\n" +
+                        "Maintain your speed and swerve around the " +
                                 "person.", "0"});
 
         pedestrains.add(new String[]{"You approach a crossing and see the scene in the picture. You should?", "pd022"});
         answerListForPedestrians.put("You approach a crossing and see the scene in the picture. You should?",
-                new String[]{"Slow down and stop until the\n" +
+                new String[]{"Slow down and stop until the " +
                         "supervisor takes down the sign.",
-                        "Slow down and drive through giving way to\n" +
+                        "Slow down and drive through giving way to " +
                                 "the children.",
-                        "Stop and wait for the children until your lane\n" +
+                        "Stop and wait for the children until your lane " +
                                 "is clear.", "0"});
 
         pedestrains.add(new String[]{"At a pedestrian crossing with traffic lights, when the lights change to red you should?", ""});
         answerListForPedestrians.put("At a pedestrian crossing with traffic lights, when the lights change to red you should?",
-                new String[]{"Slow down and stop until the\n" +
+                new String[]{"Slow down and stop until the " +
                         "Stop, wait for pedestrians to cross and for the green light to come on.",
                         "Slow down and give way to pedestrians.",
                         "Stop and continue after the pedestrians have crossed.", "0"});
 
         pedestrains.add(new String[]{"This person is standing on a pedestrian refuge. If he steps out onto your lane you should?", "pd024"});
         answerListForPedestrians.put("This person is standing on a pedestrian refuge. If he steps out onto your lane you should?",
-                new String[]{"Give way to the person if there is any\n" +
+                new String[]{"Give way to the person if there is any " +
                         "danger of colliding.",
-                        "Slow down and sound the horn to warn the\n" +
+                        "Slow down and sound the horn to warn the " +
                                 "person to move back.",
-                        "Maintain your speed so you do not hold up\n" +
+                        "Maintain your speed so you do not hold up " +
                                 "the traffic.", "0"});
 
         pedestrains.add(new String[]{"Which of the following statements is correct?", "pd025"});
         answerListForPedestrians.put("Which of the following statements is correct?",
-                new String[]{"You must give way to pedestrians if there\n" +
+                new String[]{"You must give way to pedestrians if there " +
                         "is a danger of a collision.",
-                        "Pedestrians must cross the road only at marked\n" +
+                        "Pedestrians must cross the road only at marked " +
                                 "crossings and intersections.",
-                        "You do not have to give way to adults crossing at\n" +
+                        "You do not have to give way to adults crossing at " +
                                 "children's crossings.", "0"});
 
         pedestrains.add(new String[]{"When you see children on or near the road?", "pd026"});
         answerListForPedestrians.put("When you see children on or near the road?",
-                new String[]{"You should slow down and be more\n" +
+                new String[]{"You should slow down and be more " +
                         "careful because they may move suddenly.",
                         "You should reduce your speed by 5 km/h.",
-                        "You should ignore them and pay attention to the\n" +
+                        "You should ignore them and pay attention to the " +
                                 "rear vision mirror.", "0"});
 
         pedestrains.add(new String[]{"When you see older people on or near the road, you should?", "pd027"});
         answerListForPedestrians.put("When you see older people on or near the road, you should?",
-                new String[]{"Slow down and take extra care because\n" +
-                        "they may not see you until you are very\n" +
+                new String[]{"Slow down and take extra care because " +
+                        "they may not see you until you are very " +
                         "close.",
                         "Drive around them to keep the traffic moving.",
-                        "Sound your horn and keep going at the same\n" +
+                        "Sound your horn and keep going at the same " +
                                 "speed so you do not hold up the traffic.", "0"});
 
-        pedestrains.add(new String[]{"You must give way to pedestrians if there is a risk of hitting them. When driving in poor light, you\n" +
+        pedestrains.add(new String[]{"You must give way to pedestrians if there is a risk of hitting them. When driving in poor light, you " +
                 "should?", ""});
-        answerListForPedestrians.put("You must give way to pedestrians if there is a risk of hitting them. When driving in poor light, you\n" +
+        answerListForPedestrians.put("You must give way to pedestrians if there is a risk of hitting them. When driving in poor light, you " +
                         "should?",
                 new String[]{"Look more carefully for pedestrians because they are hard to see.",
                         "Keep your headlights on high beam all the time.",
                         "Always drive in the right hand lane so you can be away from pedestrians.", "0"});
 
-        pedestrains.add(new String[]{"You drive up to a Light Rail vehicle that has just stopped at a tram stop. What is the most\n" +
+        pedestrains.add(new String[]{"You drive up to a Light Rail vehicle that has just stopped at a tram stop. What is the most " +
                 "important thing you should do?", "pd030"});
-        answerListForPedestrians.put("You drive up to a Light Rail vehicle that has just stopped at a tram stop. What is the most\n" +
+        answerListForPedestrians.put("You drive up to a Light Rail vehicle that has just stopped at a tram stop. What is the most " +
                         "important thing you should do?",
-                new String[]{"Take extra care, slow down and give way to\n" +
+                new String[]{"Take extra care, slow down and give way to " +
                         "the pedestrians.",
-                        "Keep a look out for traffic coming in the opposite\n" +
+                        "Keep a look out for traffic coming in the opposite " +
                                 "direction.",
-                        "Slow down, but keep moving so you do not delay\n" +
+                        "Slow down, but keep moving so you do not delay " +
                                 "other drivers.", "0"});
 
         pedestrains.add(new String[]{"You must give way to pedestrians?", "pd031"});
         answerListForPedestrians.put("You must give way to pedestrians?",
-                new String[]{"At all times, if there is any danger of colliding with them, even if\n" +
+                new String[]{"At all times, if there is any danger of colliding with them, even if " +
                         "there is no marked crossing.",
                         "Only on marked foot crossings.",
                         "Only on marked foot crossings and traffic light pedestrian crossings.", "0"});

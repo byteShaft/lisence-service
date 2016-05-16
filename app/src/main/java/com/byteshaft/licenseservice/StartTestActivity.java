@@ -66,6 +66,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private boolean wrongAnswer = false;
     private static ArrayList<Integer> askedItems;
     private int questionAskedForCurrentCategory = 0;
+    private boolean rightAnswer = false;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -121,6 +122,9 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
             menuItem.setTitle("Disable Instant Answer");
         } else {
             menuItem.setTitle("Enable Instant Answer");
+        }
+        if (intentValue.equals("sample")) {
+            menuItem.setVisible(false);
         }
         return true;
 
@@ -203,7 +207,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         tx.commit();
     }
 
-    private int  getCurrentCategoryMaxQuestion(String currentCategory) {
+    public int  getCurrentCategoryMaxQuestion(String currentCategory) {
         switch (currentCategory) {
             case Data.sICAC:
                 return ICAC_QUESTIONS;
@@ -314,6 +318,11 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                             setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
                     wrongAnswer = false;
                 }
+                if (rightAnswer) {
+                    QuestionsFragment.getInstance().getAnswerRadioButton().
+                            setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
+                    rightAnswer = false;
+                }
                 QuestionsFragment.getInstance().hideCurrentQuestion();
                 if (getCurrentCategoryAskedQuestion(currentCategory)
                         < getCurrentCategoryMaxQuestion(currentCategory)) {
@@ -323,20 +332,28 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 } else {
                     if (currentCategory.equals(Data.sICAC) && !intentValue.equals("sample")) {
                         if (answersHashMap.containsKey(Data.sICAC)) {
-                            if (answersHashMap.get(Data.sICAC) < ICAC_QUESTIONS) {
+                            Log.i("ICAC questions", String.valueOf(answersHashMap.get(Data.sICAC)));
+                            if (answersHashMap.get(Data.sICAC) < (ICAC_QUESTIONS+1)) {
                                 questionsArrayForCurrent = new ArrayList<>();
                                 answersForSelected = new HashMap<>();
                                 askedItems = new ArrayList<>();
                                 finish();
+                                currentCategoryIndex = 0;
+                                answersHashMap = new HashMap<>();
+                                AppGlobals.sCurrentCategoryInitialized = false;
                                 startActivity(new Intent(getApplicationContext(), TryAgain.class));
-
+                                break;
                             }
                         } else {
                             questionsArrayForCurrent = new ArrayList<>();
                             answersForSelected = new HashMap<>();
                             askedItems = new ArrayList<>();
                             finish();
+                            currentCategoryIndex = 0;
+                            answersHashMap = new HashMap<>();
+                            AppGlobals.sCurrentCategoryInitialized = false;
                             startActivity(new Intent(getApplicationContext(), TryAgain.class));
+                            break;
                         }
                     }
                     AppGlobals.sCurrentCategoryInitialized = false;
@@ -355,13 +372,14 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         loadDataForQuestion();
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
-                        if (totalAskedQuestions == 42) {
+                        if (totalAskedQuestions == 42 && !intentValue.equals("sample")) {
                             questionsArrayForCurrent = new ArrayList<>();
                             answersForSelected = new HashMap<>();
                             askedItems = new ArrayList<>();
                             Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                             intent.putExtra(AppGlobals.ANSWER_DATA, answersHashMap);
                             intent.putExtra(AppGlobals.TOTAL_CATEGORIES, categories);
+                            intent.putExtra(AppGlobals.TOTAL_QUESTIONS, totalAskedQuestions);
                             startActivity(intent);
                         }
 
@@ -382,6 +400,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                                 setCompoundDrawablesWithIntrinsicBounds(R.drawable.tick_button, 0, 0, 0);
                         okButton.setVisibility(View.GONE);
                         nextButton.setVisibility(View.VISIBLE);
+                        rightAnswer = true;
                     } else {
                        QuestionsFragment.getInstance().getAnswerRadioButton().
                                setCompoundDrawablesWithIntrinsicBounds(R.drawable.cross_button, 0, 0, 0);
@@ -396,6 +415,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                 answersForSelected = new HashMap<>();
                 askedItems = new ArrayList<>();
                 this.finish();
+                android.os.Process.killProcess(android.os.Process.myPid());
                 break;
         }
     }
