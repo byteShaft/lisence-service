@@ -41,18 +41,6 @@
      android:orientation="vertical" >
 
      <Button
-         android:id="@+id/sample"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:textColor="@android:color/white"
-         android:background="@drawable/button_effect"
-         android:text="Sample"
-         android:drawableRight="@drawable/pressed_arrow"
-         android:drawableEnd="@drawable/pressed_arrow"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"/>
-
-     <Button
          android:id="@+id/test"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
