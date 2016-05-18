@@ -67,39 +67,43 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="start"
+                    android:divider="@android:color/black"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
 
 
                     <RadioButton
                         android:id="@+id/radio_one"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/radio_group_divider"
                         android:drawableLeft="@drawable/png_selector"
                         android:gravity="center"
-                        android:textStyle="italic"
+                        android:textStyle="normal"
                         android:button="@null"
                         android:text="please select one option for one ndnhf"
                         android:padding="5dp" />
 
                     <RadioButton
                         android:id="@+id/radio_two"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/png_selector"
+                        android:background="@drawable/radio_group_divider"
                         android:gravity="center"
-                        android:textStyle="italic"
+                        android:textStyle="normal"
                         android:button="@null"
                         android:text="please select one option for one ndnhf hhh fhf  h h "
                         android:padding="5dp"  />
 
                     <RadioButton
                         android:id="@+id/radio_three"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/png_selector"
+                        android:background="@drawable/radio_group_divider"
                         android:gravity="center"
-                        android:textStyle="italic"
+                        android:textStyle="normal"
                         android:button="@null"
                         android:text="please select one option for one ndnhf hhh fhf  h h "
                         android:padding="5dp" />
