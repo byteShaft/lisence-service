@@ -36,6 +36,11 @@
             />
     </LinearLayout>
 
+    <View
+        android:layout_below="@+id/layout_text_result"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
 
     <LinearLayout
         android:id="@+id/layout_text_date"
@@ -68,6 +73,13 @@
             />
     </LinearLayout>
 
+
+    <View
+        android:layout_below="@+id/layout_text_date"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
+
     <LinearLayout
         android:id="@+id/layout_text_type"
         android:layout_below="@+id/layout_text_date"
@@ -99,11 +111,19 @@
             android:text="Car Test" />
     </LinearLayout>
 
+
+    <View
+        android:id="@+id/view"
+        android:layout_below="@+id/layout_text_type"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_below="@+id/layout_text_type"
+        android:layout_below="@+id/view"
         android:id="@+id/button"
         android:background="@drawable/another_try"
         android:layout_centerVertical="true"
