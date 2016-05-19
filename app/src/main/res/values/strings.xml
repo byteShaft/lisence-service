@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">License Service</string>
+    <string name="app_name">Learner Driver Knowledge Test</string>
     <string name="action_settings">Settings</string>
     <string name="sample_screen_msg">You are about to attempt a Car test  you will be asked
         question on information in the road user\'s handbook.</string>
