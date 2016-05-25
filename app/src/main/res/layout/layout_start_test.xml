@@ -5,20 +5,44 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-    <TextView
-        android:layout_marginTop="5dp"
-        android:text="Company Name Goes Here"
-        android:id="@+id/title"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
+    <LinearLayout
+        android:id="@+id/total_questions_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_marginTop="4dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="0"
+            android:id="@+id/current_question_number"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="/"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/total_questions"
+            android:text="42"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/container"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/total_questions_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </FrameLayout>

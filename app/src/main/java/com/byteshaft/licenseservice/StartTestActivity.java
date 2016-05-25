@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.byteshaft.licenseservice.fragments.QuestionsFragment;
@@ -62,6 +63,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private Button exitButton;
     private Button okButton;
     private String intentValue;
+    private TextView currentQuestionNumber;
     private int totalAskedQuestions = 0;
     private boolean wrongAnswer = false;
     private static ArrayList<Integer> askedItems;
@@ -86,6 +88,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
+        currentQuestionNumber = (TextView) findViewById(R.id.current_question_number);
         instance = this;
         intentValue = getIntent().getStringExtra(AppGlobals.INTENT_KEY);
         answersHashMap = new HashMap<>();
@@ -313,6 +316,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     }
                 }
                 totalAskedQuestions = totalAskedQuestions + 1;
+                currentQuestionNumber.setText(String.valueOf(totalAskedQuestions));
                 if (wrongAnswer) {
                     QuestionsFragment.getInstance().getAnswerRadioButton().
                             setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);

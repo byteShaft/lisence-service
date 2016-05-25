@@ -56,6 +56,11 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 totalTrue = totalTrue + Integer.parseInt(String.valueOf(hashMap.get(category)));
             }
         }
+
+        System.out.println(dataList);
+        System.out.println(hashMap);
+        System.out.println(totalQuestions);
+
         totalCalculations.setText(String.valueOf(totalTrue)+"/"+totalQuestions);
         Log.i("HashMap", String.valueOf(hashMap));
         Adapter adapter = new Adapter(getApplicationContext(), R.layout.layout_result_delegate,
