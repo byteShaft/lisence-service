@@ -49,7 +49,6 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         HashMap<String, String> hashMap = (HashMap<String, String>)getIntent()
                 .getSerializableExtra(AppGlobals.ANSWER_DATA);
         totalQuestions = getIntent().getIntExtra(AppGlobals.TOTAL_QUESTIONS, 0);
-        totalQuestions = totalQuestions-1;
         Log.i("Total ques received", String.valueOf(totalQuestions));
         for (String category: dataList) {
             if (hashMap.get(category) != null) {

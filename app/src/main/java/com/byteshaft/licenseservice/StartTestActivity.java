@@ -89,6 +89,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
         currentQuestionNumber = (TextView) findViewById(R.id.current_question_number);
+        currentQuestionNumber.setText("1");
         instance = this;
         intentValue = getIntent().getStringExtra(AppGlobals.INTENT_KEY);
         answersHashMap = new HashMap<>();
@@ -316,7 +317,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     }
                 }
                 totalAskedQuestions = totalAskedQuestions + 1;
-                currentQuestionNumber.setText(String.valueOf(totalAskedQuestions));
+                currentQuestionNumber.setText(String.valueOf(totalAskedQuestions + 1));
                 if (wrongAnswer) {
                     QuestionsFragment.getInstance().getAnswerRadioButton().
                             setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
@@ -376,7 +377,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         loadDataForQuestion();
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
-                        if (totalAskedQuestions == 42 && !intentValue.equals("sample")) {
+                        if (totalAskedQuestions == 41 && !intentValue.equals("sample")) {
                             questionsArrayForCurrent = new ArrayList<>();
                             answersForSelected = new HashMap<>();
                             askedItems = new ArrayList<>();
