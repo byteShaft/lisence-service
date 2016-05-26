@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.byteshaft.licenseservice.R;
 import com.byteshaft.licenseservice.utils.AppGlobals;
+import com.byteshaft.licenseservice.utils.Data;
 
 
 public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedChangeListener {
@@ -46,7 +47,11 @@ public class QuestionsFragment extends Fragment implements RadioGroup.OnCheckedC
         this.answerIndex = answerIndex;
         this.que = question;
         this.drawableName = drawableName;
-        this.question.setText(que);
+        if (category.equals(Data.sTrafficSignsSection)) {
+            this.question.setText(que.replaceAll("[0-9]",""));
+        } else {
+            this.question.setText(que);
+        }
         this.radioGroup.clearCheck();
         this.imageView.setVisibility(View.GONE);
         this.radioOne.setText(answerOne);

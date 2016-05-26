@@ -2121,8 +2121,8 @@ public class Data {
                         "Drive carefully, roundabout ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si003"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 003", "si003"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 003",
                 new String[]{
                         "All right lane traffic must turn right at the next intersection.",
                         "Right lane traffic may turn right or go straight ahead at the " +
@@ -2130,64 +2130,64 @@ public class Data {
                         "One way traffic ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si004"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 004", "si004"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 004",
                 new String[]{
                         "Traffic travels in each direction.",
                         "No turns permitted.",
                         "Double lane bridge ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si006 "});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 006", "si006 "});
+        answerListForTrafficSignsSections.put("What does this sign mean? 006",
                 new String[]{
                         "You must not turn to the right.",
                         "You may turn to the right.",
                         "You must give way to traffic on your right.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si007"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 007", "si007"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 007",
                 new String[]{
                         "You must not turn to the left.",
                         "You must not turn to the left or the right.",
                         "You must not turn to the right.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si008"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 008", "si008"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 008",
                 new String[]{
                         "All traffic must travel in the direction of the arrow.",
                         "Follow the arrow unless you are turning right.",
                         "Road curves to the left ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si009"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 009", "si009"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 009",
                 new String[]{
                         "You may travel only in the direction in which the arrow is pointing.",
                         "No left turn.",
                         "One lane bridge ahead, slow down.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si013"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 013", "si013"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 013",
                 new String[]{
                         "You are not to exceed 60 km/h.",
                         "You can go faster than 60 km/h.",
                         "You are on Highway 60.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si014"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 014", "si014"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 014",
                 new String[]{
                         "You must not drive faster than 100 km/h.",
                         "You must drive faster than 100 km/h.",
                         "The sign applies to truck drivers only, cars can travel at any speed.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si016"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 016", "si016"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 016",
                 new String[]{
                         "Drive carefully, and watch out for kangaroos " +
                                 "entering the road for the next 30 km.",
@@ -2195,8 +2195,8 @@ public class Data {
                         "Nature reserve 30 km ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si017"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 017", "si017"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 017",
                 new String[]{
                         "T-intersection ahead. If you are on the " +
                                 "terminating road, you must give way to all " +
@@ -2224,8 +2224,8 @@ public class Data {
                         "If there is a footbridge for pedestrians ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si020"});
-        answerListForTrafficSignsSections.put("What does this sign mean??",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 020", "si020"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 020",
                 new String[]{
                         "Road may be slippery when wet, slow down and " +
                                 "drive carefully.",
@@ -2242,8 +2242,8 @@ public class Data {
                         "If an unsealed road is ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si022"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 022", "si022"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 022",
                 new String[]{
                         "A sharp depression in the road is ahead, be " +
                                 "prepared, slow down.",
@@ -2251,8 +2251,8 @@ public class Data {
                         "Police station ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si024"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 024", "si024"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 024",
                 new String[]{
                         "Sharp bend to the right ahead, slow down and " +
                                 "drive carefully.",
@@ -2269,8 +2269,8 @@ public class Data {
                         "Pedestrians are not allowed.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si026"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 026", "si026"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 026",
                 new String[]{
                         "Crossroads ahead, reduce your speed and watch " +
                                 "out for other traffic and pedestrians.",
@@ -2300,8 +2300,8 @@ public class Data {
                                 "prepared to stop.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si030"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 030", "si030"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 030",
                 new String[]{
                         "Slow down and beware of trucks entering from " +
                                 "the side.",
@@ -2309,8 +2309,8 @@ public class Data {
                         "Heavy vehicle checking station ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si031"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 031", "si031"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 031",
                 new String[]{
                         "Slow down and look out for pedestrians crossing " +
                                 "the road ahead.",
@@ -2318,8 +2318,8 @@ public class Data {
                         "Hospital ahead, slow down and proceed with caution.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si032"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 032", "si032"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 032",
                 new String[]{
                         "Pedestrian crossing ahead, slow down and be " +
                                 "prepared to stop.",
@@ -2336,8 +2336,8 @@ public class Data {
                         "If a one lane bridge is ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si035"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 035", "si035"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 035",
                 new String[]{
                         "Workers ahead, slow down and be prepared to " +
                                 "stop.",
@@ -2346,8 +2346,8 @@ public class Data {
                         "Do not litter. ",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si036"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 036", "si036"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 036",
                 new String[]{
                         "Watch out for bicycle riders along the roadway or " +
                                 "when turning.",
@@ -2355,8 +2355,8 @@ public class Data {
                         "You are approaching a children's playground, slow down.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si038"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 038", "si038"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 038",
                 new String[]{
                         "If traffic lights are out of order or the amber light " +
                                 "is flashing, you must stop and give way to traffic " +
@@ -2365,16 +2365,16 @@ public class Data {
                         "Stop at all times and give way to all traffic.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si039"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 039", "si039"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 039",
                 new String[]{
                         "Stop sign ahead, slow down and prepare to stop.",
                         "You are approaching a roundabout, prepare to give way.",
                         "One way traffic ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si040"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 040", "si040"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 040",
                 new String[]{
                         "Traffic controller ahead, slow down and be " +
                                 "prepared to stop.",
@@ -2382,8 +2382,8 @@ public class Data {
                         "Traffic lights out of order, Police on duty ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si041"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 041", "si041"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 041",
                 new String[]{
                         "Steep down-grade in the road ahead, slow down.",
                         "Road ahead slippery when wet, drive carefully.",
@@ -2400,8 +2400,8 @@ public class Data {
                                 "km/h.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si043"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 043", "si043"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 043",
                 new String[]{
                         "Railway level crossing with flashing signals " +
                                 "ahead, slow down, drive carefully, and be " +
@@ -2410,8 +2410,8 @@ public class Data {
                         "Red light camera in use at traffic lights ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si045"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 045", "si045"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 045",
                 new String[]{
                         "Road narrows ahead, slow down and prepare for " +
                                 "a change in traffic conditions.",
@@ -2419,8 +2419,8 @@ public class Data {
                         "Merging traffic, give way to your right.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si045"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 046", "si046"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 046",
                 new String[]{
                         "Vehicles are not allowed to stop at the kerb " +
                                 "except in a medical emergency.",
@@ -2430,8 +2430,8 @@ public class Data {
                                 "goods.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si048"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 048", "si048"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 048",
                 new String[]{
                         "Vehicles carrying three or more people, and " +
                                 "motorcycles may use this lane.",
@@ -2439,8 +2439,8 @@ public class Data {
                         "This lane is reserved for bicycle riders only.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si049"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 049", "si049"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 049",
                 new String[]{
                         "Railway level crossing ahead, slow down and " +
                                 "look out for trains, be prepared to stop.",
@@ -2487,8 +2487,8 @@ public class Data {
                         "Stop, only if a train is at the crossing.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si056"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 056", "si056"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 056",
                 new String[]{
                         "Slow down, the maximum safe speed around the " +
                                 "next curve in the road is 35km/h.",
@@ -2507,8 +2507,8 @@ public class Data {
                                 "for approaching trains",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign means?", "si058"});
-        answerListForTrafficSignsSections.put("What does this sign means?",
+        trafficSignsSection.add(new String[]{"What does this sign means? 058", "si058"});
+        answerListForTrafficSignsSections.put("What does this sign means? 058",
                 new String[]{
                         "You must stay in or move to the left lane, unless you are " +
                                 "overtaking another vehicle.",
@@ -2525,8 +2525,8 @@ public class Data {
                         "Drive quickly over the railway crossing.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si060"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 060", "si060"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 060",
                 new String[]{
                         "Slow down, be ready to stop and give way to all vehicles " +
                                 "already on the roundabout if there is a danger of a " +
@@ -2544,8 +2544,8 @@ public class Data {
                         "Slow down, there is a dangerous curve ahead.",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si062"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 062", "si062"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 062",
                 new String[]{
                         "There is a hump (sudden slope up and down) in the road " +
                                 "ahead, slow down.",
@@ -2563,8 +2563,8 @@ public class Data {
                         "You are approaching an animal farm.    ",
                         "0"});
 
-        trafficSignsSection.add(new String[]{"What does this sign mean?", "si064"});
-        answerListForTrafficSignsSections.put("What does this sign mean?",
+        trafficSignsSection.add(new String[]{"What does this sign mean? 064", "si064"});
+        answerListForTrafficSignsSections.put("What does this sign mean? 064",
                 new String[]{
                         "Only vehicles carrying a disable person and " +
                                 "displaying a mobility parking authority may park in " +
@@ -2798,7 +2798,8 @@ public class Data {
                 "intersection_dont_walk"});
         intersectionAnswers.put("When these lights are flashing it means -",
                 new String[]{"Pedestrians who have started crossing must go back to " +
-                        "the footpath.", "`",
+                        "the footpath.", "Pedestrians who have started crossing must go back to " +
+                        "the footpath.",
                         "Pedestrians must not start to cross.", "2"});
 
 
