@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.byteshaft.licenseservice.utils.AppGlobals;
-
 public class SelectionActivity  extends Activity implements View.OnClickListener {
 
     private Button mTestButton;
@@ -23,12 +21,11 @@ public class SelectionActivity  extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(getApplicationContext(), StartTestActivity.class);
         switch (view.getId()) {
             case R.id.test:
-                intent.putExtra(AppGlobals.INTENT_KEY, "test");
+                Intent intent = new Intent(getApplicationContext(), StartTestActivity.class);
+                startActivity(intent);
                 break;
         }
-        startActivity(intent);
     }
 }

@@ -32,7 +32,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private int ASKED_ICAC_QUESTIONS = 0;
     private final int GENERAL_KNOWLEDGE_QUESTIONS = 14;
     private int ASKED_QUESTIONS_GENERAL_KNOWLEDGE = 0;
-    private final int ALCOHOL_DRUGS_QUESTIONS = 2;
+    private final int ALCOHOL_DRUGS_QUESTIONS = 3;
     private int ASKED_ALCOHOL_DRUGS_QUESTIONS = 0;
     private final int FATIGUE_AND_DEFENCE_DRIVING = 1;
     private int ASKED_FATIGUE_AND_DEFENCE_DRIVING = 0;
@@ -42,14 +42,16 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private int ASKED_NEGLIGENT_DRIVING = 0;
     private final int PEDESTRAINS = 1;
     private int ASKED_PEDESTRAINS = 0;
-    private final int SEAT_BELTS_RESTRAINS = 1;
+    private final int SEAT_BELTS_RESTRAINS = 2;
     private int ASKED_SEAT_BELTS_RESTRAINS = 0;
     private final int SPEED_LIMITS = 2;
     private int ASKED_SPEED_LIMITS = 0;
-    private final int TRAFFIC_LIGHTS = 1;
+    private final int TRAFFIC_LIGHTS = 0;
     private int ASKED_TRAFFIC_LIGHTS = 0;
-    private final int TRAFFIC_LIGHTS_2 = 1;
+    private final int TRAFFIC_LIGHTS_2 = 0;
     private int ASKED_TRAFFIC_LIGHTS_2 = 0;
+    private final int TRAFFIC_SIGNS = 9;
+    private int ASKED_TRAFFIC_SIGNS = 0;
     private static StartTestActivity instance;
     private static ArrayList<String[]> questionsArrayForCurrent;
     private static HashMap<String, String[]> answersForSelected;
@@ -62,7 +64,6 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private int trueAnswers = 0;
     private Button exitButton;
     private Button okButton;
-    private String intentValue;
     private TextView currentQuestionNumber;
     private int totalAskedQuestions = 0;
     private boolean wrongAnswer = false;
@@ -89,9 +90,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
         currentQuestionNumber = (TextView) findViewById(R.id.current_question_number);
-        currentQuestionNumber.setText("1");
+        currentQuestionNumber.setText("0");
         instance = this;
-        intentValue = getIntent().getStringExtra(AppGlobals.INTENT_KEY);
         answersHashMap = new HashMap<>();
         nextButton = (Button) findViewById(R.id.button_next);
         okButton = (Button) findViewById(R.id.button_ok);
@@ -127,9 +127,6 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         } else {
             menuItem.setTitle("Enable Instant Answer");
         }
-        if (intentValue.equals("sample")) {
-            menuItem.setVisible(false);
-        }
         return true;
 
     }
@@ -161,9 +158,6 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         } else {
             nextButton.setVisibility(View.VISIBLE);
             okButton.setVisibility(View.GONE);
-        }
-        if (intentValue.equals("sample")) {
-            QuestionsFragment.getInstance().disableRadioGroup();
         }
         if (!AppGlobals.sCurrentCategoryInitialized) {
             Data.getSelectedCategoryDetails(currentCategory);
@@ -215,6 +209,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         switch (currentCategory) {
             case Data.sICAC:
                 return ICAC_QUESTIONS;
+            case Data.sTrafficSignsSection:
+                return TRAFFIC_SIGNS;
             case Data.sGeneralKnowledge:
                 return GENERAL_KNOWLEDGE_QUESTIONS;
             case Data.sAlcholDrugs:
@@ -244,6 +240,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         switch (currentCategory) {
             case Data.sICAC:
                 return ASKED_ICAC_QUESTIONS;
+            case Data.sTrafficSignsSection:
+                return ASKED_TRAFFIC_SIGNS;
             case Data.sGeneralKnowledge:
                 return ASKED_QUESTIONS_GENERAL_KNOWLEDGE;
             case Data.sAlcholDrugs:
@@ -269,10 +267,12 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    private void  setCurrentCategoryAskedQuestion(String currentCategory, int questions) {
+    private void setCurrentCategoryAskedQuestion(String currentCategory, int questions) {
         switch (currentCategory) {
             case Data.sICAC:
                 ASKED_ICAC_QUESTIONS = questions;
+            case Data.sTrafficSignsSection:
+                ASKED_TRAFFIC_SIGNS = questions;
             case Data.sGeneralKnowledge:
                 ASKED_QUESTIONS_GENERAL_KNOWLEDGE = questions;
             case Data.sAlcholDrugs:
@@ -303,21 +303,21 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         switch (view.getId()) {
             case R.id.button_next:
                 Log.i("Total Question", ""+ totalAskedQuestions);
-                if (!intentValue.equals("sample")) {
                     if (QuestionsFragment.getInstance().getAnswerIndex() == 5) {
                         Toast.makeText(StartTestActivity.this, "please select a correct answer",
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
-                }
                 if (QuestionsFragment.getInstance().getAnswerIndex() != 5) {
                     if (currentQuestionTrueAnswers == QuestionsFragment.getInstance().getAnswerIndex()) {
                         trueAnswersForCategory = trueAnswersForCategory+1;
                         answersHashMap.put(currentCategory, trueAnswersForCategory);
                     }
                 }
-                totalAskedQuestions = totalAskedQuestions + 1;
-                currentQuestionNumber.setText(String.valueOf(totalAskedQuestions + 1));
+                if (!currentCategory.equals(Data.sICAC)) {
+                    totalAskedQuestions = totalAskedQuestions + 1;
+                }
+                currentQuestionNumber.setText(String.valueOf(totalAskedQuestions));
                 if (wrongAnswer) {
                     QuestionsFragment.getInstance().getAnswerRadioButton().
                             setCompoundDrawablesWithIntrinsicBounds(R.drawable.png_selector, 0, 0, 0);
@@ -335,7 +335,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                     loadDataForQuestion();
                     QuestionsFragment.getInstance().showCurrentQuestion();
                 } else {
-                    if (currentCategory.equals(Data.sICAC) && !intentValue.equals("sample")) {
+                    if (currentCategory.equals(Data.sICAC)) {
                         if (answersHashMap.containsKey(Data.sICAC)) {
                             Log.i("ICAC questions", String.valueOf(answersHashMap.get(Data.sICAC)));
                             if (answersHashMap.get(Data.sICAC) < (ICAC_QUESTIONS+1)) {
@@ -377,7 +377,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         loadDataForQuestion();
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
-                        if (totalAskedQuestions == 41 && !intentValue.equals("sample")) {
+                        if (totalAskedQuestions == 45) {
                             questionsArrayForCurrent = new ArrayList<>();
                             answersForSelected = new HashMap<>();
                             askedItems = new ArrayList<>();
@@ -387,7 +387,6 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                             intent.putExtra(AppGlobals.TOTAL_QUESTIONS, totalAskedQuestions);
                             startActivity(intent);
                         }
-
                     }
                 }
                 break;
