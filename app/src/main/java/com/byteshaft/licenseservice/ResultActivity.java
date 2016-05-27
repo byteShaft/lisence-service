@@ -3,6 +3,7 @@ package com.byteshaft.licenseservice;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
@@ -21,6 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.byteshaft.licenseservice.utils.AppGlobals;
+import com.byteshaft.licenseservice.utils.Data;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,9 +34,14 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private ViewHolder viewHolder;
     private ListView listView;
     private int totalQuestions = 1;
-    private TextView totalCalculations;
     private int totalTrue = 0;
     private View header;
+    private TextView generalAnswer;
+    private TextView roadSafetyEssentials;
+    private TextView trafficSigns;
+    private boolean failInGeneral = false;
+    private boolean failInOverAll = false;
+    private TextView testStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +52,17 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         ArrayList<String> dataList = getIntent()
                 .getStringArrayListExtra(AppGlobals.TOTAL_CATEGORIES);
         listView = (ListView) findViewById(R.id.result_list_view);
-        totalCalculations = (TextView) findViewById(R.id.total_question_answers);
         HashMap<String, String> hashMap = (HashMap<String, String>)getIntent()
                 .getSerializableExtra(AppGlobals.ANSWER_DATA);
         totalQuestions = getIntent().getIntExtra(AppGlobals.TOTAL_QUESTIONS, 0);
         Log.i("Total ques received", String.valueOf(totalQuestions));
         for (String category: dataList) {
             if (hashMap.get(category) != null) {
-                totalTrue = totalTrue + Integer.parseInt(String.valueOf(hashMap.get(category)));
+                if (!category.equals(Data.sGeneralKnowledge) && !category.equals(Data.sTrafficSignsSection)) {
+                    totalTrue = totalTrue + Integer.parseInt(String.valueOf(hashMap.get(category)));
+                }
             }
         }
-        totalCalculations.setText(String.valueOf(totalTrue)+"/"+totalQuestions);
         Log.i("HashMap", String.valueOf(hashMap));
         Adapter adapter = new Adapter(getApplicationContext(), R.layout.layout_result_delegate,
                 dataList, hashMap);
@@ -69,15 +76,34 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         disableNavigationViewScrollbars(navigationView);
         header = navigationView.getHeaderView(0);
-        TextView result = (TextView) header.findViewById(R.id.text_result);
-        if (totalTrue < 38) {
-            result.setText("Test Result: Fail");
+        generalAnswer = (TextView) header.findViewById(R.id.general_knowledge_answer);
+        roadSafetyEssentials = (TextView) header.findViewById(R.id.road_safety_answer);
+        trafficSigns = (TextView) header.findViewById(R.id.traffic_signs_answer);
+        testStatus = (TextView) header.findViewById(R.id.test_status);
+        roadSafetyEssentials.setText(String.valueOf(totalTrue)+"/"+"20");
+        String generalAnswers = String.valueOf(hashMap.get(Data.sGeneralKnowledge));
+        String trafficAnswers = String.valueOf(hashMap.get(Data.sTrafficSignsSection));
+        generalAnswer.setText(generalAnswers+"/"+"15");
+        if (Integer.valueOf(generalAnswers) < 12) {
+            failInGeneral = true;
+            generalAnswer.setTextColor(Color.RED);
+        }
+        trafficSigns.setText(trafficAnswers+"/"+"10");
+        if (Integer.valueOf(trafficAnswers) < 10) {
+            trafficSigns.setTextColor(Color.RED);
+        }
+        if (Integer.valueOf(trafficAnswers) < 10 || totalTrue < 20) {
+            failInOverAll = true;
+        }
+        if (failInOverAll || failInGeneral) {
+            testStatus.setText("Fail");
+            testStatus.setTextColor(Color.RED);
         } else {
-            result.setText("Test Result: Pass");
+            testStatus.setText("Pass");
+            testStatus.setTextColor(Color.parseColor("#009900"));
         }
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
-
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
         String formattedDate = df.format(c.getTime());
         TextView date = (TextView) header.findViewById(R.id.date);

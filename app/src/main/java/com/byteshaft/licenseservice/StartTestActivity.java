@@ -30,21 +30,21 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private String currentCategory = "";
     private final int ICAC_QUESTIONS = 2;
     private int ASKED_ICAC_QUESTIONS = 0;
-    private final int GENERAL_KNOWLEDGE_QUESTIONS = 14;//
+    private final int GENERAL_KNOWLEDGE_QUESTIONS = 14;
     private int ASKED_QUESTIONS_GENERAL_KNOWLEDGE = 0;
     private final int ALCOHOL_DRUGS_QUESTIONS = 3;
     private int ASKED_ALCOHOL_DRUGS_QUESTIONS = 0;
-    private final int FATIGUE_AND_DEFENCE_DRIVING = 1;//
+    private final int FATIGUE_AND_DEFENCE_DRIVING = 1;
     private int ASKED_FATIGUE_AND_DEFENCE_DRIVING = 0;
-    private final int INTERSECTION = 1;//
+    private final int INTERSECTION = 1;
     private int ASKED_INTERSECTION = 0;
-    private final int NEGLIGENT_DRIVING = 1;//
+    private final int NEGLIGENT_DRIVING = 1;
     private int ASKED_NEGLIGENT_DRIVING = 0;
     private final int PEDESTRAINS = 1;
     private int ASKED_PEDESTRAINS = 0;
-    private final int SEAT_BELTS_RESTRAINS = 2;//
+    private final int SEAT_BELTS_RESTRAINS = 2;
     private int ASKED_SEAT_BELTS_RESTRAINS = 0;
-    private final int SPEED_LIMITS = 2;//
+    private final int SPEED_LIMITS = 2;
     private int ASKED_SPEED_LIMITS = 0;
     private final int TRAFFIC_LIGHTS = 0;
     private int ASKED_TRAFFIC_LIGHTS = 0;
@@ -90,7 +90,7 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
         currentQuestionNumber = (TextView) findViewById(R.id.current_question_number);
-        currentQuestionNumber.setText("1");
+        currentQuestionNumber.setText("0");
         instance = this;
         answersHashMap = new HashMap<>();
         nextButton = (Button) findViewById(R.id.button_next);

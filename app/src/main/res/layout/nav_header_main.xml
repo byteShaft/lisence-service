@@ -7,44 +7,7 @@
     >
 
     <LinearLayout
-        android:id="@+id/layout_text_result"
-        android:layout_marginTop="40dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    <TextView
-        android:text="Result: "
-        android:layout_marginTop="10dp"
-        android:gravity="start"
-        android:textColor="@android:color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_gravity="start"
-       />
-        <TextView
-            android:id="@+id/text_result"
-            android:text="one two three four"
-            android:gravity="end"
-            android:textColor="@android:color/darker_gray"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            />
-    </LinearLayout>
-
-    <View
-        android:layout_below="@+id/layout_text_result"
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:background="#d13033"/>
-
-    <LinearLayout
         android:id="@+id/layout_text_date"
-        android:layout_below="@+id/layout_text_result"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -81,7 +44,7 @@
         android:background="#d13033"/>
 
     <LinearLayout
-        android:id="@+id/layout_text_type"
+        android:id="@+id/layout_test_type"
         android:layout_below="@+id/layout_text_date"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
@@ -111,23 +74,170 @@
             android:text="Car Test" />
     </LinearLayout>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/layout_test_type"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
+
+
+    <LinearLayout
+        android:id="@+id/layout_text_result"
+        android:layout_below="@+id/layout_test_type"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Result"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
 
     <View
         android:id="@+id/view"
-        android:layout_below="@+id/layout_text_type"
+        android:layout_below="@+id/layout_text_result"
         android:layout_width="fill_parent"
         android:layout_height="2dp"
         android:background="#d13033"/>
+
+    <LinearLayout
+        android:id="@+id/layout_general"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:text="General Knowledge"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="start"
+            />
+        <TextView
+            android:id="@+id/general_knowledge_answer"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="general knowledge answer" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_below="@+id/layout_general"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
+
+    <LinearLayout
+        android:id="@+id/road_safety_essentials"
+        android:layout_below="@+id/layout_general"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:text="Road Safety Essentials"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="start"
+            />
+        <TextView
+            android:id="@+id/road_safety_answer"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Road safety answer" />
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/road_safety_essentials"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
+
+    <LinearLayout
+        android:id="@+id/Traffic_Signs_layout"
+        android:layout_below="@+id/road_safety_essentials"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:text="Traffic Signs"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="start"
+            />
+        <TextView
+            android:id="@+id/traffic_signs_answer"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Traffic signs answer" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/last_view"
+        android:layout_below="@+id/Traffic_Signs_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#d13033"/>
+
+    <TextView
+        android:id="@+id/test_status"
+        android:layout_below="@+id/last_view"
+        android:gravity="right"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="state" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_below="@+id/view"
+        android:layout_below="@+id/test_status"
         android:id="@+id/button"
-        android:background="@drawable/another_try"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/another_try"
         />
 
 </RelativeLayout>
