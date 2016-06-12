@@ -70,6 +70,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
     private static ArrayList<Integer> askedItems;
     private int questionAskedForCurrentCategory = 0;
     private boolean rightAnswer = false;
+    private TextView slash;
+    private TextView totalQuestions;
 
     public static StartTestActivity getInstance() {
         return instance;
@@ -90,6 +92,8 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_start_test);
         currentQuestionNumber = (TextView) findViewById(R.id.current_question_number);
+        totalQuestions = (TextView) findViewById(R.id.total_questions);
+        slash = (TextView) findViewById(R.id.slash);
         currentQuestionNumber.setText("0");
         instance = this;
         answersHashMap = new HashMap<>();
@@ -108,6 +112,11 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
         exitButton.setOnClickListener(this);
         categories = Data.initializeCategoriesArray();
         currentCategory = categories.get(currentCategoryIndex);
+        if (currentCategory.equals(Data.sICAC)) {
+            currentQuestionNumber.setVisibility(View.GONE);
+            slash.setVisibility(View.GONE);
+            totalQuestions.setVisibility(View.GONE);
+        }
         loadFragment(new QuestionsFragment());
     }
 
@@ -314,6 +323,15 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         answersHashMap.put(currentCategory, trueAnswersForCategory);
                     }
                 }
+                if (currentCategory.equals(Data.sICAC)) {
+                    currentQuestionNumber.setVisibility(View.GONE);
+                    slash.setVisibility(View.GONE);
+                    totalQuestions.setVisibility(View.GONE);
+                } else {
+                    currentQuestionNumber.setVisibility(View.VISIBLE);
+                    slash.setVisibility(View.VISIBLE);
+                    totalQuestions.setVisibility(View.VISIBLE);
+                }
                 if (!currentCategory.equals(Data.sICAC)) {
                     totalAskedQuestions = totalAskedQuestions + 1;
                 }
@@ -374,6 +392,11 @@ public class StartTestActivity extends AppCompatActivity implements View.OnClick
                         currentCategory = categories.get(nextIndex);
                         Log.i("Else Part", currentCategory);
                         Log.i("index", "" + nextIndex);
+                        if (!currentCategory.equals(Data.sICAC)) {
+                            currentQuestionNumber.setVisibility(View.VISIBLE);
+                            slash.setVisibility(View.VISIBLE);
+                            totalQuestions.setVisibility(View.VISIBLE);
+                        }
                         loadDataForQuestion();
                         QuestionsFragment.getInstance().showCurrentQuestion();
                     } else {
