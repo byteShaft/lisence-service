@@ -87,11 +87,22 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         if (Integer.valueOf(generalAnswers) < 12) {
             failInGeneral = true;
             generalAnswer.setTextColor(Color.RED);
+        } else {
+            generalAnswer.setTextColor(Color.parseColor("#009900"));
         }
         trafficSigns.setText(trafficAnswers+"/"+"10");
         if (Integer.valueOf(trafficAnswers) < 10) {
             trafficSigns.setTextColor(Color.RED);
+        } else {
+            trafficSigns.setTextColor(Color.parseColor("#009900"));
         }
+
+        if (totalTrue < 20) {
+            roadSafetyEssentials.setTextColor(Color.RED);
+        } else {
+            roadSafetyEssentials.setTextColor(Color.parseColor("#009900"));
+        }
+
         if (Integer.valueOf(trafficAnswers) < 10 || totalTrue < 20) {
             failInOverAll = true;
         }
@@ -110,6 +121,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         date.setText(formattedDate);
         Button haveAnotherGo = (Button) header.findViewById(R.id.button);
         haveAnotherGo.setOnClickListener(this);
+        drawer.openDrawer(GravityCompat.START);
     }
 
     private void disableNavigationViewScrollbars(NavigationView navigationView) {
